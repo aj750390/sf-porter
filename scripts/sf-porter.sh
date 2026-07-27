@@ -23,6 +23,25 @@ function print_err() { echo -e "${RED}[ERROR]${NC} $1"; exit 1; }
 function print_info() { echo -e "${YELLOW}[INFO]${NC} $1"; }
 function print_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
 
+# Function to automatically install the Android repo tool
+function install_repo_tool() {
+    print_info "Android 'repo' tool not found. Installing it automatically..."
+    mkdir -p ~/bin
+    
+    print_info "Downloading repo tool..."
+    curl -s https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo || print_err "Failed to download repo tool."
+    chmod a+x ~/bin/repo
+    
+    # Add to .bashrc if not already there
+    if ! grep -q 'export PATH=~/bin:$PATH' ~/.bashrc; then
+        echo 'export PATH=~/bin:$PATH' >> ~/.bashrc
+    fi
+    
+    # Make it available in the current session
+    export PATH=~/bin:$PATH
+    print_ok "Repo tool installed successfully!"
+}
+
 # --- Menu ---
 clear
 echo "=========================================="
@@ -41,9 +60,9 @@ case $choice in
     1)
         echo "Setting up Halium 11.0 build environment..."
         
-        # Check if repo tool is installed
+        # Check if repo tool is installed, if not, install it!
         if ! command -v repo &> /dev/null; then
-            print_err "Android 'repo' tool not found. Please install it first."
+            install_repo_tool
         fi
 
         # Check if user is in the intended build directory
