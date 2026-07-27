@@ -17,9 +17,11 @@ RED='\033[0;31m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# Print functions
 function print_ok() { echo -e "${GREEN}[OK]${NC} $1"; }
 function print_err() { echo -e "${RED}[ERROR]${NC} $1"; exit 1; }
 function print_info() { echo -e "${YELLOW}[INFO]${NC} $1"; }
+function print_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
 
 # --- Menu ---
 clear
@@ -29,10 +31,10 @@ echo " Halium $HALIUM_VERSION"
 echo "=========================================="
 echo "1. Init Halium Source & Sync Vayu Tree"
 echo "2. Build Halium Images (boot & system)"
-echo "3. Setup Droid-Configs"
-echo "4. Extract Vendor Blobs"
-echo "5. Package Flashable ZIP"
-echo "==========================================="
+echo "3. Setup Droid-Configs & Apply Patches"
+echo "4. Extract Vendor Blobs (Placeholder)"
+echo "5. Package Flashable ZIP (Placeholder)"
+echo "=========================================="
 read -p "Select an option [1-5]: " choice
 
 case $choice in
@@ -76,23 +78,76 @@ EOF
         ;;
     2)
         echo "Building Halium images..."
-        # We will build this out next!
-        echo "TODO: Implement Halium build commands"
+        # Ensure we are in the build dir
+        if [ ! -d "out/target/product/$DEVICE" ]; then
+            print_err "Build directory not found. Did you run Option 1 first?"
+        fi
+
+        print_info "Setting up build environment..."
+        source build/envsetup.sh
+        lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree."
+
+        print_info "Starting Halium boot and system image build. This will take a long time..."
+        mka halium-boot systemimage || print_err "Build failed!"
+
+        print_ok "Build complete!"
+        print_ok "Images located in: out/target/product/$DEVICE/"
         ;;
     3)
-        echo "Setting up droid-configs..."
-        # Logic to copy templates from sf-porter/configs/vayu/ into the build tree
-        echo "TODO: Implement droid-configs setup"
+        echo "Setting up droid-configs and applying patches..."
+        
+        # IMPORTANT: Change this path if your sf-porter folder is located somewhere else!
+        CONFIG_SOURCE="$HOME/sf-porter/configs/vayu" 
+        
+        CONFIG_DEST="hybris/droid-configs/$DEVICE"
+
+        # Create destination directory
+        mkdir -p $CONFIG_DEST
+
+        # Copy droid-configs template
+        print_info "Copying droid-configs to $CONFIG_DEST..."
+        cp -r $CONFIG_SOURCE/droid-config-vayu/* $CONFIG_DEST/
+
+        # Apply patches (if any exist and have content)
+        if [ -s "$CONFIG_SOURCE/patches/device_tree_hybris.patch" ]; then
+            print_info "Applying device tree patches..."
+            git -C device/xiaomi/$DEVICE apply $CONFIG_SOURCE/patches/device_tree_hybris.patch || print_warn "Device tree patch failed or already applied."
+        else
+            print_warn "No device tree patch found (or file is empty). Skipping."
+        fi
+
+        if [ -s "$CONFIG_SOURCE/patches/kernel_hybris.patch" ]; then
+            print_info "Applying kernel patches..."
+            git -C kernel/xiaomi/$DEVICE apply $CONFIG_SOURCE/patches/kernel_hybris.patch || print_warn "Kernel patch failed or already applied."
+        else
+            print_warn "No kernel patch found (or file is empty). Skipping."
+        fi
+
+        # Initialize git in the droid-configs folder (prevents the 'fatal: not a git repository' error!)
+        cd $CONFIG_DEST
+        if [ ! -d ".git" ]; then
+            git init
+            git add .
+            git commit -m "Initial droid-configs for vayu"
+            print_ok "Initialized Git in $CONFIG_DEST"
+        else
+            print_ok "Git already initialized in $CONFIG_DEST"
+        fi
+        cd ../../../
+        
+        print_ok "Droid-configs and patches applied successfully!"
         ;;
     4)
-        echo "Extracting proprietary blobs..."
-        echo "TODO: Implement blob extraction"
+        echo "Extracting Vendor Blobs..."
+        # We will build this out in the next step
+        echo "TODO: Implement logic to mount system.img and pull .so files for libhybris"
         ;;
     5)
         echo "Packaging..."
-        echo "TODO: Implement zip packaging"
+        # We will build this out in the next step
+        echo "TODO: Implement logic to generate META-INF and zip the flashable package"
         ;;
     *)
-        echo "Invalid option."
+        echo "Invalid option. Exiting."
         ;;
 esac
