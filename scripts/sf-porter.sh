@@ -26,6 +26,13 @@ function print_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
 # Function to automatically install the Android repo tool
 function install_repo_tool() {
     print_info "Android 'repo' tool not found. Installing it automatically..."
+    
+    # Check if curl is installed, if not, install it
+    if ! command -v curl &> /dev/null; then
+        print_info "curl not found. Installing curl..."
+        sudo apt-get update && sudo apt-get install -y curl || print_err "Failed to install curl."
+    fi
+    
     mkdir -p ~/bin
     
     print_info "Downloading repo tool..."
