@@ -72,6 +72,14 @@ case $choice in
             install_repo_tool
         fi
 
+        # Check if Git user name and email are configured (required by repo tool!)
+        if [ -z "$(git config --global user.name)" ] || [ -z "$(git config --global user.email)" ]; then
+            print_info "Git identity not found. Configuring default identity for repo tool..."
+            git config --global user.name "SF-Porter User"
+            git config --global user.email "sfporter@example.com"
+            print_ok "Git identity configured."
+        fi
+
         # Check if user is in the intended build directory
         read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu): " BUILD_DIR
         mkdir -p "$BUILD_DIR"
