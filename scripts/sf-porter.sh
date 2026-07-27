@@ -14,77 +14,82 @@ HALIUM_VERSION="11.0"
 # Colors for terminal
 GREEN='\033[0;32m'
 RED='\033[0;31m'
+YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 function print_ok() { echo -e "${GREEN}[OK]${NC} $1"; }
 function print_err() { echo -e "${RED}[ERROR]${NC} $1"; exit 1; }
+function print_info() { echo -e "${YELLOW}[INFO]${NC} $1"; }
 
 # --- Menu ---
-echo "SF-PORTER for $DEVICE"
-echo "1. Setup Droid-Configs Template"
+clear
+echo "=========================================="
+echo " SF-PORTER for $DEVICE"
+echo " Halium $HALIUM_VERSION"
+echo "=========================================="
+echo "1. Init Halium Source & Sync Vayu Tree"
 echo "2. Build Halium Images (boot & system)"
-echo "3. Extract Vendor Blobs"
-echo "4. Build Sailfish Rootfs (Placeholder)"
+echo "3. Setup Droid-Configs"
+echo "4. Extract Vendor Blobs"
 echo "5. Package Flashable ZIP"
+echo "==========================================="
 read -p "Select an option [1-5]: " choice
 
 case $choice in
     1)
-        echo "Setting up droid-configs..."
-        # 1. Check if repo exists
-        if [ ! -d ".repo" ]; then
-            print_err "This is not a Halium build tree. Run from the root of the source."
+        echo "Setting up Halium 11.0 build environment..."
+        
+        # Check if repo tool is installed
+        if ! command -v repo &> /dev/null; then
+            print_err "Android 'repo' tool not found. Please install it first."
         fi
 
-        # 2. Create droid-config directory structure
-        CONFIG_DIR="hybris/droid-configs"
-        mkdir -p $CONFIG_DIR
+        # Check if user is in the intended build directory
+        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu): " BUILD_DIR
+        mkdir -p "$BUILD_DIR"
+        cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
+
+        # Initialize Halium repo
+        print_info "Initializing Halium manifest..."
+        repo init -u https://github.com/Halium/halium-manifest -b halium-11.0 --depth=1 || print_err "Repo init failed"
+
+        # Create local manifest for Poco X3 Pro
+        print_info "Adding Vayu device tree to local manifests..."
+        mkdir -p .repo/local_manifests
+        cat << 'EOF' > .repo/local_manifests/vayu.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Note: If these repos 404, you will need to search GitHub for the exact LineageOS 18.1 vayu repos -->
+  <project name="LineageOS/android_device_xiaomi_vayu" path="device/xiaomi/vayu" remote="github" revision="lineage-18.1" />
+  <project name="LineageOS/android_kernel_xiaomi_vayu" path="kernel/xiaomi/vayu" remote="github" revision="lineage-18.1" />
+  <!-- Vendor blobs might need to be pulled from a different source like TheMuppets -->
+  <project name="TheMuppets/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="github" revision="lineage-18.1" />
+</manifest>
+EOF
+        print_ok "Vayu local_manifest created."
+
+        # Sync the source
+        print_info "Syncing source code. This will take a long time and download ~50GB+..."
+        repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags || print_err "Repo sync failed"
         
-        # 3. Initialize git in the configs folder (prevents the error you had earlier!)
-        cd $CONFIG_DIR
-        if [ ! -d ".git" ]; then
-            git init
-            print_ok "Initialized Git in $CONFIG_DIR"
-        fi
-        
-        # 4. Create basic droid-config files
-        mkdir -p $DEVICE
-        echo "ro.hardware=qcom" > $DEVICE/system.prop
-        echo "Created $DEVICE/system.prop"
-        
-        cd ../../
-        print_ok "Droid-configs template created. You still need to manually edit audio/sensor configs!"
+        print_ok "Halium source and Vayu device tree successfully synced!"
         ;;
     2)
         echo "Building Halium images..."
-        source build/envsetup.sh
-        lunch halium_$DEVICE-userdebug || print_err "Lunch failed"
-        mka halium-boot systemimage || print_err "Build failed"
-        print_ok "Halium boot.img and system.img built successfully in out/target/product/$DEVICE/"
+        # We will build this out next!
+        echo "TODO: Implement Halium build commands"
         ;;
     3)
-        echo "Extracting proprietary blobs from built system.img..."
-        IMG_PATH="out/target/product/$DEVICE/system.img"
-        if [ ! -f "$IMG_PATH" ]; then
-            print_err "system.img not found. Run option 2 first."
-        fi
-        
-        mkdir -p extracted_blobs
-        sudo mount -t ext4 -o loop $IMG_PATH extracted_blobs
-        # Here you would add logic to copy specific .so files needed for libhybris
-        sudo umount extracted_blobs
-        print_ok "Extraction complete."
+        echo "Setting up droid-configs..."
+        # Logic to copy templates from sf-porter/configs/vayu/ into the build tree
+        echo "TODO: Implement droid-configs setup"
         ;;
     4)
-        echo "Building Sailfish Rootfs..."
-        # This would normally call the Sailfish SDK 'mic' tool
-        # We will build this part out later
-        echo "TODO: Implement mic image creator integration"
+        echo "Extracting proprietary blobs..."
+        echo "TODO: Implement blob extraction"
         ;;
     5)
         echo "Packaging..."
-        # Combine boot.img, system.img, and rootfs into an edify script zip
-        # TODO: Create META-INF/com/google/android/update-binary
         echo "TODO: Implement zip packaging"
         ;;
     *)
