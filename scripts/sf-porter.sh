@@ -23,11 +23,22 @@ function print_err() { echo -e "${RED}[ERROR]${NC} $1"; exit 1; }
 function print_info() { echo -e "${YELLOW}[INFO]${NC} $1"; }
 function print_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
 
+# Function to automatically install build dependencies
+function install_dependencies() {
+    print_info "Checking and installing required system packages..."
+    
+    # Update apt and install curl, git, and python3 (required for repo tool)
+    sudo apt-get update
+    sudo apt-get install -y curl git python3 || print_err "Failed to install system dependencies."
+    
+    print_ok "System dependencies installed."
+}
+
 # Function to automatically install the Android repo tool
 function install_repo_tool() {
     print_info "Android 'repo' tool not found. Installing it automatically..."
     
-    # Check if curl is installed, if not, install it
+    # Check if curl is installed just in case
     if ! command -v curl &> /dev/null; then
         print_info "curl not found. Installing curl..."
         sudo apt-get update && sudo apt-get install -y curl || print_err "Failed to install curl."
@@ -67,6 +78,11 @@ case $choice in
     1)
         echo "Setting up Halium 11.0 build environment..."
         
+        # Ensure git, python3, and curl are installed
+        if ! command -v git &> /dev/null || ! command -v python3 &> /dev/null || ! command -v curl &> /dev/null; then
+            install_dependencies
+        fi
+
         # Check if repo tool is installed, if not, install it!
         if ! command -v repo &> /dev/null; then
             install_repo_tool
