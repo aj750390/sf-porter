@@ -116,7 +116,12 @@ EOF
 
         # Sync the source
         print_info "Syncing source code. This will take a long time and download ~50GB+..."
-        repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags || print_err "Repo sync failed"
+        print_warn "If you get 429 errors, the script will automatically retry with fewer connections."
+        
+        # Start with normal sync, then drop to 4 threads, then 2 threads to avoid 429 errors
+        repo sync -c -j4 --force-sync --no-clone-bundle --no-tags || \
+        repo sync -c -j2 --force-sync --no-clone-bundle --no-tags || \
+        print_err "Repo sync failed. Try again later or use a VPN."
         
         print_ok "Halium source and Vayu device tree successfully synced!"
         ;;
