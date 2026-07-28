@@ -29,7 +29,7 @@ function install_dependencies() {
     
     # Update apt and install curl, git, and python3 (required for repo tool)
     sudo apt-get update
-    sudo apt-get install -y curl git python3 || print_err "Failed to install system dependencies."
+    sudo apt-get install -y curl git python3 python-is-python3 ca-certificates || print_err "Failed to install system dependencies."
     
     print_ok "System dependencies installed."
 }
@@ -37,12 +37,6 @@ function install_dependencies() {
 # Function to automatically install the Android repo tool
 function install_repo_tool() {
     print_info "Android 'repo' tool not found. Installing it automatically..."
-    
-    # Check if curl is installed just in case
-    if ! command -v curl &> /dev/null; then
-        print_info "curl not found. Installing curl..."
-        sudo apt-get update && sudo apt-get install -y curl || print_err "Failed to install curl."
-    fi
     
     mkdir -p ~/bin
     
@@ -103,7 +97,7 @@ case $choice in
 
         # Initialize Halium repo
         print_info "Initializing Halium manifest..."
-        repo init -u https://github.com/Halium/halium-manifest -b halium-11.0 --depth=1 || print_err "Repo init failed"
+        repo init -u https://github.com/Halium/android -b halium-11.0 --depth=1 || print_err "Repo init failed"
 
         # Create local manifest for Poco X3 Pro
         print_info "Adding Vayu device tree to local manifests..."
