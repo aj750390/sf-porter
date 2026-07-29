@@ -1,0 +1,3 @@
+cd ~/sailfish_vayu
+rm -rf .repo/projects/prebuilts/devtools.git
+rm -rf prebuilts/devtools
