@@ -94,7 +94,9 @@ case $choice in
         fi
 
         # Check if user is in the intended build directory
-        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu): " BUILD_DIR
+        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu): " INPUT_DIR
+        # Expand the ~ symbol to the real home directory path
+        BUILD_DIR=$(eval echo "$INPUT_DIR")
         mkdir -p "$BUILD_DIR"
         cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
 
