@@ -100,9 +100,9 @@ case $choice in
         mkdir -p "$BUILD_DIR"
         cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
 
-        # Initialize Halium repo
+        # Initialize Halium repo (-g default,-darwin skips macOS files to save space/time)
         print_info "Initializing Halium manifest..."
-        repo init -u https://github.com/Halium/android -b halium-11.0 --depth=1 || print_err "Repo init failed"
+        repo init -u https://github.com/Halium/android -b halium-11.0 -g default,-darwin --depth=1 || print_err "Repo init failed"
 
         # Create local manifest for Poco X3 Pro
         print_info "Adding Vayu device tree to local manifests..."
@@ -124,10 +124,9 @@ EOF
 
         # Sync the source
         print_info "Syncing source code. This will take a long time and download ~50GB+..."
-        print_warn "If you get 429 errors, the script will automatically retry with fewer connections."
+        print_warn "Using -j2 and skipping darwin files to prevent 429 errors and save space."
         
-        # Start with normal sync, then drop to 4 threads, then 2 threads to avoid 429 errors
-        repo sync -c -j4 --force-sync --no-clone-bundle --no-tags || \
+        # Use -j2 for safe downloading to avoid Google rate limits (429 errors)
         repo sync -c -j2 --force-sync --no-clone-bundle --no-tags || \
         print_err "Repo sync failed. Try again later or use a VPN."
         
