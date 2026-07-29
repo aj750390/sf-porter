@@ -108,9 +108,14 @@ case $choice in
         cat << 'EOF' > .repo/local_manifests/vayu.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <!-- Define the GitLab remote -->
+  <remote name="gitlab" fetch="https://gitlab.com" />
+  
   <project name="LineageOS/android_device_xiaomi_vayu" path="device/xiaomi/vayu" remote="github" revision="lineage-18.1" />
   <project name="LineageOS/android_kernel_xiaomi_sm8150" path="kernel/xiaomi/sm8150" remote="github" revision="lineage-18.1" />
-  <project name="TheMuppets/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="github" revision="lineage-18.1" />
+  
+  <!-- Point the vendor repository to the GitLab mirror -->
+  <project name="the-muppets/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="gitlab" revision="lineage-18.1" />
 </manifest>
 EOF
         print_ok "Vayu local_manifest created."
