@@ -27,11 +27,14 @@ function print_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
 function install_dependencies() {
     print_info "Checking and installing required system packages..."
     
-    # Update apt and install curl, git, and python3 (required for repo tool)
+    # Update apt and install curl, git, python3, and git-lfs
     sudo apt-get update
-    sudo apt-get install -y curl git python3 python-is-python3 ca-certificates || print_err "Failed to install system dependencies."
+    sudo apt-get install -y curl git python3 python-is-python3 ca-certificates git-lfs || print_err "Failed to install system dependencies."
     
-    print_ok "System dependencies installed."
+    # Initialize Git LFS
+    git lfs install || print_err "Failed to initialize Git LFS."
+    
+    print_ok "System dependencies and Git LFS installed."
 }
 
 # Function to automatically install the Android repo tool
@@ -72,8 +75,8 @@ case $choice in
     1)
         echo "Setting up Halium 11.0 build environment..."
         
-        # Ensure git, python3, and curl are installed
-        if ! command -v git &> /dev/null || ! command -v python3 &> /dev/null || ! command -v curl &> /dev/null; then
+        # Ensure git, python3, curl, and git-lfs are installed
+        if ! command -v git &> /dev/null || ! command -v python3 &> /dev/null || ! command -v curl &> /dev/null || ! command -v git-lfs &> /dev/null; then
             install_dependencies
         fi
 
@@ -105,10 +108,8 @@ case $choice in
         cat << 'EOF' > .repo/local_manifests/vayu.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- Note: If these repos 404, you will need to search GitHub for the exact LineageOS 18.1 vayu repos -->
   <project name="LineageOS/android_device_xiaomi_vayu" path="device/xiaomi/vayu" remote="github" revision="lineage-18.1" />
-  <project name="LineageOS/android_kernel_xiaomi_vayu" path="kernel/xiaomi/vayu" remote="github" revision="lineage-18.1" />
-  <!-- Vendor blobs might need to be pulled from a different source like TheMuppets -->
+  <project name="LineageOS/android_kernel_xiaomi_sm8150" path="kernel/xiaomi/sm8150" remote="github" revision="lineage-18.1" />
   <project name="TheMuppets/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="github" revision="lineage-18.1" />
 </manifest>
 EOF
@@ -167,7 +168,7 @@ EOF
 
         if [ -s "$CONFIG_SOURCE/patches/kernel_hybris.patch" ]; then
             print_info "Applying kernel patches..."
-            git -C kernel/xiaomi/$DEVICE apply $CONFIG_SOURCE/patches/kernel_hybris.patch || print_warn "Kernel patch failed or already applied."
+            git -C kernel/xiaomi/sm8150 apply $CONFIG_SOURCE/patches/kernel_hybris.patch || print_warn "Kernel patch failed or already applied."
         else
             print_warn "No kernel patch found (or file is empty). Skipping."
         fi
