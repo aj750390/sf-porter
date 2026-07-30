@@ -140,19 +140,21 @@ EOF
         cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
 
         # Ensure we are in the build dir
-        if [ ! -d "out/target/product/$DEVICE" ] && [ ! -d "build/target/product" ]; then
-             # Just a basic check to see if it looks like an Android tree
-             if [ ! -f "build/envsetup.sh" ]; then
-                print_err "Build directory invalid or source not synced. Did you run Option 1 first?"
-             fi
+        if [ ! -f "build/envsetup.sh" ]; then
+            print_err "Build directory invalid or source not synced. Did you run Option 1 first?"
         fi
 
         print_info "Setting up build environment..."
+        
+        # Limit Java heap size to 2GB to prevent Out of Memory (Killed) errors
+        export BUILDTOOL_JAVA_VM_ARGS="-Xmx2G"
+        
         source build/envsetup.sh
         lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree (make sure halium_vayu.mk exists)."
 
         print_info "Starting Halium boot and system image build. This will take a long time..."
-        mka halium-boot systemimage || print_err "Build failed!"
+        # Use -j2 to limit RAM usage. Change to -j1 if it still gets Killed.
+        make -j2 halium-boot systemimage || print_err "Build failed!"
 
         print_ok "Build complete!"
         print_ok "Images located in: out/target/product/$DEVICE/"
