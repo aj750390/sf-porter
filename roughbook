@@ -3,25 +3,5 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
 
 
-
-package {
-    default_applicable_licenses: ["vendor_lineage_license"],
-}
-
-cc_defaults {
-    name: "stagefright_qcom_legacy_defaults",
-    cflags: [
-        "-DQCOM_HARDWARE",
-        "-DQCOM_ENHANCED_AUDIO",
-    ],
-}
-
-cc_defaults {
-    name: "disable_postrender_cleanup_defaults",
-    cflags: ["-DPOSTRENDER_CLEANUP_DISABLE"],
-}
-
-cc_defaults {
-    name: "surfaceflinger_qcom_ext_defaults",
-    cflags: ["-DQCOM_HARDWARE"],
-}
+error: external/tinycompress/Android.bp:1:1: "libtinycompress" depends on undefined module "extended_compress_format_defaults"
+08:09:28 soong bootstrap failed with: exit status 1
