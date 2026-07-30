@@ -9,7 +9,12 @@ cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
 
 
-error: frameworks/native/libs/ui/Android.bp:15:1: "libui" depends on undefined module "gralloc_10_usage_bits_defaults"
-09:27:20 soong bootstrap failed with: exit status 1
+[100% 2/2] out/soong/.bootstrap/bin/soong_build out/soong/build.ninja
+FAILED: out/soong/build.ninja
+out/soong/.bootstrap/bin/soong_build -t -l out/.module_paths/Android.bp.list -b out/soong -n out -d out/soong/build.ninja.d -glo
+bFile out/soong/.bootstrap/build-globs.ninja -o out/soong/build.ninja Android.bp
+Killed
+09:41:35 soong bootstrap failed with: exit status 1
+ninja: build stopped: subcommand failed.
 
-#### failed to build some targets (4 seconds) ####
+#### failed to build some targets (05:34 (mm:ss)) ####
