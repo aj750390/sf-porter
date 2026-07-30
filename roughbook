@@ -6,73 +6,8 @@ nano ~/sailfish_vayu/build/make/core/board_config.mk
 
 nano ~/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
 
-[  1% 1072/82061] build out/target/common/obj/all-event-log-tags.txt
-frameworks/base/services/core/java/com/android/server/wm/EventLogTags.logtags:39
-: warning: tag "wm_on_paused_called" (30021) duplicated in frameworks/base/core/
-java/android/app/EventLogTags.logtags:9
-frameworks/base/services/core/java/com/android/server/wm/EventLogTags.logtags:41
-: warning: tag "wm_on_resume_called" (30022) duplicated in frameworks/base/core/
-java/android/app/EventLogTags.logtags:11
-frameworks/base/services/core/java/com/android/server/wm/EventLogTags.logtags:50
-: warning: tag "wm_stop_activity" (30048) duplicated in frameworks/base/core/jav
-a/android/app/EventLogTags.logtags:14
-frameworks/base/services/core/java/com/android/server/wm/EventLogTags.logtags:56
-: warning: tag "wm_add_to_stopping" (30066) duplicated in frameworks/base/core/j
-ava/android/app/EventLogTags.logtags:35
-packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
-ions/EventLogTags.logtags:6: warning: tag "lock_screen_type" (90200) duplicated 
-in packages/apps/Settings/src/com/android/settings/EventLogTags.logtags:6
-packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
-ions/EventLogTags.logtags:9: warning: tag "exp_det_device_admin_activated_by_use
-r" (90201) duplicated in packages/apps/Settings/src/com/android/settings/EventLo
-gTags.logtags:9
-packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
-ions/EventLogTags.logtags:12: warning: tag "exp_det_device_admin_declined_by_use
-r" (90202) duplicated in packages/apps/Settings/src/com/android/settings/EventLo
-gTags.logtags:12
-packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
-ions/EventLogTags.logtags:15: warning: tag "exp_det_device_admin_uninstalled_by_
-user" (90203) duplicated in packages/apps/Settings/src/com/android/settings/Even
-tLogTags.logtags:15
-packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
-ions/EventLogTags.logtags:18: warning: tag "settings_latency" (90204) duplicated
- in packages/apps/Settings/src/com/android/settings/EventLogTags.logtags:18
-vendor/qcom/opensource/commonsys/system/bt/EventLogTags.logtags:36: warning: tag
- "bt_hci_timeout" (1010000) duplicated in system/bt/EventLogTags.logtags:36
-vendor/qcom/opensource/commonsys/system/bt/EventLogTags.logtags:37: warning: tag
- "bt_config_source" (1010001) duplicated in system/bt/EventLogTags.logtags:37
-vendor/qcom/opensource/commonsys/system/bt/EventLogTags.logtags:38: warning: tag
- "bt_hci_unknown_type" (1010002) duplicated in system/bt/EventLogTags.logtags:38
-[  1% 1400/82061] bc: libclcore.bc <= frameworks/rs/driver/runtime/rs_cl.c
-FAILED: out/target/product/vayu/obj/RENDERSCRIPT_BITCODE/libclcore.bc_intermedia
-tes/rs_cl.bc
-/bin/bash -c "PWD=/proc/self/cwd prebuilts/clang/host/linux-x86/clang-3289846/bi
-n/clang -Iframeworks/rs/script_api/include -Iexternal/clang/lib/Headers -MD -DRS
-_VERSION=24 -std=c99 -c -O3 -fno-builtin -emit-llvm -target renderscript64-linux
--android -fsigned-char  -Wno-deprecated -Werror  -Werror -Wall -Wextra -Iframewo
-rks/rs/cpu_ref -DRS_DECLARE_EXPIRED_APIS  -DARCH_ARM64_HAVE_NEON -x renderscript
- frameworks/rs/driver/runtime/rs_cl.c -o out/target/product/vayu/obj/RENDERSCRIP
-T_BITCODE/libclcore.bc_intermediates/rs_cl.bc"
-prebuilts/clang/host/linux-x86/clang-3289846/bin/clang.real: error while loading
- shared libraries: libncurses.so.5: cannot open shared object file: No such file
- or directory
-[  1% 1401/82061] bc: libclcore.bc <= frameworks/rs/driver/runtime/rs_allocation
-FAILED: out/target/product/vayu/obj/RENDERSCRIPT_BITCODE/libclcore.bc_intermedia
-tes/rs_allocation.bc
-/bin/bash -c "PWD=/proc/self/cwd prebuilts/clang/host/linux-x86/clang-3289846/bi
-n/clang -Iframeworks/rs/script_api/include -Iexternal/clang/lib/Headers -MD -DRS
-_VERSION=24 -std=c99 -c -O3 -fno-builtin -emit-llvm -target renderscript64-linux
--android -fsigned-char  -Wno-deprecated -Werror  -Werror -Wall -Wextra -Iframewo
-rks/rs/cpu_ref -DRS_DECLARE_EXPIRED_APIS  -DARCH_ARM64_HAVE_NEON -x renderscript
- frameworks/rs/driver/runtime/rs_allocation.c -o out/target/product/vayu/obj/REN
-DERSCRIPT_BITCODE/libclcore.bc_intermediates/rs_allocation.bc"
-prebuilts/clang/host/linux-x86/clang-3289846/bin/clang.real: error while loading
- shared libraries: libncurses.so.5: cannot open shared object file: No such file
- or directory
-03:15:03 ninja failed with: exit status 1
-
-#### failed to build some targets (02:19 (mm:ss)) ####
-
+sudo apt-get update
+sudo apt-get install -y libncurses5 libncurses5-dev
 
 
 
