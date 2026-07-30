@@ -41,25 +41,4 @@ build/make/core/tasks/tools/package-modules.mk:80: error: done.
 cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
 
-[ 77% 246/316] including vendor/halium/audioflingerglue/Android.mk ...
-vendor/halium/audioflingerglue/Android.mk:41: warning: *** ANDROID_MICRO undefin
-ed. Assuming 0
-/bin/bash: line 1: test: -le: unary operator expected
-cat: frameworks/av/include/media/AudioSystem.h: No such file or directory
-[ 78% 248/316] including vendor/halium/droidmedia/Android.mk ...
-vendor/halium/droidmedia/Android.mk:43: warning: *** ANDROID_MICRO undefined. As
-suming 0
-[ 99% 315/316] finishing build rules ...
-FAILED: 
-platform_testing/build/tasks/tests/instrumentation_test_list.mk: error: continuo
-us_instrumentation_tests: Unknown installed file for module 'BluetoothInstrument
-ationTests' 
-In file included from build/make/core/main.mk:1341:
-In file included from build/make/core/Makefile:5632:
-In file included from platform_testing/build/tasks/continuous_instrumentation_te
-sts.mk:27:
-build/make/core/tasks/tools/package-modules.mk:80: error: done.
-02:34:33 ckati failed with: exit status 1
-
-#### failed to build some targets (16:47 (mm:ss)) ####
-
+nano ~/sailfish_vayu/build/make/core/Makefile
