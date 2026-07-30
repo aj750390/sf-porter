@@ -1,1 +1,13 @@
-cat ~/sailfish_vayu/device/xiaomi/vayu/AndroidProducts.mk
+nano ~/sailfish_vayu/device/xiaomi/vayu/AndroidProducts.mk
+
+
+
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/lineage_vayu.mk \
+    $(LOCAL_DIR)/halium_vayu.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_vayu-user \
+    lineage_vayu-userdebug \
+    lineage_vayu-eng \
+    halium_vayu-userdebug
