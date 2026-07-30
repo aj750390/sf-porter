@@ -1,3 +1,5 @@
+
+
 nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
 nano ~/sailfish_vayu/build/make/core/board_config.mk
@@ -7,3 +9,6 @@ cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
 
 
+error: vendor/lineage/build/soong/Android.bp:24:8: module "generated_kernel_includes": cmd: unknown variable '$(TARGET_KERNEL_SO
+URCE)'
+09:04:52 soong bootstrap failed with: exit status 1
