@@ -8,23 +8,92 @@ nano ~/sailfish_vayu/build/make/core/board_config.mk
 cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
 
-[100% 2/2] out/soong/.bootstrap/bin/soong_build out/soong/build.ninja
-FAILED: out/soong/build.ninja
-out/soong/.bootstrap/bin/soong_build -t -l out/.module_paths/Android.bp.list -b 
-out/soong -n out -d out/soong/build.ninja.d -globFile out/soong/.bootstrap/build
--globs.ninja -o out/soong/build.ninja Android.bp
-error: hardware/qcom-caf/sm8350/display/libdrmutils/Android.bp:1:1: "libdrmutils
-" depends on undefined module "generated_kernel_headers"
-error: hardware/qcom/sm8150/data/ipacfg-mgr/ipanat/Android.bp:3:1: "libipanat" d
-epends on undefined module "generated_kernel_headers"
-error: hardware/qcom-caf/sm8350/display/libhistogram/Android.bp:15:1: "libhistog
-ram" depends on undefined module "generated_kernel_headers"
-error: vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm/Android.bp:2:1: "ipacm" dep
-ends on undefined module "generated_kernel_headers"
-error: vendor/qcom/opensource/data-ipa-cfg-mgr/ipanat/Android.bp:3:1: "libipanat
-" depends on undefined module "generated_kernel_headers"
-error: device/xiaomi/sm8150-common/fod/Android.bp:39:1: "libfod_extension.xiaomi
-_msmnile" depends on undefined module "generated_kernel_headers"
-01:47:35 soong bootstrap failed with: exit status 1
+// LineageOS soong configs
 
-#### failed to build some targets (27 seconds) ####
+bootstrap_go_package {
+    name: "soong-lineage-generator",
+    pkgPath: "lineage/soong/generator",
+    deps: [
+        "blueprint",
+        "blueprint-pathtools",
+        "soong",
+        "soong-android",
+        "soong-shared",
+    ],
+    srcs: [
+        "generator/generator.go",
+        "generator/variables.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+// Define the headers without the broken lineage_generator
+cc_library_headers {
+    name: "generated_kernel_headers",
+    export_include_dirs: [
+        "usr/audio/include/uapi",
+        "usr/include",
+        "usr/include/audio",
+        "usr/include/audio/include/uapi",
+        "usr/techpack/audio/include",
+    ],
+    vendor_available: true,
+    recovery_available: true,
+}
+
+// Target platform agnostic config modules
+soong_config_module_type {
+    name: "disable_postrender_cleanup",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    bool_variables: ["disable_postrender_cleanup"],
+    properties: ["cppflags"],
+}
+
+soong_config_module_type {
+    name: "surfaceflinger_qcom_ext",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    bool_variables: ["surfaceflinger_qcom_ext"],
+    properties: ["cppflags"],
+}
+
+soong_config_module_type {
+    name: "stagefright_qcom_legacy",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    bool_variables: ["stagefright_qcom_legacy"],
+    properties: ["cppflags"],
+}
+
+soong_config_module_type {
+    name: "extended_compress_format",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    bool_variables: ["extended_compress_format"],
+    properties: ["cppflags"],
+}
+
+soong_config_module_type {
+    name: "bootloader_message_offset",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    bool_variables: ["bootloader_message_offset"],
+    properties: ["cppflags"],
+}
+
+soong_config_module_type {
+    name: "nvidia_enhancements",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    bool_variables: ["nvidia_enhancements"],
+    properties: ["cppflags"],
+}
+
+soong_config_module_type {
+    name: "gralloc_10_usage_bits",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    bool_variables: ["gralloc_10_usage_bits"],
+    properties: ["cppflags"],
+}
