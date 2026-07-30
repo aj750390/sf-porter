@@ -6,29 +6,18 @@ nano ~/sailfish_vayu/build/make/core/board_config.mk
 
 nano ~/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
 
-device/xiaomi/vayu/BoardConfig.mk was modified, regenerating...
-[ 99% 26064/26134] including vendor/halium/audioflingerglue/Android.mk ...
+[ 77% 245/315] including vendor/halium/audioflingerglue/Android.mk ...
 vendor/halium/audioflingerglue/Android.mk:41: warning: *** ANDROID_MICRO undefin
 ed. Assuming 0
 /bin/bash: line 1: test: -le: unary operator expected
 cat: frameworks/av/include/media/AudioSystem.h: No such file or directory
-[ 99% 26066/26134] including vendor/halium/droidmedia/Android.mk ...
+[ 78% 247/315] including vendor/halium/droidmedia/Android.mk ...
 vendor/halium/droidmedia/Android.mk:43: warning: *** ANDROID_MICRO undefined. As
 suming 0
-[ 99% 26133/26134] finishing build rules ...
-FAILED: 
-platform_testing/build/tasks/tests/instrumentation_test_list.mk: error: continuo
-us_instrumentation_tests: Unknown installed file for module 'BluetoothInstrument
-ationTests' 
-In file included from build/make/core/main.mk:1341:
-In file included from build/make/core/Makefile:5632:
-In file included from platform_testing/build/tasks/continuous_instrumentation_te
-sts.mk:27:
-build/make/core/tasks/tools/package-modules.mk:80: error: done.
-02:45:56 ckati failed with: exit status 1
+FAILED: ninja: unknown target 'halium-boot'
+03:04:51 ninja failed with: exit status 1
 
-#### failed to build some targets (02:38 (mm:ss)) ####
-
+#### failed to build some targets (01:02 (mm:ss)) ####
 
 
 
