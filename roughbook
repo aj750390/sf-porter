@@ -4,7 +4,5 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
 
 
-error: vendor/lineage/build/soong/Android.bp:39:21: expected assignment or module definition, found "*"
-ninja: build stopped: subcommand failed.
-
-#### failed to build some targets (2 seconds) ####
+package {
+}
