@@ -134,14 +134,22 @@ EOF
         ;;
     2)
         echo "Building Halium images..."
+        # Ask for the build directory
+        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu): " INPUT_DIR
+        BUILD_DIR=$(eval echo "$INPUT_DIR")
+        cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
+
         # Ensure we are in the build dir
-        if [ ! -d "out/target/product/$DEVICE" ]; then
-            print_err "Build directory not found. Did you run Option 1 first?"
+        if [ ! -d "out/target/product/$DEVICE" ] && [ ! -d "build/target/product" ]; then
+             # Just a basic check to see if it looks like an Android tree
+             if [ ! -f "build/envsetup.sh" ]; then
+                print_err "Build directory invalid or source not synced. Did you run Option 1 first?"
+             fi
         fi
 
         print_info "Setting up build environment..."
         source build/envsetup.sh
-        lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree."
+        lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree (make sure halium_vayu.mk exists)."
 
         print_info "Starting Halium boot and system image build. This will take a long time..."
         mka halium-boot systemimage || print_err "Build failed!"
@@ -152,9 +160,12 @@ EOF
     3)
         echo "Setting up droid-configs and applying patches..."
         
-        # IMPORTANT: Change this path if your sf-porter folder is located somewhere else!
+        # Ask for the build directory to ensure we patch the right files
+        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu): " INPUT_DIR
+        BUILD_DIR=$(eval echo "$INPUT_DIR")
+        cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
+
         CONFIG_SOURCE="$HOME/sf-porter/configs/vayu" 
-        
         CONFIG_DEST="hybris/droid-configs/$DEVICE"
 
         # Create destination directory
@@ -189,7 +200,7 @@ EOF
         else
             print_ok "Git already initialized in $CONFIG_DEST"
         fi
-        cd ../../../
+        cd "$BUILD_DIR"
         
         print_ok "Droid-configs and patches applied successfully!"
         ;;
