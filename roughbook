@@ -9,7 +9,56 @@ cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
 
 
-sudo fallocate -l 6G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
+[100% 1/1] out/soong/.bootstrap/bin/soong_build out/soong/build.ninja
+FAILED: out/soong/build.ninja
+out/soong/.bootstrap/bin/soong_build -t -l out/.module_paths/Android.bp.list -b 
+out/soong -n out -d out/soong/build.ninja.d -globFile out/soong/.bootstrap/build
+-globs.ninja -o out/soong/build.ninja Android.bp
+internal error: panic in GenerateBuildActions for singleton glob
+error parsing variable "glob": invalid character after '$' at byte offset 1
+goroutine 1 [running]:
+github.com/google/blueprint.newPanicErrorf(0xb10f40, 0xc13ac9d5b0, 0xc20dbd3770,
+ 0x27, 0x0, 0x0, 0x0, 0xc1fdf4e000, 0xc13ac9d5b0)
+	/home/user/sailfish_vayu/build/blueprint/context.go:3808 +0x7b
+github.com/google/blueprint.(*Context).generateSingletonBuildActions.func1.1(0xc
+161b1f708, 0xc2e422c2c0)
+	/home/user/sailfish_vayu/build/blueprint/context.go:2599 +0x3a8
+panic(0xb10f40, 0xc13ac9d5b0)
+	prebuilts/go/linux-x86/src/runtime/panic.go:679 +0x1b2
+github.com/google/blueprint.(*singletonContext).Build(0xc2e422c2c0, 0xd77520, 0x
+c0000b6140, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	/home/user/sailfish_vayu/build/blueprint/singleton_ctx.go:247 +0x18e
+github.com/google/blueprint/bootstrap.GlobFile(0x707abac207b8, 0xc2e422c2c0, 0xc
+049680b40, 0x20, 0x0, 0x0, 0x0, 0xc120c13340, 0x35, 0xc120c13480, ...)
+	/home/user/sailfish_vayu/build/blueprint/bootstrap/glob.go:73 +0x246
+github.com/google/blueprint/bootstrap.(*globSingleton).GenerateBuildActions(0xc1
+3b0ff680, 0xd87600, 0xc2e422c2c0)
+	/home/user/sailfish_vayu/build/blueprint/bootstrap/glob.go:143 +0x4f5
+github.com/google/blueprint.(*Context).generateSingletonBuildActions.func1(0xc16
+1b1f708, 0xc2e422c2c0)
+	/home/user/sailfish_vayu/build/blueprint/context.go:2603 +0x8b
+github.com/google/blueprint.(*Context).generateSingletonBuildActions(0xc135dea68
+0, 0x0, 0x0, 0xc05c142070, 0x1, 0x1, 0xc142426210, 0x0, 0x0, 0x0, ...)
+	/home/user/sailfish_vayu/build/blueprint/context.go:2604 +0x299
+github.com/google/blueprint.(*Context).PrepareBuildActions.func1(0xd6bc00, 0xc14
+2426390)
+	/home/user/sailfish_vayu/build/blueprint/context.go:2092 +0x158
+runtime/pprof.Do(0xd6bc00, 0xc142426390, 0xc0b2eb6100, 0x1, 0x1, 0xc161b1f980)
+	prebuilts/go/linux-x86/src/runtime/pprof/runtime.go:37 +0xf8
+github.com/google/blueprint.(*Context).PrepareBuildActions(0xc135dea680, 0x0, 0x
+0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/home/user/sailfish_vayu/build/blueprint/context.go:2073 +0x12e
+github.com/google/blueprint/bootstrap.generateGlobNinjaFile(0xc13b0ff600, 0xc13b
+0ff600, 0x1000, 0xc13c46b000, 0xc05c142058, 0x0, 0x0)
+	/home/user/sailfish_vayu/build/blueprint/bootstrap/glob.go:168 +0xff
+github.com/google/blueprint/bootstrap.Main(0xc0001ca4e0, 0xbfc0c0, 0xc00021cc00,
+ 0xc00005be80, 0x3, 0x4)
+	/home/user/sailfish_vayu/build/blueprint/bootstrap/command.go:204 +0x114
+4
+main.main()
+	/home/user/sailfish_vayu/build/soong/cmd/soong_build/main.go:126 +0x617
+
+
+01:28:16 soong bootstrap failed with: exit status 1
+ninja: build stopped: subcommand failed.
+
