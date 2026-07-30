@@ -4,6 +4,20 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
 nano ~/sailfish_vayu/build/make/core/board_config.mk
 
+nano ~/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
+
+# Disable instrumentation tests (Halium doesn't need them)
+BUILD_RUNNING_INSTRUMENTATION_TESTS := false
+BUILD_RUN_INSTRUMENTATION_TESTS := false
+
+
+
+
+
+
+
+
+
 
 cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
