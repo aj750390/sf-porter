@@ -8,27 +8,25 @@ nano ~/sailfish_vayu/build/make/core/board_config.mk
 cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
 
-lineage_generator {
-    name: "generated_kernel_includes",
+[ 77% 246/316] including vendor/halium/audioflingerglue/Android.mk ...
+vendor/halium/audioflingerglue/Android.mk:41: warning: *** ANDROID_MICRO undefin
+ed. Assuming 0
+/bin/bash: line 1: test: -le: unary operator expected
+cat: frameworks/av/include/media/AudioSystem.h: No such file or directory
+[ 78% 248/316] including vendor/halium/droidmedia/Android.mk ...
+vendor/halium/droidmedia/Android.mk:43: warning: *** ANDROID_MICRO undefined. As
+suming 0
+[ 99% 315/316] finishing build rules ...
+FAILED: 
+platform_testing/build/tasks/tests/instrumentation_test_list.mk: error: continuo
+us_instrumentation_tests: Unknown installed file for module 'BluetoothInstrument
+ationTests' 
+In file included from build/make/core/main.mk:1341:
+In file included from build/make/core/Makefile:5632:
+In file included from platform_testing/build/tasks/continuous_instrumentation_te
+sts.mk:27:
+build/make/core/tasks/tools/package-modules.mk:80: error: done.
+02:34:33 ckati failed with: exit status 1
 
-    // The headers make command (Halium fix: removed unknown variables)
-    cmd: "make headers_install",
+#### failed to build some targets (16:47 (mm:ss)) ####
 
-    // Directories that can be imported by a cc_* module generated_headers property
-    export_include_dirs: [
-        "usr/audio/include/uapi",
-        "usr/include",
-        "usr/include/audio",
-        "usr/include/audio/include/uapi",
-        "usr/techpack/audio/include",
-    ],
-
-    // Sources for dependency tracking (Halium fix: removed unknown variables)
-    dep_root: "kernel/xiaomi/sm8150",
-    dep_files: [
-        "Makefile",
-        "include/**/*",
-        "arch/arm64/include/**/*",
-        "techpack/audio/include/**/*",
-    ],
-}
