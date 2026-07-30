@@ -8,14 +8,27 @@ nano ~/sailfish_vayu/build/make/core/board_config.mk
 cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
 
-[100% 2/2] out/soong/.bootstrap/bin/soong_build out/soong/build.ninja
-FAILED: out/soong/build.ninja
-out/soong/.bootstrap/bin/soong_build -t -l out/.module_paths/Android.bp.list -b 
-out/soong -n out -d out/soong/build.ninja.d -globFile out/soong/.bootstrap/build
--globs.ninja -o out/soong/build.ninja Android.bp
-error: hardware/lineage/interfaces/cryptfshw/1.0/qsee/Android.bp:15:1: "vendor.q
-ti.hardware.cryptfshw@1.0-service-qti.qsee" depends on undefined module "qti_cry
-ptfshw_qsee_defaults"
-02:07:27 soong bootstrap failed with: exit status 1
+lineage_generator {
+    name: "generated_kernel_includes",
 
-#### failed to build some targets (5 seconds) ####
+    // The headers make command (Halium fix: removed unknown variables)
+    cmd: "make headers_install",
+
+    // Directories that can be imported by a cc_* module generated_headers property
+    export_include_dirs: [
+        "usr/audio/include/uapi",
+        "usr/include",
+        "usr/include/audio",
+        "usr/include/audio/include/uapi",
+        "usr/techpack/audio/include",
+    ],
+
+    // Sources for dependency tracking (Halium fix: removed unknown variables)
+    dep_root: "kernel/xiaomi/sm8150",
+    dep_files: [
+        "Makefile",
+        "include/**/*",
+        "arch/arm64/include/**/*",
+        "techpack/audio/include/**/*",
+    ],
+}
