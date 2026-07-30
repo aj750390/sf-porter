@@ -3,5 +3,5 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
 
 
-error: external/tinycompress/Android.bp:1:1: "libtinycompress" depends on undefined module "extended_compress_format_defaults"
-08:09:28 soong bootstrap failed with: exit status 1
+cd ~/sailfish_vayu
+git -C vendor/lineage checkout -- build/soong/Android.bp
