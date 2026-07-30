@@ -4,5 +4,12 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
 
 
-package {
-}
+error: frameworks/av/media/libstagefright/bqhelper/Android.bp:1:1: "libstagefright_bufferqueue-defaults" depends on undefined mo
+dule "stagefright_qcom_legacy_defaults"
+error: frameworks/native/services/surfaceflinger/Android.bp:14:1: "libsurfaceflinger_defaults" depends on undefined module "disa
+ble_postrender_cleanup_defaults"
+error: frameworks/native/services/surfaceflinger/Android.bp:14:1: "libsurfaceflinger_defaults" depends on undefined module "surf
+aceflinger_qcom_ext_defaults"
+08:03:53 soong bootstrap failed with: exit status 1
+
+#### failed to build some targets (7 seconds) ####
