@@ -1,13 +1,20 @@
-nano ~/sailfish_vayu/device/xiaomi/vayu/AndroidProducts.mk
+nano ~/sailfish_vayu/device/xiaomi/vayu/halium_vayu.mk
 
 
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_vayu.mk \
-    $(LOCAL_DIR)/halium_vayu.mk
 
-COMMON_LUNCH_CHOICES := \
-    lineage_vayu-user \
-    lineage_vayu-userdebug \
-    lineage_vayu-eng \
-    halium_vayu-userdebug
+# Halium configuration for Poco X3 Pro (vayu)
+
+# Inherit from LineageOS device config
+ $(call inherit-product, device/xiaomi/vayu/lineage_vayu.mk)
+
+# Override product name for Halium
+PRODUCT_NAME := halium_vayu
+PRODUCT_BRAND := Xiaomi
+PRODUCT_DEVICE := vayu
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_MODEL := POCO X3 Pro
+
+# Halium specific flags
+TARGET_USES_HMI := true
+HMI_FEATURES := arm64
