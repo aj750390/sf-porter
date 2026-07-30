@@ -3,10 +3,9 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 nano ~/sailfish_vayu/build/make/core/board_config.mk
 
 
-# Halium fixes for LineageOS variables
-PATH_OVERRIDE_SOONG := 
-KERNEL_MAKE_CMD := make
-TARGET_KERNEL_SOURCE := $(TARGET_KERNEL_SOURCE)
-KERNEL_BUILD_OUT_PREFIX := 
-KERNEL_ARCH := $(TARGET_ARCH)
-KERNEL_CROSS_COMPILE := $(TARGET_CROSS_COMPILE)
+error: vendor/lineage/build/soong/Android.bp:24:8: module "generated_kernel_includes": cmd: unknown variable '$(PATH_OVERRIDE_SO
+ONG)'
+08:20:25 soong bootstrap failed with: exit status 1
+
+#### failed to build some targets (01:00 (mm:ss)) ####
+
