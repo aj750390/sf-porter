@@ -8,14 +8,101 @@ nano ~/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
 sudo apt-get install -y libncurses-dev
 
 
-# Find where the library is installed (usually /usr/lib/x86_64-linux-gnu/)
-cd /usr/lib/x86_64-linux-gnu/
+[  1% 1434/80662] build out/target/product/vayu/system/etc/event-log-tags
+frameworks/base/services/core/java/com/android/server/wm/EventLogTags.logtags:39
+: warning: tag "wm_on_paused_called" (30021) duplicated in frameworks/base/core/
+java/android/app/EventLogTags.logtags:9
+frameworks/base/services/core/java/com/android/server/wm/EventLogTags.logtags:41
+: warning: tag "wm_on_resume_called" (30022) duplicated in frameworks/base/core/
+java/android/app/EventLogTags.logtags:11
+frameworks/base/services/core/java/com/android/server/wm/EventLogTags.logtags:50
+: warning: tag "wm_stop_activity" (30048) duplicated in frameworks/base/core/jav
+a/android/app/EventLogTags.logtags:14
+frameworks/base/services/core/java/com/android/server/wm/EventLogTags.logtags:56
+: warning: tag "wm_add_to_stopping" (30066) duplicated in frameworks/base/core/j
+ava/android/app/EventLogTags.logtags:35
+packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
+ions/EventLogTags.logtags:6: warning: tag "lock_screen_type" (90200) duplicated 
+in packages/apps/Settings/src/com/android/settings/EventLogTags.logtags:6
+packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
+ions/EventLogTags.logtags:9: warning: tag "exp_det_device_admin_activated_by_use
+r" (90201) duplicated in packages/apps/Settings/src/com/android/settings/EventLo
+gTags.logtags:9
+packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
+ions/EventLogTags.logtags:12: warning: tag "exp_det_device_admin_declined_by_use
+r" (90202) duplicated in packages/apps/Settings/src/com/android/settings/EventLo
+gTags.logtags:12
+packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
+ions/EventLogTags.logtags:15: warning: tag "exp_det_device_admin_uninstalled_by_
+user" (90203) duplicated in packages/apps/Settings/src/com/android/settings/Even
+tLogTags.logtags:15
+packages/services/Car/tests/CarDeveloperOptions/src/com/android/car/developeropt
+ions/EventLogTags.logtags:18: warning: tag "settings_latency" (90204) duplicated
+ in packages/apps/Settings/src/com/android/settings/EventLogTags.logtags:18
+[  1% 1437/80662] Building Kernel Config
+FAILED: out/target/product/vayu/obj/KERNEL_OBJ/.config
+/bin/bash -c "(PATH=out/host/linux-x86/bin:\$PATH PATH=/prebuilts/clang/host/lin
+ux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/host/linux-x8
+6/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C kernel/xiao
+mi/sm8150 O=out/target/product/vayu/obj/KERNEL_OBJ ARCH=arm64  CLANG_TRIPLE=aarc
+h64-linux-gnu- CC=\" clang\"  VARIANT_DEFCONFIG= SELINUX_DEFCONFIG= vendor/vayu_
+defconfig ) && (if [ \"\" = \"none\" ]; then kernel/xiaomi/sm8150/scripts/config
+ --file out/target/product/vayu/obj/KERNEL_OBJ/.config -d LTO_CLANG -e LTO_NONE 
+-d LTO_CLANG_THIN -d LTO_CLANG_FULL -d THINLTO; PATH=out/host/linux-x86/bin:\$PA
+TH PATH=/prebuilts/clang/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PA
+TH=/prebuilts/clang/host/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=
+/bin:\$PATH  make  -C kernel/xiaomi/sm8150 O=out/target/product/vayu/obj/KERNEL_
+OBJ ARCH=arm64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  olddefconfig; eli
+f [ \"\" = \"thin\" ]; then kernel/xiaomi/sm8150/scripts/config --file out/targe
+t/product/vayu/obj/KERNEL_OBJ/.config -e LTO_CLANG -d LTO_NONE -e LTO_CLANG_THIN
+ -d LTO_CLANG_FULL -e THINLTO; PATH=out/host/linux-x86/bin:\$PATH PATH=/prebuilt
+s/clang/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/cla
+ng/host/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make
+  -C kernel/xiaomi/sm8150 O=out/target/product/vayu/obj/KERNEL_OBJ ARCH=arm64  C
+LANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  olddefconfig; elif [ \"\" = \"full
+\" ]; then kernel/xiaomi/sm8150/scripts/config --file out/target/product/vayu/ob
+j/KERNEL_OBJ/.config -e LTO_CLANG -d LTO_NONE -d LTO_CLANG_THIN -e LTO_CLANG_FUL
+L -d THINLTO; PATH=out/host/linux-x86/bin:\$PATH PATH=/prebuilts/clang/host/linu
+x-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/host/linux-x86
+/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C kernel/xiaom
+i/sm8150 O=out/target/product/vayu/obj/KERNEL_OBJ ARCH=arm64  CLANG_TRIPLE=aarch
+64-linux-gnu- CC=\" clang\"  olddefconfig; fi ) && (if [ ! -z \"\" ]; then echo 
+\"Overriding kernel config with ''\"; echo  >> out/target/product/vayu/obj/KERNE
+L_OBJ/.config; PATH=out/host/linux-x86/bin:\$PATH PATH=/prebuilts/clang/host/lin
+ux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/host/linux-x8
+6/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C kernel/xiao
+mi/sm8150 O=out/target/product/vayu/obj/KERNEL_OBJ ARCH=arm64  CLANG_TRIPLE=aarc
+h64-linux-gnu- CC=\" clang\"  oldconfig; fi ) && (PATH=out/host/linux-x86/bin:\$
+PATH PATH=/prebuilts/clang/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_
+PATH=/prebuilts/clang/host/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PAT
+H=/bin:\$PATH  make  -C kernel/xiaomi/sm8150 O=out/target/product/vayu/obj/KERNE
+L_OBJ ARCH=arm64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  savedefconfig )
+ && (if [ ! -z \"\" ]; then echo \"Using additional config ''\"; kernel/xiaomi/s
+m8150/scripts/kconfig/merge_config.sh -m -O out/target/product/vayu/obj/KERNEL_O
+BJ out/target/product/vayu/obj/KERNEL_OBJ/.config kernel/xiaomi/sm8150/arch/arm6
+4/configs/; PATH=out/host/linux-x86/bin:\$PATH PATH=/prebuilts/clang/host/linux-
+x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/host/linux-x86/c
+lang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C kernel/xiaomi/
+sm8150 O=out/target/product/vayu/obj/KERNEL_OBJ ARCH=arm64  CLANG_TRIPLE=aarch64
+-linux-gnu- CC=\" clang\"  KCONFIG_ALLCONFIG=out/target/product/vayu/obj/KERNEL_
+OBJ/.config alldefconfig; fi )"
+make: Entering directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150'
+make[1]: Entering directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150/out/t
+arget/product/vayu/obj/KERNEL_OBJ'
+/bin/sh: 1: ld: not found
+/bin/sh: 1: ld: not found
+  HOSTCC  scripts/basic/fixdep
+/bin/sh: 1: gcc: not found
+make[2]: *** [scripts/Makefile.host:102: scripts/basic/fixdep] Error 127
+make[1]: *** [/home/user/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:482: script
+s_basic] Error 2
+make[1]: Leaving directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150/out/ta
+rget/product/vayu/obj/KERNEL_OBJ'
+make: *** [Makefile:146: sub-make] Error 2
+make: Leaving directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150'
+03:27:53 ninja failed with: exit status 1
 
-# Create symlinks for both libncurses and libtinfo
-sudo ln -s libncurses.so.6 libncurses.so.5
-sudo ln -s libtinfo.so.6 libtinfo.so.5
-
-
+#### failed to build some targets (01:22 (mm:ss)) ####
 
 
 cd ~/sailfish_vayu
