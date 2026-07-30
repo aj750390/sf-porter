@@ -3,6 +3,16 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 nano ~/sailfish_vayu/build/make/core/board_config.mk
 
 
+error: vendor/lineage/build/soong/Android.bp:61:19: expected "=" or "+=" or "{" or "(", found ":"
+08:49:40 soong minibootstrap failed with: exit status 1
+
+#### failed to build some targets (2 seconds) ####
+
+
+
+
+
+
 // LineageOS soong configs
 
 bootstrap_go_package {
