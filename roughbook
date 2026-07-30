@@ -4,9 +4,10 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
 
 
-error: vendor/lineage/build/soong/Android.bp:24:8: module "generated_kernel_includes": cmd: unknown variable '$(KERNEL_MAKE_CMD)
-'
-07:04:27 soong bootstrap failed with: exit status 1
+error: vendor/lineage/build/soong/Android.bp:20:1: module "generated_kernel_includes": %s: %s: $ -C $(TARGET_KERNEL_SOURCE) O=$(
+KERNEL_BUILD_OUT_PREFIX)$(genDir) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) headers_install%!(EXTRA string=unexpected characte
+r ' ' after '$')
+07:18:44 soong bootstrap failed with: exit status 1
 
 #### failed to build some targets (01:00 (mm:ss)) ####
 
