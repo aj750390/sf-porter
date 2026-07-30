@@ -9,44 +9,9 @@ cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
 
 
-// LineageOS soong configs
+error: frameworks/native/opengl/libs/Android.bp:133:1: "libEGL" depends on undefined module "nvidia_enhancements_defaults"
+error: bootable/recovery/bootloader_message/Android.bp:17:1: "libbootloader_message_defaults" depends on undefined module "bootl
+oader_message_offset_defaults"
+09:20:54 soong bootstrap failed with: exit status 1
 
-bootstrap_go_package {
-    name: "soong-lineage-generator",
-    pkgPath: "lineage/soong/generator",
-    deps: [
-        "blueprint",
-        "blueprint-pathtools",
-        "soong",
-        "soong-android",
-        "soong-shared",
-    ],
-    srcs: [
-        "generator/generator.go",
-        "generator/variables.go",
-    ],
-    pluginFor: ["soong_build"],
-}
-
-// Define the headers without the broken lineage_generator
-cc_library_headers {
-    name: "generated_kernel_headers",
-    export_include_dirs: [
-        "usr/audio/include/uapi",
-        "usr/include",
-        "usr/include/audio",
-        "usr/include/audio/include/uapi",
-        "usr/techpack/audio/include",
-    ],
-    vendor_available: true,
-    recovery_available: true,
-}
-
-// Target platform agnostic config modules
-soong_config_module_type {
-    name: "disable_postrender_cleanup",
-    module_type: "cc_defaults",
-    config_namespace: "lineageGlobalVars",
-    bool_variables: ["disable_postrender_cleanup"],
-    properties: ["cppflags"],
-}
+#### failed to build some targets (5 seconds) ####
