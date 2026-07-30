@@ -4,8 +4,7 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
 
 
-lineage_generator {
-    name: "generated_kernel_includes",
+error: vendor/lineage/build/soong/Android.bp:39:21: expected assignment or module definition, found "*"
+ninja: build stopped: subcommand failed.
 
-    // The headers make command
-    cmd: "$(TARGET_KERNEL_SOURCE) O=$(KERNEL_BUILD_OUT_PREFIX)$(genDir) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) headers_ins>
+#### failed to build some targets (2 seconds) ####
