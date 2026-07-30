@@ -1,7 +1,12 @@
 nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
+nano ~/sailfish_vayu/build/make/core/board_config.mk
 
 
-
-cd ~/sailfish_vayu
-git -C vendor/lineage checkout -- build/soong/Android.bp
+# Halium fixes for LineageOS variables
+PATH_OVERRIDE_SOONG := 
+KERNEL_MAKE_CMD := make
+TARGET_KERNEL_SOURCE := $(TARGET_KERNEL_SOURCE)
+KERNEL_BUILD_OUT_PREFIX := 
+KERNEL_ARCH := $(TARGET_ARCH)
+KERNEL_CROSS_COMPILE := $(TARGET_CROSS_COMPILE)
