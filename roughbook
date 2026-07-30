@@ -1,2 +1,1 @@
-rm -rf ~/sf-porter/scripts/hybris
-rm -rf ~/sf-porter/hybris
+cat ~/sailfish_vayu/device/xiaomi/vayu/AndroidProducts.mk
