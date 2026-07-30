@@ -3,3 +3,7 @@ nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 nano ~/sailfish_vayu/build/make/core/board_config.mk
 
 
+cd ~/sailfish_vayu
+git -C vendor/lineage checkout -- build/soong/Android.bp
+
+
