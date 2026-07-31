@@ -14,4 +14,133 @@ sudo apt-get install -y build-essential
 cd ~/sailfish_vayu
 git -C vendor/lineage checkout -- build/soong/Android.bp
 
-nano ~/sailfish_vayu/build/make/core/Makefile
+[  0% 505/79225] Building Kernel Config
+make: Entering directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150'
+make[1]: Entering directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150/out/t
+arget/product/vayu/obj/KERNEL_OBJ'
+  HOSTCC  scripts/basic/fixdep
+  GEN     ./Makefile
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+In file included from scripts/kconfig/zconf.tab.c:2470:
+In function ‘dep_stack_insert’,
+    inlined from ‘sym_check_print_recursive’ at /home/user/sailfish_vayu/kernel/
+xiaomi/sm8150/scripts/kconfig/symbol.c:1123:3,
+    inlined from ‘sym_check_deps’ at /home/user/sailfish_vayu/kernel/xiaomi/sm81
+50/scripts/kconfig/symbol.c:1300:3:
+/home/user/sailfish_vayu/kernel/xiaomi/sm8150/scripts/kconfig/symbol.c:1099:19: 
+warning: storing the address of local variable ‘cv_stack’ in ‘check_top’ [-Wdang
+ling-pointer=]
+ 1099 |         check_top = stack;
+      |         ~~~~~~~~~~^~~~~~~
+/home/user/sailfish_vayu/kernel/xiaomi/sm8150/scripts/kconfig/symbol.c: In funct
+ion ‘sym_check_deps’:
+/home/user/sailfish_vayu/kernel/xiaomi/sm8150/scripts/kconfig/symbol.c:1120:26: 
+note: ‘cv_stack’ declared here
+ 1120 |         struct dep_stack cv_stack;
+      |                          ^~~~~~~~
+/home/user/sailfish_vayu/kernel/xiaomi/sm8150/scripts/kconfig/symbol.c:1090:4: n
+ote: ‘check_top’ declared here
+ 1090 | } *check_top;
+      |    ^~~~~~~~~
+  HOSTLD  scripts/kconfig/conf
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150/out/ta
+rget/product/vayu/obj/KERNEL_OBJ'
+make: Leaving directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150'
+make: Entering directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150'
+make[1]: Entering directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150/out/t
+arget/product/vayu/obj/KERNEL_OBJ'
+  GEN     ./Makefile
+scripts/kconfig/conf  --savedefconfig=defconfig Kconfig
+make[1]: Leaving directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150/out/ta
+rget/product/vayu/obj/KERNEL_OBJ'
+make: Leaving directory '/home/user/sailfish_vayu/kernel/xiaomi/sm8150'
+[  2% 1764/79225] //bionic/libc:common_libc versioner preprocess include
+warning: attempted to generate guard with empty availability: obsoleted = 23
+warning: attempted to generate guard with empty availability: obsoleted = 21
+[  5% 4333/79225] //bootable/recovery/bootloader_message:libbootloader_message c
+FAILED: out/soong/.intermediates/bootable/recovery/bootloader_message/libbootloa
+der_message/android_arm64_armv8-a_static/obj/bootable/recovery/bootloader_messag
+e/bootloader_message.o
+PWD=/proc/self/cwd prebuilts/clang/host/linux-x86/clang-r383902b1/bin/clang++ -c
+ -Wno-enum-compare -Wno-enum-compare-switch -Wno-null-pointer-arithmetic -Wno-nu
+ll-dereference -Wno-pointer-compare -Wno-xor-used-as-pow -Wno-final-dtor-non-fin
+al-class  -Werror=implicit-function-declaration -DANDROID -fmessage-length=0 -W 
+-Wall -Wno-unused -Winit-self -Wpointer-arith -no-canonical-prefixes -DNDEBUG -U
+DEBUG -fno-exceptions -Wno-multichar -O2 -g -fno-strict-aliasing -Werror=date-ti
+me -Werror=pragma-pack -Werror=pragma-pack-suspicious-include -fdebug-prefix-map
+=/proc/self/cwd= -D__compiler_offsetof=__builtin_offsetof -faddrsig -Werror=int-
+conversion -fexperimental-new-pass-manager -Wno-reserved-id-macro -Wno-unused-co
+mmand-line-argument -fcolor-diagnostics -Wno-sign-compare -Wno-defaulted-functio
+n-deleted -Wno-inconsistent-missing-override -Wno-c99-designator -ftrivial-auto-
+var-init=zero -enable-trivial-auto-var-init-zero-knowing-it-will-be-removed-from
+-clang -ffunction-sections -fdata-sections -fno-short-enums -funwind-tables -fst
+ack-protector-strong -Wa,--noexecstack -D_FORTIFY_SOURCE=2 -Wstrict-aliasing=2 -
+Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-poi
+nt -Werror=format-security -nostdlibinc -march=armv8-a  -target aarch64-linux-an
+droid10000 -Bprebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/aarch64-l
+inux-android/bin -DANDROID_STRICT -fPIC -Wsign-promo -Wimplicit-fallthrough -D_L
+IBCPP_ENABLE_THREAD_SAFETY_ANNOTATIONS -Wno-gnu-include-next -fvisibility-inline
+s-hidden  -Ibootable/recovery/bootloader_message/include -Ibootable/recovery/boo
+tloader_message -D__LIBC_API__=10000 -D__LIBM_API__=10000 -D__LIBDL_API__=10000 
+-Isystem/core/fs_mgr/include_fstab -Iexternal/e2fsprogs/lib/blkid -Iexternal/e2f
+sprogs/lib -Iexternal/e2fsprogs/lib/uuid -Iexternal/libcxx/include -Iexternal/li
+bcxxabi/include -Isystem/core/base/include -Iexternal/fmtlib/include -Ibionic/li
+bc/include -Wall -Werror -std=gnu++17 -fno-rtti -Isystem/core/include -Isystem/m
+edia/audio/include -Ihardware/libhardware/include -Ihardware/libhardware_legacy/
+include -Ihardware/ril/include -Iframeworks/native/include -Iframeworks/native/o
+pengl/include -Iframeworks/av/include -isystem bionic/libc/include -isystem bion
+ic/libc/kernel/uapi -isystem bionic/libc/kernel/uapi/asm-arm64 -isystem bionic/l
+ibc/kernel/android/scsi -isystem bionic/libc/kernel/android/uapi -Ilibnativehelp
+er/include_jni -Werror=int-to-pointer-cast -Werror=pointer-to-int-cast -Werror=f
+ortify-source -Werror=address-of-temporary -Werror=return-type -Wno-tautological
+-constant-compare -Wno-tautological-type-limit-compare -Wno-reorder-init-list -W
+no-implicit-int-float-conversion -Wno-int-in-bool-context -Wno-sizeof-array-div 
+-Wno-tautological-overlap-compare -Wno-deprecated-copy -Wno-range-loop-construct
+ -Wno-misleading-indentation -Wno-zero-as-null-pointer-constant -Wno-deprecated-
+anon-enum-enum-conversion -Wno-deprecated-enum-enum-conversion -Wno-string-compa
+re -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-pessimizing-move -M
+D -MF out/soong/.intermediates/bootable/recovery/bootloader_message/libbootloade
+r_message/android_arm64_armv8-a_static/obj/bootable/recovery/bootloader_message/
+bootloader_message.o.d -o out/soong/.intermediates/bootable/recovery/bootloader_
+message/libbootloader_message/android_arm64_armv8-a_static/obj/bootable/recovery
+/bootloader_message/bootloader_message.o bootable/recovery/bootloader_message/bo
+otloader_message.cpp
+In file included from bootable/recovery/bootloader_message/bootloader_message.cp
+p:17:
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_messa
+ge.h:32:54: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t BOOTLOADER_MESSAGE_OFFSET_IN_MISC = BOARD_RECOVERY_BLDRMSG_OFFS
+ET;
+                                                     ^
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_messa
+ge.h:33:59: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t VENDOR_SPACE_OFFSET_IN_MISC = 2 * 1024 + BOARD_RECOVERY_BLDRMSG
+_OFFSET;
+                                                          ^
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_messa
+ge.h:34:60: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t WIPE_PACKAGE_OFFSET_IN_MISC = 16 * 1024 + BOARD_RECOVERY_BLDRMS
+G_OFFSET;
+                                                           ^
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_messa
+ge.h:35:60: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t SYSTEM_SPACE_OFFSET_IN_MISC = 32 * 1024 + BOARD_RECOVERY_BLDRMS
+G_OFFSET;
+                                                           ^
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_messa
+ge.h:36:58: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t SYSTEM_SPACE_SIZE_IN_MISC = 32 * 1024 + BOARD_RECOVERY_BLDRMSG_
+OFFSET;
+                                                         ^
+5 errors generated.
+03:48:35 ninja failed with: exit status 1
+
+#### failed to build some targets (15:23 (mm:ss)) ####
+
+
