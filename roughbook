@@ -22,3 +22,6 @@ nano ~/sailfish_vayu/bootable/recovery/bootloader_message/include/bootloader_mes
 nano /media/user/AMAL001/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
 
 
+# Force the kernel to build with GCC instead of Clang
+TARGET_KERNEL_CLANG_COMPILE := false
+TARGET_KERNEL_CLANG_PATH := ""
