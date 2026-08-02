@@ -17,4 +17,28 @@ git -C vendor/lineage checkout -- build/soong/Android.bp
 
 nano ~/sailfish_vayu/bootable/recovery/bootloader_message/include/bootloader_message/bootloader_message.h
 
-nano ~/sailfish_vayu/device/xiaomi/sm8150-common/sepolicy/public/attributes
+[  0% 17/43140] build out/target/product/vayu/obj/FAKE/sepolicy_neverallows_interm
+FAILED: out/target/product/vayu/obj/FAKE/sepolicy_neverallows_intermediates/sepoli
+cy_neverallows
+/bin/bash -c "(ASAN_OPTIONS=detect_leaks=0 out/host/linux-x86/bin/checkpolicy -M -
+c 		30 -o out/target/product/vayu/obj/FAKE/sepolicy_neverallows_interm
+ediates/sepolicy_neverallows.tmp out/target/product/vayu/obj/FAKE/sepolicy_neveral
+lows_intermediates/policy.conf ) && (out/host/linux-x86/bin/sepolicy-analyze out/t
+arget/product/vayu/obj/FAKE/sepolicy_neverallows_intermediates/sepolicy_neverallow
+s.tmp neverallow -w -f out/target/product/vayu/obj/FAKE/sepolicy_neverallows_inter
+mediates/policy_2.conf || 	  ( echo \"\" 1>&2; 	    echo \"sepolicy-analyz
+e failed. This is most likely due to the use\" 1>&2; 	    echo \"of an expanded 
+attribute in a neverallow assertion. Please fix\" 1>&2; 	    echo \"the pol
+icy.\" 1>&2; 	    exit 1 ) ) && (touch out/target/product/vayu/obj/FAKE/sepolicy
+_neverallows_intermediates/sepolicy_neverallows.tmp ) && (mv out/target/product/va
+yu/obj/FAKE/sepolicy_neverallows_intermediates/sepolicy_neverallows.tmp out/target
+/product/vayu/obj/FAKE/sepolicy_neverallows_intermediates/sepolicy_neverallows )"
+device/xiaomi/sm8150-common/sepolicy/public/attributes:4:ERROR 'syntax error' at t
+oken 'hal_attribute_lineage' on line 6621:
+
+hal_attribute_lineage(motor)
+checkpolicy:  error(s) encountered while parsing configuration
+19:06:38 ninja failed with: exit status 1
+
+#### failed to build some targets (18 seconds) ####
+
