@@ -80,6 +80,85 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150
 TARGET_KERNEL_CONFIG := vendor/vayu_defconfig
 TARGET_KERNEL_MAKE_CMD := make
 
+[  9% 7668/82560] //bootable/recovery/bootloader_message:libbootloader_message cla
+FAILED: /home/user/sailfish_build_out/soong/.intermediates/bootable/recovery/bootl
+oader_message/libbootloader_message/android_arm64_armv8-a_static/obj/bootable/reco
+very/bootloader_message/bootloader_message.o
+PWD=/proc/self/cwd prebuilts/clang/host/linux-x86/clang-r383902b1/bin/clang++ -c -
+Wno-enum-compare -Wno-enum-compare-switch -Wno-null-pointer-arithmetic -Wno-null-d
+ereference -Wno-pointer-compare -Wno-xor-used-as-pow -Wno-final-dtor-non-final-cla
+ss  -Werror=implicit-function-declaration -DANDROID -fmessage-length=0 -W -Wall -W
+no-unused -Winit-self -Wpointer-arith -no-canonical-prefixes -DNDEBUG -UDEBUG -fno
+-exceptions -Wno-multichar -O2 -g -fno-strict-aliasing -Werror=date-time -Werror=p
+ragma-pack -Werror=pragma-pack-suspicious-include -fdebug-prefix-map=/proc/self/cw
+d= -D__compiler_offsetof=__builtin_offsetof -faddrsig -Werror=int-conversion -fexp
+erimental-new-pass-manager -Wno-reserved-id-macro -Wno-unused-command-line-argumen
+t -fcolor-diagnostics -Wno-sign-compare -Wno-defaulted-function-deleted -Wno-incon
+sistent-missing-override -Wno-c99-designator -ftrivial-auto-var-init=zero -enable-
+trivial-auto-var-init-zero-knowing-it-will-be-removed-from-clang -ffunction-sectio
+ns -fdata-sections -fno-short-enums -funwind-tables -fstack-protector-strong -Wa,-
+-noexecstack -D_FORTIFY_SOURCE=2 -Wstrict-aliasing=2 -Werror=return-type -Werror=n
+on-virtual-dtor -Werror=address -Werror=sequence-point -Werror=format-security -no
+stdlibinc -march=armv8-a  -target aarch64-linux-android10000 -Bprebuilts/gcc/linux
+-x86/aarch64/aarch64-linux-android-4.9/aarch64-linux-android/bin -DANDROID_STRICT 
+-fPIC -Wsign-promo -Wimplicit-fallthrough -D_LIBCPP_ENABLE_THREAD_SAFETY_ANNOTATIO
+NS -Wno-gnu-include-next -fvisibility-inlines-hidden  -Ibootable/recovery/bootload
+er_message/include -Ibootable/recovery/bootloader_message -D__LIBC_API__=10000 -D_
+_LIBM_API__=10000 -D__LIBDL_API__=10000 -Isystem/core/fs_mgr/include_fstab -Iexter
+nal/e2fsprogs/lib/blkid -Iexternal/e2fsprogs/lib -Iexternal/e2fsprogs/lib/uuid -Ie
+xternal/libcxx/include -Iexternal/libcxxabi/include -Isystem/core/base/include -Ie
+xternal/fmtlib/include -Ibionic/libc/include -Wall -Werror -std=gnu++17 -fno-rtti 
+-Isystem/core/include -Isystem/media/audio/include -Ihardware/libhardware/include 
+-Ihardware/libhardware_legacy/include -Ihardware/ril/include -Iframeworks/native/i
+nclude -Iframeworks/native/opengl/include -Iframeworks/av/include -isystem bionic/
+libc/include -isystem bionic/libc/kernel/uapi -isystem bionic/libc/kernel/uapi/asm
+-arm64 -isystem bionic/libc/kernel/android/scsi -isystem bionic/libc/kernel/androi
+d/uapi -Ilibnativehelper/include_jni -Werror=int-to-pointer-cast -Werror=pointer-t
+o-int-cast -Werror=fortify-source -Werror=address-of-temporary -Werror=return-type
+ -Wno-tautological-constant-compare -Wno-tautological-type-limit-compare -Wno-reor
+der-init-list -Wno-implicit-int-float-conversion -Wno-int-in-bool-context -Wno-siz
+eof-array-div -Wno-tautological-overlap-compare -Wno-deprecated-copy -Wno-range-lo
+op-construct -Wno-misleading-indentation -Wno-zero-as-null-pointer-constant -Wno-d
+eprecated-anon-enum-enum-conversion -Wno-deprecated-enum-enum-conversion -Wno-stri
+ng-compare -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-pessimizing-m
+ove -MD -MF /home/user/sailfish_build_out/soong/.intermediates/bootable/recovery/b
+ootloader_message/libbootloader_message/android_arm64_armv8-a_static/obj/bootable/
+recovery/bootloader_message/bootloader_message.o.d -o /home/user/sailfish_build_ou
+t/soong/.intermediates/bootable/recovery/bootloader_message/libbootloader_message/
+android_arm64_armv8-a_static/obj/bootable/recovery/bootloader_message/bootloader_m
+essage.o bootable/recovery/bootloader_message/bootloader_message.cpp
+In file included from bootable/recovery/bootloader_message/bootloader_message.cpp:
+17:
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_message
+.h:32:54: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t BOOTLOADER_MESSAGE_OFFSET_IN_MISC = BOARD_RECOVERY_BLDRMSG_OFFSET
+;
+                                                     ^
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_message
+.h:33:59: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t VENDOR_SPACE_OFFSET_IN_MISC = 2 * 1024 + BOARD_RECOVERY_BLDRMSG_O
+FFSET;
+                                                          ^
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_message
+.h:34:60: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t WIPE_PACKAGE_OFFSET_IN_MISC = 16 * 1024 + BOARD_RECOVERY_BLDRMSG_
+OFFSET;
+                                                           ^
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_message
+.h:35:60: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t SYSTEM_SPACE_OFFSET_IN_MISC = 32 * 1024 + BOARD_RECOVERY_BLDRMSG_
+OFFSET;
+                                                           ^
+bootable/recovery/bootloader_message/include/bootloader_message/bootloader_message
+.h:36:58: error: use of undeclared identifier 'BOARD_RECOVERY_BLDRMSG_OFFSET'
+constexpr size_t SYSTEM_SPACE_SIZE_IN_MISC = 32 * 1024 + BOARD_RECOVERY_BLDRMSG_OF
+FSET;
+                                                         ^
+5 errors generated.
+01:37:24 ninja failed with: exit status 1
+
+#### failed to build some targets (36:10 (mm:ss)) ####
+
 
         # Force kernel variables into the environment (fixes missing 'make' and 'ARCH=')
         export KERNEL_MAKE_CMD=make
