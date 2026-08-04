@@ -94,7 +94,7 @@ case $choice in
         fi
 
         # Check if user is in the intended build directory
-        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu or /media/user/AMAL001/sailfish_vayu): " INPUT_DIR
+        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu or /media/user/sailfish/sailfish_vayu): " INPUT_DIR
         # Expand the ~ symbol to the real home directory path
         BUILD_DIR=$(eval echo "$INPUT_DIR")
         mkdir -p "$BUILD_DIR"
@@ -135,7 +135,7 @@ EOF
     2)
         echo "Building Halium images..."
         # Ask for the build directory
-        read -p "Enter the absolute path to your source directory (e.g., /media/user/AMAL001/sailfish_vayu): " INPUT_DIR
+        read -p "Enter the absolute path to your source directory (e.g., /media/user/sailfish/sailfish_vayu): " INPUT_DIR
         BUILD_DIR=$(eval echo "$INPUT_DIR")
         cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
 
@@ -153,6 +153,13 @@ EOF
         mkdir -p $HOME/sailfish_build_out
         export OUT_DIR=$HOME/sailfish_build_out
         
+        # Force kernel variables into the environment (fixes missing 'make' and 'ARCH=')
+        export TARGET_KERNEL_MAKE_CMD=make
+        export TARGET_KERNEL_ARCH=arm64
+        export TARGET_KERNEL_HEADER_ARCH=arm64
+        export TARGET_KERNEL_SOURCE=kernel/xiaomi/sm8150
+        export TARGET_KERNEL_CONFIG=vendor/vayu_defconfig
+        
         source build/envsetup.sh
         lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree (make sure halium_vayu.mk exists)."
 
@@ -167,7 +174,7 @@ EOF
         echo "Setting up droid-configs and applying patches..."
         
         # Ask for the build directory to ensure we patch the right files
-        read -p "Enter the absolute path to your source directory (e.g., /media/user/AMAL001/sailfish_vayu): " INPUT_DIR
+        read -p "Enter the absolute path to your source directory (e.g., /media/user/sailfish/sailfish_vayu): " INPUT_DIR
         BUILD_DIR=$(eval echo "$INPUT_DIR")
         cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
 
