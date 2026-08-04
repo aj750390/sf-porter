@@ -40,3 +40,8 @@ rm -rf /media/user/sailfish/sailfish_vayu/out
 find /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/configs -name "*vayu*"
 
 grep -r "TARGET_KERNEL_CONFIG" /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/
+
+
+
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/configs/vendor/vayu_defconfig
+
