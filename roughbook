@@ -47,18 +47,7 @@ find /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/configs 
 grep -r "TARGET_KERNEL_CONFIG" /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/
 
 
-[ 77% 244/314] including vendor/halium/audioflingerglue/Android.mk ...
-vendor/halium/audioflingerglue/Android.mk:41: warning: *** ANDROID_MICRO undefin
-ed. Assuming 0
-/bin/bash: line 1: test: -le: unary operator expected
-cat: frameworks/av/include/media/AudioSystem.h: No such file or directory
-[ 78% 246/314] including vendor/halium/droidmedia/Android.mk ...
-vendor/halium/droidmedia/Android.mk:43: warning: *** ANDROID_MICRO undefined. As
-suming 0
-FAILED: ninja: 'kernel/xiaomi/sm8150/arch/configs/vendor/vayu_defconfig', needed
- by '/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/.config', 
-missing and no known rule to make it
-22:49:18 ninja failed with: exit status 1
+ln -s /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/configs /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/configs
 
 
 
