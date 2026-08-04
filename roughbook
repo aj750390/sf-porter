@@ -57,57 +57,5 @@ ln -s /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/configs
 
 nano /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
 
-[  3% 2836/82061] Building Kernel Config
-FAILED: /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/.config
-/bin/bash -c "(PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH
-=/prebuilts/clang/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/pre
-builts/clang/host/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$
-PATH    -C kernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/product/v
-ayu/obj/KERNEL_OBJ ARCH=   CC=\" clang\"  VARIANT_DEFCONFIG= SELINUX_DEFCONFIG= 
-vendor/vayu_defconfig ) && (if [ \"\" = \"none\" ]; then kernel/xiaomi/sm8150/sc
-ripts/config --file /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL
-_OBJ/.config -d LTO_CLANG -e LTO_NONE -d LTO_CLANG_THIN -d LTO_CLANG_FULL -d THI
-NLTO; PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH=/prebuil
-ts/clang/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/cl
-ang/host/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH    -
-C kernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/K
-ERNEL_OBJ ARCH=   CC=\" clang\"  olddefconfig; elif [ \"\" = \"thin\" ]; then ke
-rnel/xiaomi/sm8150/scripts/config --file /home/user/sailfish_build_out/target/pr
-oduct/vayu/obj/KERNEL_OBJ/.config -e LTO_CLANG -d LTO_NONE -e LTO_CLANG_THIN -d 
-LTO_CLANG_FULL -e THINLTO; PATH=/home/user/sailfish_build_out/host/linux-x86/bin
-:\$PATH PATH=/prebuilts/clang/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRA
-RY_PATH=/prebuilts/clang/host/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH 
-PATH=/bin:\$PATH    -C kernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/targ
-et/product/vayu/obj/KERNEL_OBJ ARCH=   CC=\" clang\"  olddefconfig; elif [ \"\" 
-= \"full\" ]; then kernel/xiaomi/sm8150/scripts/config --file /home/user/sailfis
-h_build_out/target/product/vayu/obj/KERNEL_OBJ/.config -e LTO_CLANG -d LTO_NONE 
--d LTO_CLANG_THIN -e LTO_CLANG_FULL -d THINLTO; PATH=/home/user/sailfish_build_o
-ut/host/linux-x86/bin:\$PATH PATH=/prebuilts/clang/host/linux-x86/clang-r383902b
-1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/host/linux-x86/clang-r383902b1/lib
-64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH    -C kernel/xiaomi/sm8150 O=/home/user/sa
-ilfish_build_out/target/product/vayu/obj/KERNEL_OBJ ARCH=   CC=\" clang\"  oldde
-fconfig; fi ) && (if [ ! -z \"\" ]; then echo \"Overriding kernel config with ''
-\"; echo  >> /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/.c
-onfig; PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH=/prebui
-lts/clang/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/c
-lang/host/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH    
--C kernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/
-KERNEL_OBJ ARCH=   CC=\" clang\"  oldconfig; fi ) && (PATH=/home/user/sailfish_b
-uild_out/host/linux-x86/bin:\$PATH PATH=/prebuilts/clang/host/linux-x86/clang-r3
-83902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/host/linux-x86/clang-r383902
-b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH    -C kernel/xiaomi/sm8150 O=/home/u
-ser/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ ARCH=   CC=\" clang\" 
- savedefconfig ) && (if [ ! -z \"\" ]; then echo \"Using additional config ''\";
- kernel/xiaomi/sm8150/scripts/kconfig/merge_config.sh -m -O /home/user/sailfish_
-build_out/target/product/vayu/obj/KERNEL_OBJ /home/user/sailfish_build_out/targe
-t/product/vayu/obj/KERNEL_OBJ/.config kernel/xiaomi/sm8150/arch//configs/; PATH=
-/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH=/prebuilts/clang/ho
-st/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/host/li
-nux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH    -C kernel/xi
-aomi/sm8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ A
-RCH=   CC=\" clang\"  KCONFIG_ALLCONFIG=/home/user/sailfish_build_out/target/pro
-duct/vayu/obj/KERNEL_OBJ/.config alldefconfig; fi )"
-/bin/bash: line 1: -C: command not found
-22:59:09 ninja failed with: exit status 1
-
-
+# Explicitly define the make command
+TARGET_KERNEL_MAKE_CMD := make
