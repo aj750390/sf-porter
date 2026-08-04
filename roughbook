@@ -89,4 +89,33 @@ constexpr size_t WIPE_PACKAGE_OFFSET_IN_MISC = 16 * 1024 + 0;
 constexpr size_t SYSTEM_SPACE_OFFSET_IN_MISC = 32 * 1024 + 0;
 constexpr size_t SYSTEM_SPACE_SIZE_IN_MISC = 32 * 1024 + 0;
 
+[ 57% 57643/100753] build /home/user/sailfish_build_out/target/product/vayu/obj/FA
+FAILED: /home/user/sailfish_build_out/target/product/vayu/obj/FAKE/sepolicy_nevera
+llows_intermediates/sepolicy_neverallows
+/bin/bash -c "(ASAN_OPTIONS=detect_leaks=0 /home/user/sailfish_build_out/host/linu
+x-x86/bin/checkpolicy -M -c 		30 -o /home/user/sailfish_build_out/target
+/product/vayu/obj/FAKE/sepolicy_neverallows_intermediates/sepolicy_neverallows.tmp
+ /home/user/sailfish_build_out/target/product/vayu/obj/FAKE/sepolicy_neverallows_i
+ntermediates/policy.conf ) && (/home/user/sailfish_build_out/host/linux-x86/bin/se
+policy-analyze /home/user/sailfish_build_out/target/product/vayu/obj/FAKE/sepolicy
+_neverallows_intermediates/sepolicy_neverallows.tmp neverallow -w -f /home/user/sa
+ilfish_build_out/target/product/vayu/obj/FAKE/sepolicy_neverallows_intermediates/p
+olicy_2.conf || 	  ( echo \"\" 1>&2; 	    echo \"sepolicy-analyze failed
+. This is most likely due to the use\" 1>&2; 	    echo \"of an expanded attribut
+e in a neverallow assertion. Please fix\" 1>&2; 	    echo \"the policy.\" 1
+>&2; 	    exit 1 ) ) && (touch /home/user/sailfish_build_out/target/product/vayu
+/obj/FAKE/sepolicy_neverallows_intermediates/sepolicy_neverallows.tmp ) && (mv /ho
+me/user/sailfish_build_out/target/product/vayu/obj/FAKE/sepolicy_neverallows_inter
+mediates/sepolicy_neverallows.tmp /home/user/sailfish_build_out/target/product/vay
+u/obj/FAKE/sepolicy_neverallows_intermediates/sepolicy_neverallows )"
+device/xiaomi/sm8150-common/sepolicy/public/attributes:2:ERROR 'syntax error' at t
+oken 'hal_attribute_lineage' on line 6619:
+#line 1 "device/xiaomi/sm8150-common/sepolicy/public/attributes"
+hal_attribute_lineage(mlipay)
+checkpolicy:  error(s) encountered while parsing configuration
+04:03:05 ninja failed with: exit status 1
+
+#### failed to build some targets (02:12:07 (hh:mm:ss)) ####
+
+
    
