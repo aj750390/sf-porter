@@ -37,24 +37,4 @@ TARGET_KERNEL_CLANG_PATH := prebuilts/clang/host/linux-x86/clang-r383902b1
 rm -rf /media/user/sailfish/sailfish_vayu/out
 
 
-wildcard(/home/user/sailfish_build_out/target/product/vayu/clean_steps.mk) was c
-hanged, regenerating...
-[ 99% 26103/26173] including vendor/halium/audioflingerglue/Android.mk ...
-vendor/halium/audioflingerglue/Android.mk:41: warning: *** ANDROID_MICRO undefin
-ed. Assuming 0
-/bin/bash: line 1: test: -le: unary operator expected
-cat: frameworks/av/include/media/AudioSystem.h: No such file or directory
-[ 99% 26105/26173] including vendor/halium/droidmedia/Android.mk ...
-vendor/halium/droidmedia/Android.mk:43: warning: *** ANDROID_MICRO undefined. As
-suming 0
-[ 99% 26172/26173] finishing build rules ...
-FAILED: 
-platform_testing/build/tasks/tests/instrumentation_test_list.mk: error: continuo
-us_instrumentation_tests: Unknown installed file for module 'BluetoothInstrument
-ationTests' 
-In file included from build/make/core/main.mk:1341:
-In file included from build/make/core/Makefile:5632:
-In file included from platform_testing/build/tasks/continuous_instrumentation_te
-sts.mk:27:
-build/make/core/tasks/tools/package-modules.mk:80: error: done.
-21:50:09 ckati failed with: exit status 1
+include platform_testing/build/tasks/continuous_instrumentation_tests.mk
