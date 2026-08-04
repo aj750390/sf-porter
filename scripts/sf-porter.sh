@@ -154,9 +154,8 @@ EOF
         export OUT_DIR=$HOME/sailfish_build_out
         
         # Force kernel variables into the environment (fixes missing 'make' and 'ARCH=')
-        export TARGET_KERNEL_MAKE_CMD=make
-        export TARGET_KERNEL_ARCH=arm64
-        export TARGET_KERNEL_HEADER_ARCH=arm64
+        export KERNEL_MAKE_CMD=make
+        export KERNEL_ARCH=arm64
         export TARGET_KERNEL_SOURCE=kernel/xiaomi/sm8150
         export TARGET_KERNEL_CONFIG=vendor/vayu_defconfig
         
