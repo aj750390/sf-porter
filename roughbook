@@ -37,4 +37,4 @@ TARGET_KERNEL_CLANG_PATH := prebuilts/clang/host/linux-x86/clang-r383902b1
 rm -rf /media/user/sailfish/sailfish_vayu/out
 
 
-include platform_testing/build/tasks/continuous_instrumentation_tests.mk
+nano /media/user/sailfish/sailfish_vayu/build/make/core/Makefile
