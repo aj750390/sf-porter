@@ -1,6 +1,6 @@
 /media/user/sailfish/sailfish_vayu
 
-nano /media/user/AMAL001/sailfish_vayu/device/xiaomi/sm8150-common/sepolicy/public/attributes
+nano /media/user/sailfish/sailfish_vayu/device/xiaomi/sm8150-common/sepolicy/public/attributes
 
 
 nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
@@ -19,25 +19,25 @@ git -C vendor/lineage checkout -- build/soong/Android.bp
 
 nano ~/sailfish_vayu/bootable/recovery/bootloader_message/include/bootloader_message/bootloader_message.h
 
-nano /media/user/AMAL001/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
+nano /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
 
 
 # Force the kernel to build with GCC instead of Clang
 TARGET_KERNEL_CLANG_COMPILE := false
 TARGET_KERNEL_CLANG_PATH := ""
 
-rm -rf /media/user/AMAL001/sailfish_vayu/out/target/product/vayu/obj/KERNEL_OBJ
-rm -rf /media/user/AMAL001/sailfish_vayu/out/target/product/vayu/obj/DTB_OBJ
+rm -rf /media/user/sailfish/sailfish_vayu/out/target/product/vayu/obj/KERNEL_OBJ
+rm -rf /media/user/sailfish/sailfish_vayu/out/target/product/vayu/obj/DTB_OBJ
 
 
 # Explicitly define the Clang path for the kernel
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_PATH := prebuilts/clang/host/linux-x86/clang-r383902b1
 
-rm -rf /media/user/AMAL001/sailfish_vayu/out
+rm -rf /media/user/sailfish/sailfish_vayu/out
 
 
-nano /media/user/AMAL001/sailfish_vayu/device/xiaomi/vayu/AndroidProducts.mk
+nano /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/AndroidProducts.mk
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_vayu.mk \
@@ -50,7 +50,7 @@ COMMON_LUNCH_CHOICES := \
     halium_vayu-userdebug
 
 
-nano /media/user/AMAL001/sailfish_vayu/device/xiaomi/vayu/halium_vayu.mk
+nano /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/halium_vayu.mk
 
 
  $(call inherit-product, device/xiaomi/vayu/lineage_vayu.mk)
@@ -61,7 +61,7 @@ HMI_FEATURES := arm64
 
 
 
-nano /media/user/AMAL001/sailfish_vayu/vendor/lineage/build/soong/Android.bp
+nano /media/user/sailfish/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
 
 lineage_generator {
