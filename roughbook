@@ -121,6 +121,5 @@ inux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/host/linux-
 \" clang\"  KCONFIG_ALLCONFIG=/home/user/sailfish_build_out/target/product/vayu/ob
 j/KERNEL_OBJ/.config alldefconfig; fi )"
 /bin/bash: line 1: -C: command not found
-23:36:25 ninja failed with: exit status 1
-
+00:11:22 ninja failed with: exit status 1
 
