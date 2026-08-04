@@ -29,7 +29,7 @@ function install_dependencies() {
     
     # Update apt and install curl, git, python3, and git-lfs
     sudo apt-get update
-    sudo apt-get install -y curl git python3 python-is-python3 ca-certificates git-lfs || print_err "Failed to install system dependencies."
+    sudo apt-get install -y curl git python3 python-is-python3 ca-certificates git-lfs build-essential libncurses-dev || print_err "Failed to install system dependencies."
     
     # Initialize Git LFS
     git lfs install || print_err "Failed to initialize Git LFS."
@@ -94,7 +94,7 @@ case $choice in
         fi
 
         # Check if user is in the intended build directory
-        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu): " INPUT_DIR
+        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu or /media/user/AMAL001/sailfish_vayu): " INPUT_DIR
         # Expand the ~ symbol to the real home directory path
         BUILD_DIR=$(eval echo "$INPUT_DIR")
         mkdir -p "$BUILD_DIR"
@@ -135,7 +135,7 @@ EOF
     2)
         echo "Building Halium images..."
         # Ask for the build directory
-        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu): " INPUT_DIR
+        read -p "Enter the absolute path to your source directory (e.g., /media/user/AMAL001/sailfish_vayu): " INPUT_DIR
         BUILD_DIR=$(eval echo "$INPUT_DIR")
         cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
 
@@ -149,21 +149,25 @@ EOF
         # Limit Java heap size to 2GB to prevent Out of Memory (Killed) errors
         export BUILDTOOL_JAVA_VM_ARGS="-Xmx2G"
         
+        # Put the build cache (out/) on the fast internal SSD!
+        mkdir -p $HOME/sailfish_build_out
+        export OUT_DIR=$HOME/sailfish_build_out
+        
         source build/envsetup.sh
         lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree (make sure halium_vayu.mk exists)."
 
         print_info "Starting Halium boot and system image build. This will take a long time..."
         # Use -j2 to limit RAM usage. Change to -j1 if it still gets Killed.
-        make -j2 halium-boot systemimage || print_err "Build failed!"
+        make -j2 bootimage systemimage || print_err "Build failed!"
 
         print_ok "Build complete!"
-        print_ok "Images located in: out/target/product/$DEVICE/"
+        print_ok "Images located in: $OUT_DIR/target/product/$DEVICE/"
         ;;
     3)
         echo "Setting up droid-configs and applying patches..."
         
         # Ask for the build directory to ensure we patch the right files
-        read -p "Enter the absolute path to your build directory (e.g., ~/sailfish_vayu): " INPUT_DIR
+        read -p "Enter the absolute path to your source directory (e.g., /media/user/AMAL001/sailfish_vayu): " INPUT_DIR
         BUILD_DIR=$(eval echo "$INPUT_DIR")
         cd "$BUILD_DIR" || print_err "Cannot access $BUILD_DIR"
 
