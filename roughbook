@@ -36,6 +36,11 @@ TARGET_KERNEL_CLANG_PATH := prebuilts/clang/host/linux-x86/clang-r383902b1
 
 rm -rf /media/user/sailfish/sailfish_vayu/out
 
+# Explicitly define kernel architecture and source
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150
+TARGET_KERNEL_CONFIG := vendor/vayu_defconfig
 
 find /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/configs -name "*vayu*"
 
@@ -44,4 +49,6 @@ grep -r "TARGET_KERNEL_CONFIG" /media/user/sailfish/sailfish_vayu/device/xiaomi/
 
 
 /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/configs/vendor/vayu_defconfig
+
+nano /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
 
