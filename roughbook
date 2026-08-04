@@ -37,50 +37,54 @@ TARGET_KERNEL_CLANG_PATH := prebuilts/clang/host/linux-x86/clang-r383902b1
 rm -rf /media/user/AMAL001/sailfish_vayu/out
 
 
-[ 20% 37/182] test github.com/google/blueprint/pathtools
-FAILED: out/soong/.bootstrap/blueprint-pathtools/test/test.passed
-out/soong/.bootstrap/bin/gotestrunner -p ./build/blueprint/pathtools -f out/soon
-g/.bootstrap/blueprint-pathtools/test/test.passed -- out/soong/.bootstrap/bluepr
-int-pathtools/test/test -test.short
---- FAIL: TestGlobEscapes (0.00s)
-    --- FAIL: TestGlobEscapes/**/* (0.00s)
-        glob_test.go:571: incorrect matches list:
-        glob_test.go:571:  pattern: "**/*"
-        glob_test.go:571:      got: []string{"a/", "b", "a/a"}
-        glob_test.go:571: expected: []string{"*", "**/", "?", "a/", "b", "**/*",
- "**/a", "**/b/", "**/b/b", "a/a"}
-        glob_test.go:571: incorrect deps list:
-        glob_test.go:571:  pattern: "**/*"
-        glob_test.go:571:      got: []string{".", "a"}
-        glob_test.go:571: expected: []string{".", "**", "**/b", "a"}
-    --- FAIL: TestGlobEscapes/**/\* (0.00s)
-        glob_test.go:571: incorrect matches list:
-        glob_test.go:571:  pattern: "**/\\*"
-        glob_test.go:571:      got: []string(nil)
-        glob_test.go:571: expected: []string{"*", "**/*"}
-        glob_test.go:571: incorrect deps list:
-        glob_test.go:571:  pattern: "**/\\*"
-        glob_test.go:571:      got: []string{".", "a"}
-        glob_test.go:571: expected: []string{".", "**", "**/b", "a"}
-    --- FAIL: TestGlobEscapes/\*\*/* (0.00s)
-        glob_test.go:571: incorrect matches list:
-        glob_test.go:571:  pattern: "\\*\\*/*"
-        glob_test.go:571:      got: []string(nil)
-        glob_test.go:571: expected: []string{"**/*", "**/a", "**/b/"}
-        glob_test.go:571: incorrect deps list:
-        glob_test.go:571:  pattern: "\\*\\*/*"
-        glob_test.go:571:      got: []string{"."}
-        glob_test.go:571: expected: []string{".", "**"}
-    --- FAIL: TestGlobEscapes/\*\*/**/* (0.00s)
-        glob_test.go:571: incorrect matches list:
-        glob_test.go:571:  pattern: "\\*\\*/**/*"
-        glob_test.go:571:      got: []string(nil)
-        glob_test.go:571: expected: []string{"**/*", "**/a", "**/b/", "**/b/b"}
-        glob_test.go:571: incorrect deps list:
-        glob_test.go:571:  pattern: "\\*\\*/**/*"
-        glob_test.go:571:      got: []string{"."}
-        glob_test.go:571: expected: []string{".", "**", "**/b"}
-FAIL
-00:38:37 soong bootstrap failed with: exit status 1
+nano /media/user/AMAL001/sailfish_vayu/device/xiaomi/vayu/AndroidProducts.mk
+
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/lineage_vayu.mk \
+    $(LOCAL_DIR)/halium_vayu.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_vayu-user \
+    lineage_vayu-userdebug \
+    lineage_vayu-eng \
+    halium_vayu-userdebug
 
 
+nano /media/user/AMAL001/sailfish_vayu/device/xiaomi/vayu/halium_vayu.mk
+
+
+ $(call inherit-product, device/xiaomi/vayu/lineage_vayu.mk)
+PRODUCT_NAME := halium_vayu
+PRODUCT_DEVICE := vayu
+TARGET_USES_HMI := true
+HMI_FEATURES := arm64
+
+
+
+nano /media/user/AMAL001/sailfish_vayu/vendor/lineage/build/soong/Android.bp
+
+
+lineage_generator {
+    name: "generated_kernel_includes",
+
+    // The headers make command (Halium fix: removed unknown variables)
+    cmd: "make headers_install",
+
+    // Directories that can be imported by a cc_* module generated_headers property
+    export_include_dirs: [
+        "usr/audio/include/uapi",
+        "usr/include",
+        "usr/include/audio",
+        "usr/include/audio/include/uapi",
+        "usr/techpack/audio/include",
+    ],
+
+    // Sources for dependency tracking (Halium fix: removed unknown variables)
+    dep_root: "kernel/xiaomi/sm8150",
+    dep_files: [
+        "Makefile",
+        "include/**/*",
+        "arch/arm64/include/**/*",
+        "techpack/audio/include/**/*",
+    ],
+}
