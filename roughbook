@@ -108,3 +108,10 @@ nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrapper
 
         print(line, file=sys.stderr, end="")
 
+def interpret_warning(line):
+    if isinstance(line, bytes):
+        line = line.decode('utf-8')
+    line = line.rstrip('\n')
+
+
+
