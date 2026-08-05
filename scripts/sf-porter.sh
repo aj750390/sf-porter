@@ -156,8 +156,14 @@ EOF
         # Force kernel variables into the environment (fixes missing 'make' and 'ARCH=')
         export KERNEL_MAKE_CMD=make
         export KERNEL_ARCH=arm64
+        export TARGET_KERNEL_ARCH=arm64
         export TARGET_KERNEL_SOURCE=kernel/xiaomi/sm8150
         export TARGET_KERNEL_CONFIG=vendor/vayu_defconfig
+        
+        # Force the shell to use ARM64 architecture for the kernel
+        export ARCH=arm64
+        export CROSS_COMPILE=aarch64-linux-android-
+        export CROSS_COMPILE_ARM32=arm-linux-androideabi-
         
         # Force Clang to ignore strict warnings in the older kernel
         export KCFLAGS="-Wno-array-bounds -Wno-error"
