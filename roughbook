@@ -63,50 +63,48 @@ TARGET_KERNEL_MAKE_CMD := make
 
 rm -rf ~/sailfish_build_out
 
-cat /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk | grep "TARGET_KERNEL"
-
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150
-TARGET_KERNEL_CONFIG := vendor/vayu_defconfig
-TARGET_KERNEL_MAKE_CMD := make
-
-nano /media/user/sailfish/sailfish_vayu/device/xiaomi/sm8150-common/BoardConfigCommon.mk
-
-# Explicitly define kernel architecture and make command
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150
-TARGET_KERNEL_CONFIG := vendor/vayu_defconfig
-TARGET_KERNEL_MAKE_CMD := make
-
-nano /media/user/sailfish/sailfish_vayu/bootable/recovery/bootloader_message/include/bootloader_message/bootloader_message.h
-
-
-constexpr size_t BOOTLOADER_MESSAGE_OFFSET_IN_MISC = 0;
-constexpr size_t VENDOR_SPACE_OFFSET_IN_MISC = 2 * 1024 + 0;
-constexpr size_t WIPE_PACKAGE_OFFSET_IN_MISC = 16 * 1024 + 0;
-constexpr size_t SYSTEM_SPACE_OFFSET_IN_MISC = 32 * 1024 + 0;
-constexpr size_t SYSTEM_SPACE_SIZE_IN_MISC = 32 * 1024 + 0;
-
-nano /media/user/sailfish/sailfish_vayu/device/xiaomi/sm8150-common/sepolicy/public/attributes
-
-# Manually declare lineage attributes to prevent sepolicy build errors
-attribute hal_motor_client;
-attribute hal_motor_server;
-attribute hal_mlipay_client;
-attribute hal_mlipay_server;
-attribute hal_lineage_livedisplay_client;
-attribute hal_lineage_livedisplay_server;
-
-
-nano /media/user/sailfish/sailfish_vayu/device/xiaomi/sm8150-common/BoardConfigCommon.mk
-
-
-
-
-
-
+# configuration written to .config
+#
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/DTB_OBJ'
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
+0'
+make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
+bj/DTB_OBJ'
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
+line 26: clang: command not found
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
+line 27: clang: command not found
+make[1]: clang: No such file or directory
+make[1]: clang: No such file or directory
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will b
+e unreliable
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
+line 26: clang: command not found
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
+line 27: clang: command not found
+make[1]: clang: No such file or directory
+make[1]: clang: No such file or directory
+  CHK     include/config/kernel.release
+  UPD     include/config/kernel.release
+make[1]: clang: No such file or directory
+  Using /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150 as source for ke
+rnel
+make[1]: clang: No such file or directory
+Cannot use CONFIG_CC_STACKPROTECTOR_STRONG: -fstack-protector-strong not support
+ed by compiler
+make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
+305: prepare-compiler-check] Error 1
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/DTB_OBJ'
+make: *** [Makefile:146: sub-make] Error 2
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+05:50:52 ninja failed with: exit status 1
 
 
 
