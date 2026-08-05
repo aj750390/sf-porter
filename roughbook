@@ -97,7 +97,16 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile
 
 
+10 warnings and 3 errors generated.
+make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:5
+8: arch/arm64/kernel/asm-offsets.s] Error 1
+make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
+239: prepare0] Error 2
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/KERNEL_OBJ'
+make: *** [Makefile:146: sub-make] Error 2
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+23:19:46 ninja failed with: exit status 1
 
-# Explicitly define the Clang path for the kernel (Using older Clang 10 to avoid strict errors)
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_PATH := /media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/clang-r370808b
+#### failed to build some targets (03:09 (mm:ss)) ###
