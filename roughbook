@@ -84,6 +84,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := -Wno-array-bounds
 
 # Ignore strict array bounds warning in older kernel
 KCFLAGS := -Wno-array-bounds -Wno-error
+
 /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/linux/signal.h:1
 58:10: note: expanded from macro '_SIG_SET_OP'
         case 2: set->sig[1] = op(set->sig[1]);                          \
@@ -154,8 +155,5 @@ j/DTB_OBJ'
 make: *** [Makefile:146: sub-make] Error 2
 make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 '
-11:46:47 ninja failed with: exit status 1
-
-
-
+12:09:43 ninja failed with: exit status 1
 
