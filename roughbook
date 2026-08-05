@@ -97,6 +97,305 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile
 
 
+[  0% 2/43058] Building Kernel Config
+make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
+0'
+make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
+bj/KERNEL_OBJ'
+  GEN     ./Makefile
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/KERNEL_OBJ'
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
+0'
+make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
+bj/KERNEL_OBJ'
+  GEN     ./Makefile
+scripts/kconfig/conf  --savedefconfig=defconfig Kconfig
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/KERNEL_OBJ'
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+[  0% 3/43058] Building dtb.img
+FAILED: /home/user/sailfish_build_out/target/product/vayu/dtb.img
+/bin/bash -c "(PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH
+=/media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/clang-r370808
+b/bin:\$PATH LD_LIBRARY_PATH=/media/user/sailfish/sailfish_vayu/prebuilts/clang/
+host/linux-x86/clang-r370808b/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C
+ kernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/DT
+B_OBJ ARCH=arm64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  vendor/vayu_def
+config ) && (PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH=/
+media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/clang-r370808b/
+bin:\$PATH LD_LIBRARY_PATH=/media/user/sailfish/sailfish_vayu/prebuilts/clang/ho
+st/linux-x86/clang-r370808b/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C k
+ernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/DTB_
+OBJ ARCH=arm64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  dtbs ) && (cat \$
+(find /home/user/sailfish_build_out/target/product/vayu/obj/DTB_OBJ/arch/arm64/b
+oot/dts -type f -name \"*.dtb\" | sort) > /home/user/sailfish_build_out/target/p
+roduct/vayu/dtb.img )"
+make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
+0'
+make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
+bj/DTB_OBJ'
+  GEN     ./Makefile
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/DTB_OBJ'
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
+0'
+make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
+bj/DTB_OBJ'
+arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will b
+e unreliable
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will b
+e unreliable
+  CHK     include/config/kernel.release
+  Using /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150 as source for ke
+rnel
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/timeconst.h
+  CC      arch/arm64/kernel/asm-offsets.s
+clang-10: warning: optimization flag '-fmerge-constants' is not supported [-Wign
+ored-optimization-argument]
+warning: unknown warning option '-Wno-frame-address'; did you mean '-Wno-address
+'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-format-truncation' [-Wunknown-warning-opti
+on]
+warning: unknown warning option '-Wno-format-overflow'; did you mean '-Wno-shift
+-overflow'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-int-in-bool-context'; did you mean '-Wno-g
+nu-include-next'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-attribute-alias'; did you mean '-Wno-attri
+butes'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-undefined-optimized'; did you mean '-Wno-u
+ndefined-inline'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-stringop-truncation'; did you mean '-Wno-s
+tring-conversion'? [-Wunknown-warning-option]
+warning: unknown warning option '-Werror=designated-init' [-Wunknown-warning-opt
+ion]
+warning: unknown warning option '-Wno-packed-not-aligned'; did you mean '-Wno-ov
+er-aligned'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-pointer-to-enum-cast'; did you mean '-Wno-
+pointer-compare'? [-Wunknown-warning-option]
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/kernel/asm-offsets.c:21:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/sched.h:14:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/pid.h:5:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/rculist.h:11:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/rcupdate.h:40:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/preempt.h:81:
+In file included from ./arch/arm64/include/generated/asm/preempt.h:1:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/asm-generic/preempt.h:5:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/thread_info.h:38:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/include/asm/thread_info.h:31:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/s
+tack_pointer.h:8:51: error: register 'sp' unsuitable for global register variabl
+es on this target
+register unsigned long current_stack_pointer asm ("sp");
+                                                  ^
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/kernel/asm-offsets.c:21:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/sched.h:14:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/pid.h:6:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/wait.h:9:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/spinlock.h:88:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/s
+pinlock.h:67:28: error: value '65536' out of range for constraint 'I'
+        : "Q" (lock->owner), "I" (1 << TICKET_SHIFT)
+                                  ^~~~~~~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/s
+pinlock.h:95:9: error: value '65536' out of range for constraint 'I'
+        : "I" (1 << TICKET_SHIFT)
+               ^~~~~~~~~~~~~~~~~
+10 warnings and 3 errors generated.
+make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:5
+8: arch/arm64/kernel/asm-offsets.s] Error 1
+make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
+239: prepare0] Error 2
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/DTB_OBJ'
+make: *** [Makefile:146: sub-make] Error 2
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+[  0% 4/43058] Building Kernel Image (Image)
+FAILED: /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/arch/ar
+m64/boot/Image
+/bin/bash -c "(PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH
+=/media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/clang-r370808
+b/bin:\$PATH LD_LIBRARY_PATH=/media/user/sailfish/sailfish_vayu/prebuilts/clang/
+host/linux-x86/clang-r370808b/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C
+ kernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/KE
+RNEL_OBJ ARCH=arm64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  Image ) && (
+if grep -q '^CONFIG_OF=y' /home/user/sailfish_build_out/target/product/vayu/obj/
+KERNEL_OBJ/.config; then 			echo \"Building DTBs\"; 	P
+ATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH=/media/user/sai
+lfish/sailfish_vayu/prebuilts/clang/host/linux-x86/clang-r370808b/bin:\$PATH LD_
+LIBRARY_PATH=/media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/c
+lang-r370808b/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C kernel/xiaomi/s
+m8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ ARCH=ar
+m64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  dtbs; 		fi ) && 
+(if grep -q '=m' /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OB
+J/.config; then 			echo \"Building Kernel Modules\"; 	P
+ATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH=/media/user/sai
+lfish/sailfish_vayu/prebuilts/clang/host/linux-x86/clang-r370808b/bin:\$PATH LD_
+LIBRARY_PATH=/media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/c
+lang-r370808b/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C kernel/xiaomi/s
+m8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ ARCH=ar
+m64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  modules || exit \"\$?\"; 	e
+cho \"Installing Kernel Modules\"; 			PATH=/home/user/sailfish
+_build_out/host/linux-x86/bin:\$PATH PATH=/media/user/sailfish/sailfish_vayu/pre
+builts/clang/host/linux-x86/clang-r370808b/bin:\$PATH LD_LIBRARY_PATH=/media/use
+r/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/clang-r370808b/lib64:\$L
+D_LIBRARY_PATH PATH=/bin:\$PATH  make  -C kernel/xiaomi/sm8150 O=/home/user/sail
+fish_build_out/target/product/vayu/obj/KERNEL_OBJ ARCH=arm64  CLANG_TRIPLE=aarch
+64-linux-gnu- CC=\" clang\"  INSTALL_MOD_PATH=/home/user/sailfish_build_out/targ
+et/product/vayu/obj/PACKAGING/kernel_modules_intermediates INSTALL_MOD_STRIP=1 m
+odules_install; 			kernel_release=\$(cat /home/user/sailfis
+h_build_out/target/product/vayu/obj/KERNEL_OBJ/include/config/kernel.release) 	k
+ernel_modules_dir=/home/user/sailfish_build_out/target/product/vayu/obj/PACKAGIN
+G/kernel_modules_intermediates/lib/modules/\$kernel_release 			;
+ 			modules=\$(find \$kernel_modules_dir -type f -name '*.ko
+'); 			(    mkdir -p /home/user/sailfish_build_out/target/produ
+ct/vayu/vendor/lib/modules ) && (cp \$modules /home/user/sailfish_build_out/targ
+et/product/vayu/vendor/lib/modules/ ) && (rm -rf /home/user/sailfish_build_out/t
+arget/product/vayu/obj/PACKAGING/depmod_vendor_intermediates ) && (mkdir -p /hom
+e/user/sailfish_build_out/target/product/vayu/obj/PACKAGING/depmod_vendor_interm
+ediates/lib/modules/0.0/vendor/lib/modules ) && (cp \$modules /home/user/sailfis
+h_build_out/target/product/vayu/obj/PACKAGING/depmod_vendor_intermediates/lib/mo
+dules/0.0/vendor/lib/modules ) && (/home/user/sailfish_build_out/host/linux-x86/
+bin/depmod -b /home/user/sailfish_build_out/target/product/vayu/obj/PACKAGING/de
+pmod_vendor_intermediates 0.0 ) && (sed -e 's/\\(.*modules.*\\):/\\/\\1:/g' -e '
+s/ \\([^ ]*modules[^ ]*\\)/ \\/\\1/g' /home/user/sailfish_build_out/target/produ
+ct/vayu/obj/PACKAGING/depmod_vendor_intermediates/lib/modules/0.0/modules.dep > 
+/home/user/sailfish_build_out/target/product/vayu/vendor/lib/modules/modules.dep
+ ) && (cp /home/user/sailfish_build_out/target/product/vayu/obj/PACKAGING/depmod
+_vendor_intermediates/lib/modules/0.0/modules.softdep /home/user/sailfish_build_
+out/target/product/vayu/vendor/lib/modules ) && (cp /home/user/sailfish_build_ou
+t/target/product/vayu/obj/PACKAGING/depmod_vendor_intermediates/lib/modules/0.0/
+modules.alias /home/user/sailfish_build_out/target/product/vayu/vendor/lib/modul
+es ) && (rm -f /home/user/sailfish_build_out/target/product/vayu/vendor/lib/modu
+les/modules.load ) && (for MODULE in ; do basename \$MODULE >> /home/user/sailfi
+sh_build_out/target/product/vayu/vendor/lib/modules/modules.load; done); 	 
+fi )"
+make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
+0'
+make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
+bj/KERNEL_OBJ'
+arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will b
+e unreliable
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will b
+e unreliable
+  CHK     include/config/kernel.release
+  Using /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150 as source for ke
+rnel
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/timeconst.h
+  CC      arch/arm64/kernel/asm-offsets.s
+clang-10: warning: optimization flag '-fmerge-constants' is not supported [-Wign
+ored-optimization-argument]
+warning: unknown warning option '-Wno-frame-address'; did you mean '-Wno-address
+'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-format-truncation' [-Wunknown-warning-opti
+on]
+warning: unknown warning option '-Wno-format-overflow'; did you mean '-Wno-shift
+-overflow'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-int-in-bool-context'; did you mean '-Wno-g
+nu-include-next'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-attribute-alias'; did you mean '-Wno-attri
+butes'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-undefined-optimized'; did you mean '-Wno-u
+ndefined-inline'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-stringop-truncation'; did you mean '-Wno-s
+tring-conversion'? [-Wunknown-warning-option]
+warning: unknown warning option '-Werror=designated-init' [-Wunknown-warning-opt
+ion]
+warning: unknown warning option '-Wno-packed-not-aligned'; did you mean '-Wno-ov
+er-aligned'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-pointer-to-enum-cast'; did you mean '-Wno-
+pointer-compare'? [-Wunknown-warning-option]
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/kernel/asm-offsets.c:21:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/sched.h:14:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/pid.h:5:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/rculist.h:11:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/rcupdate.h:40:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/preempt.h:81:
+In file included from ./arch/arm64/include/generated/asm/preempt.h:1:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/asm-generic/preempt.h:5:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/thread_info.h:38:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/include/asm/thread_info.h:31:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/s
+tack_pointer.h:8:51: error: register 'sp' unsuitable for global register variabl
+es on this target
+register unsigned long current_stack_pointer asm ("sp");
+                                                  ^
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/kernel/asm-offsets.c:21:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/sched.h:14:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/pid.h:6:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/wait.h:9:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/spinlock.h:88:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/s
+pinlock.h:67:28: error: value '65536' out of range for constraint 'I'
+        : "Q" (lock->owner), "I" (1 << TICKET_SHIFT)
+                                  ^~~~~~~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/s
+pinlock.h:95:9: error: value '65536' out of range for constraint 'I'
+        : "I" (1 << TICKET_SHIFT)
+               ^~~~~~~~~~~~~~~~~
+10 warnings and 3 errors generated.
+make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:5
+8: arch/arm64/kernel/asm-offsets.s] Error 1
+make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
+239: prepare0] Error 2
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/KERNEL_OBJ'
+make: *** [Makefile:146: sub-make] Error 2
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+01:06:56 ninja failed with: exit status 1
 
 
 
