@@ -159,8 +159,10 @@ EOF
         export TARGET_KERNEL_SOURCE=kernel/xiaomi/sm8150
         export TARGET_KERNEL_CONFIG=vendor/vayu_defconfig
         
-        # Add prebuilt Clang to PATH so the kernel can find it
-        export PATH=$PATH:$BUILD_DIR/prebuilts/clang/host/linux-x86/clang-r383902b1/bin
+        # Force Clang to ignore strict warnings in the older kernel
+        export KCFLAGS="-Wno-array-bounds -Wno-error"
+        export CFLAGS="-Wno-array-bounds -Wno-error"
+        export KCPPFLAGS="-Wno-error"
         
         source build/envsetup.sh
         lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree (make sure halium_vayu.mk exists)."
