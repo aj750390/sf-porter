@@ -74,5 +74,8 @@ sudo ln -sf /media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/cl
 clang --version
 
 
+clang --version
+Internal error. Please report to chromeos-toolchain@google.com.
+compiler_wrapper.go:162: failed to execute &main.command{Path:"/usr/bin/clang.real", Args:[]string{"--version"}, EnvUpdates:[]string(nil)}: go_exec.go:22: exec error: no such file or directory
 
 
