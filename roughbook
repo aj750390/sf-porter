@@ -5,9 +5,6 @@ nano /media/user/sailfish/sailfish_vayu/device/xiaomi/sm8150-common/sepolicy/pub
 
 nano ~/sailfish_vayu/vendor/lineage/build/soong/Android.bp
 
-nano ~/sailfish_vayu/build/make/core/board_config.mk
-
-nano ~/sailfish_vayu/device/xiaomi/vayu/BoardConfig.mk
 sudo apt-get install -y libncurses-dev
 
 
