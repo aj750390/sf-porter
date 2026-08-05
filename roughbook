@@ -1,3 +1,5 @@
+
+
 /media/user/sailfish/sailfish_vayu
 
 nano /media/user/sailfish/sailfish_vayu/device/xiaomi/sm8150-common/sepolicy/public/attributes
@@ -93,3 +95,22 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
                    -Wno-array-bounds -Wno-error
         
 nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile
+
+
+
+9 warnings and 3 errors generated.
+make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:5
+8: arch/arm64/kernel/asm-offsets.s] Error 1
+make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
+239: prepare0] Error 2
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/DTB_OBJ'
+make: *** [Makefile:146: sub-make] Error 2
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+22:58:49 ninja failed with: exit status 1
+
+#### failed to build some targets (01:17 (mm:ss)) ####
+
+
+
