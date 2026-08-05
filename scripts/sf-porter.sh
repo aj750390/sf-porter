@@ -165,10 +165,10 @@ EOF
         export CROSS_COMPILE=aarch64-linux-android-
         export CROSS_COMPILE_ARM32=arm-linux-androideabi-
         
-        # Force Clang to ignore strict warnings in the older kernel
-        export KCFLAGS="-Wno-array-bounds -Wno-error"
-        export CFLAGS="-Wno-array-bounds -Wno-error"
-        export KCPPFLAGS="-Wno-error"
+        # Force Clang to ignore strict warnings and compile for ARM64
+        export KCFLAGS="-Wno-array-bounds -Wno-error --target=aarch64-linux-gnu"
+        export CFLAGS="-Wno-array-bounds -Wno-error --target=aarch64-linux-gnu"
+        export KCPPFLAGS="-Wno-error --target=aarch64-linux-gnu"
         
         source build/envsetup.sh
         lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree (make sure halium_vayu.mk exists)."
