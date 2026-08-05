@@ -101,15 +101,59 @@ make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
 0'
 make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
 bj/DTB_OBJ'
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   GEN     ./Makefile
 scripts/kconfig/conf  --silentoldconfig Kconfig
 arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will b
 e unreliable
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   CHK     include/config/kernel.release
   UPD     include/config/kernel.release
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   Using /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150 as source for ke
 rnel
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   GEN     ./Makefile
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   WRAP    arch/arm64/include/generated/uapi/asm/errno.h
   WRAP    arch/arm64/include/generated/uapi/asm/ioctl.h
   WRAP    arch/arm64/include/generated/uapi/asm/ioctls.h
@@ -127,6 +171,10 @@ rnel
   WRAP    arch/arm64/include/generated/uapi/asm/termbits.h
   WRAP    arch/arm64/include/generated/uapi/asm/termios.h
   WRAP    arch/arm64/include/generated/uapi/asm/types.h
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   WRAP    arch/arm64/include/generated/asm/bugs.h
   WRAP    arch/arm64/include/generated/asm/clkdev.h
   WRAP    arch/arm64/include/generated/asm/delay.h
@@ -157,27 +205,37 @@ rnel
   WRAP    arch/arm64/include/generated/asm/user.h
   WRAP    arch/arm64/include/generated/asm/vga.h
   WRAP    arch/arm64/include/generated/asm/xor.h
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   CHK     include/generated/uapi/linux/version.h
   UPD     include/generated/uapi/linux/version.h
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   CHK     include/generated/utsrelease.h
   UPD     include/generated/utsrelease.h
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/basic/bin2c
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   CC      kernel/bounds.s
-b'gcc: error: unrecognized command-line option \xe2\x80\x98-mlittle-endian\xe2\x
-80\x99\n'Traceback (most recent call last):
   File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
-per.py", line 94, in <module>
-    status = run_gcc()
-             ^^^^^^^^^
-  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
-per.py", line 80, in run_gcc
-    interpret_warning(line)
-  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
-per.py", line 51, in interpret_warning
-    line = line.rstrip('\n')
-           ^^^^^^^^^^^^^^^^^
-TypeError: a bytes-like object is required, not 'str'
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
 make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:2
 2: kernel/bounds.s] Error 1
 make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
@@ -239,15 +297,59 @@ make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
 0'
 make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
 bj/KERNEL_OBJ'
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   GEN     ./Makefile
 scripts/kconfig/conf  --silentoldconfig Kconfig
 arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will b
 e unreliable
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   CHK     include/config/kernel.release
   UPD     include/config/kernel.release
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   Using /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150 as source for ke
 rnel
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   GEN     ./Makefile
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   WRAP    arch/arm64/include/generated/uapi/asm/errno.h
   WRAP    arch/arm64/include/generated/uapi/asm/ioctl.h
   WRAP    arch/arm64/include/generated/uapi/asm/ioctls.h
@@ -265,6 +367,10 @@ rnel
   WRAP    arch/arm64/include/generated/uapi/asm/termbits.h
   WRAP    arch/arm64/include/generated/uapi/asm/termios.h
   WRAP    arch/arm64/include/generated/uapi/asm/types.h
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   WRAP    arch/arm64/include/generated/asm/bugs.h
   WRAP    arch/arm64/include/generated/asm/clkdev.h
   WRAP    arch/arm64/include/generated/asm/delay.h
@@ -295,27 +401,37 @@ rnel
   WRAP    arch/arm64/include/generated/asm/user.h
   WRAP    arch/arm64/include/generated/asm/vga.h
   WRAP    arch/arm64/include/generated/asm/xor.h
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   CHK     include/generated/uapi/linux/version.h
   UPD     include/generated/uapi/linux/version.h
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   CHK     include/generated/utsrelease.h
   UPD     include/generated/utsrelease.h
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/basic/bin2c
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
   CC      kernel/bounds.s
-b'gcc: error: unrecognized command-line option \xe2\x80\x98-mlittle-endian\xe2\x
-80\x99\n'Traceback (most recent call last):
   File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
-per.py", line 94, in <module>
-    status = run_gcc()
-             ^^^^^^^^^
-  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
-per.py", line 80, in run_gcc
-    interpret_warning(line)
-  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
-per.py", line 51, in interpret_warning
-    line = line.rstrip('\n')
-           ^^^^^^^^^^^^^^^^^
-TypeError: a bytes-like object is required, not 'str'
+per.py", line 53
+    m = warning_re.match(line)
+IndentationError: unexpected indent
 make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:2
 2: kernel/bounds.s] Error 1
 make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
@@ -325,5 +441,4 @@ j/KERNEL_OBJ'
 make: *** [Makefile:146: sub-make] Error 2
 make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 '
-02:02:21 ninja failed with: exit status 1
-
+02:17:24 ninja failed with: exit status 1
