@@ -80,3 +80,78 @@ TARGET_KERNEL_CLANG_PATH := /media/user/sailfish/sailfish_vayu/prebuilts/clang/h
 
 # Ignore strict array bounds warning in older kernel
 TARGET_KERNEL_ADDITIONAL_FLAGS := -Wno-array-bounds
+
+
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/linux/signal.h:1
+58:10: note: expanded from macro '_SIG_SET_OP'
+        case 2: set->sig[1] = op(set->sig[1]);                          \
+                ^        ~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/uapi/asm-generic
+/signal.h:91:2: note: array 'sig' declared here
+        unsigned long sig[_NSIG_WORDS];
+        ^
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/kernel/asm-offsets.c:24:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/kvm_host.h:14:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/linux/signal.h:1
+78:10: warning: array index 1 is past the end of the array (which contains 1 ele
+ment) [-Warray-bounds]
+        case 2: set->sig[1] = 0;
+                ^        ~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/uapi/asm-generic
+/signal.h:91:2: note: array 'sig' declared here
+        unsigned long sig[_NSIG_WORDS];
+        ^
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/kernel/asm-offsets.c:24:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/kvm_host.h:14:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/linux/signal.h:1
+90:10: warning: array index 1 is past the end of the array (which contains 1 ele
+ment) [-Warray-bounds]
+        case 2: set->sig[1] = -1;
+                ^        ~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/uapi/asm-generic
+/signal.h:91:2: note: array 'sig' declared here
+        unsigned long sig[_NSIG_WORDS];
+        ^
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/kernel/asm-offsets.c:24:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/kvm_host.h:14:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/linux/signal.h:2
+20:10: warning: array index 1 is past the end of the array (which contains 1 ele
+ment) [-Warray-bounds]
+        case 2: set->sig[1] = 0;
+                ^        ~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/uapi/asm-generic
+/signal.h:91:2: note: array 'sig' declared here
+        unsigned long sig[_NSIG_WORDS];
+        ^
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
+ch/arm64/kernel/asm-offsets.c:24:
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
+clude/linux/kvm_host.h:14:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/linux/signal.h:2
+32:10: warning: array index 1 is past the end of the array (which contains 1 ele
+ment) [-Warray-bounds]
+        case 2: set->sig[1] = -1;
+                ^        ~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/include/uapi/asm-generic
+/signal.h:91:2: note: array 'sig' declared here
+        unsigned long sig[_NSIG_WORDS];
+        ^
+49 warnings and 3 errors generated.
+make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:5
+8: arch/arm64/kernel/asm-offsets.s] Error 1
+make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
+233: prepare0] Error 2
+make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
+j/KERNEL_OBJ'
+make: *** [Makefile:146: sub-make] Error 2
+make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+'
+11:35:53 ninja failed with: exit status 1
+
+
