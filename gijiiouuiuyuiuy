@@ -1,14 +1,4 @@
-device/xiaomi/vayu/BoardConfig.mk was modified, regenerating...
-device/xiaomi/vayu/BoardConfig.mk was modified, regenerating...
-[ 77% 244/314] including vendor/halium/audioflingerglue/Android.mk ...
-vendor/halium/audioflingerglue/Android.mk:41: warning: *** ANDROID_MICRO undefin
-ed. Assuming 0
-/bin/bash: line 1: test: -le: unary operator expected
-cat: frameworks/av/include/media/AudioSystem.h: No such file or directory
-[ 78% 246/314] including vendor/halium/droidmedia/Android.mk ...
-vendor/halium/droidmedia/Android.mk:43: warning: *** ANDROID_MICRO undefined. As
-suming 0
-[  0% 317/43373] Building Kernel Config
+[  0% 3/43059] Building Kernel Config
 make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
 0'
 make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
@@ -58,7 +48,7 @@ make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
 j/KERNEL_OBJ'
 make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 '
-[  0% 318/43373] Building dtb.img
+[  0% 4/43059] Building dtb.img
 FAILED: /home/user/sailfish_build_out/target/product/vayu/dtb.img
 /bin/bash -c "(PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH
 =/bin:\$PATH  make  -C kernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/targ
@@ -174,17 +164,20 @@ rnel
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/basic/bin2c
   CC      kernel/bounds.s
-Traceback (most recent call last):
+b'gcc: error: unrecognized command-line option \xe2\x80\x98-mlittle-endian\xe2\x
+80\x99\n'Traceback (most recent call last):
   File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
 per.py", line 94, in <module>
     status = run_gcc()
              ^^^^^^^^^
   File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
-per.py", line 79, in run_gcc
-    print >> sys.stderr, line,
-    ~~~~~~^^~~~~~~~~~~~
-TypeError: unsupported operand type(s) for >>: 'builtin_function_or_method' and 
-'_io.TextIOWrapper'. Did you mean "print(<message>, file=<output_stream>)"?
+per.py", line 80, in run_gcc
+    interpret_warning(line)
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 51, in interpret_warning
+    line = line.rstrip('\n')
+           ^^^^^^^^^^^^^^^^^
+TypeError: a bytes-like object is required, not 'str'
 make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:2
 2: kernel/bounds.s] Error 1
 make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
@@ -194,7 +187,7 @@ j/DTB_OBJ'
 make: *** [Makefile:146: sub-make] Error 2
 make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 '
-[  0% 319/43373] Building Kernel Image (Image)
+[  0% 5/43059] Building Kernel Image (Image)
 FAILED: /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/arch/ar
 m64/boot/Image
 /bin/bash -c "(PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH
@@ -309,17 +302,20 @@ rnel
   HOSTCC  scripts/basic/fixdep
   HOSTCC  scripts/basic/bin2c
   CC      kernel/bounds.s
-Traceback (most recent call last):
+b'gcc: error: unrecognized command-line option \xe2\x80\x98-mlittle-endian\xe2\x
+80\x99\n'Traceback (most recent call last):
   File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
 per.py", line 94, in <module>
     status = run_gcc()
              ^^^^^^^^^
   File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
-per.py", line 79, in run_gcc
-    print >> sys.stderr, line,
-    ~~~~~~^^~~~~~~~~~~~
-TypeError: unsupported operand type(s) for >>: 'builtin_function_or_method' and 
-'_io.TextIOWrapper'. Did you mean "print(<message>, file=<output_stream>)"?
+per.py", line 80, in run_gcc
+    interpret_warning(line)
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrap
+per.py", line 51, in interpret_warning
+    line = line.rstrip('\n')
+           ^^^^^^^^^^^^^^^^^
+TypeError: a bytes-like object is required, not 'str'
 make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:2
 2: kernel/bounds.s] Error 1
 make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
@@ -329,4 +325,5 @@ j/KERNEL_OBJ'
 make: *** [Makefile:146: sub-make] Error 2
 make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 '
-01:52:02 ninja failed with: exit status 1
+02:02:21 ninja failed with: exit status 1
+
