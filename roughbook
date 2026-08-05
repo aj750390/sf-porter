@@ -68,41 +68,4 @@ rm -rf ~/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ
 
 
 
-make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
-0'
-make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
-bj/KERNEL_OBJ'
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
-line 26: clang: command not found
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
-line 27: clang: command not found
-make[1]: clang: No such file or directory
-make[1]: clang: No such file or directory
-  GEN     ./Makefile
-scripts/kconfig/conf  --silentoldconfig Kconfig
-arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will b
-e unreliable
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
-line 26: clang: command not found
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
-line 27: clang: command not found
-make[1]: clang: No such file or directory
-make[1]: clang: No such file or directory
-  CHK     include/config/kernel.release
-  UPD     include/config/kernel.release
-make[1]: clang: No such file or directory
-  Using /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150 as source for ke
-rnel
-make[1]: clang: No such file or directory
-Cannot use CONFIG_CC_STACKPROTECTOR_STRONG: -fstack-protector-strong not support
-ed by compiler
-make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
-305: prepare-compiler-check] Error 1
-make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
-j/KERNEL_OBJ'
-make: *** [Makefile:146: sub-make] Error 2
-make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
-'
-06:01:04 ninja failed with: exit status 1
-
-
+ls /media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/
