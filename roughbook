@@ -69,3 +69,9 @@ rm -rf ~/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ
 
 
 ls /media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/
+Android.bp       clang-r370808   clang-r383902b          OWNERS
+Android.mk       clang-r370808b  clang-r383902b1         profiles
+clang-3289846    clang-r377782b  clang-stable            README.md
+clang-r353983c   clang-r377782c  CleanSpec.mk            RELEASE_NOTES.md
+clang-r353983c1  clang-r377782d  GCC_4_9_DEPRECATION.md  soong
+clang-r365631c   clang-r383902   llvm-binutils-stable
