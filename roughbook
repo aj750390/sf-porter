@@ -104,3 +104,7 @@ TARGET_KERNEL_CLANG_PATH := ""
 
 # CONFIG_CC_STACKPROTECTOR_STRONG is not set
 
+nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrapper.py
+
+        print(line, file=sys.stderr, end="")
+
