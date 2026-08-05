@@ -1,14 +1,42 @@
-device/xiaomi/vayu/BoardConfig.mk was modified, regenerating...
-device/xiaomi/vayu/BoardConfig.mk was modified, regenerating...
-[ 77% 244/314] including vendor/halium/audioflingerglue/Android.mk ...
-vendor/halium/audioflingerglue/Android.mk:41: warning: *** ANDROID_MICRO undefin
-ed. Assuming 0
-/bin/bash: line 1: test: -le: unary operator expected
-cat: frameworks/av/include/media/AudioSystem.h: No such file or directory
-[ 78% 246/314] including vendor/halium/droidmedia/Android.mk ...
-vendor/halium/droidmedia/Android.mk:43: warning: *** ANDROID_MICRO undefined. As
-suming 0
-[  0% 317/43373] Building Kernel Config
+[INFO] Starting Halium boot and system image build. This will take a long time...
+01:30:47 ************************************************************
+01:30:47 You are building on a machine with 10.9GB of RAM
+01:30:47 
+01:30:47 The minimum required amount of free memory is around 16GB,
+01:30:47 and even with that, some configurations may not work.
+01:30:47 
+01:30:47 If you run into segfaults or other errors, try reducing your
+01:30:47 -j value.
+01:30:47 ************************************************************
+01:30:47 Build sandboxing disabled due to nsjail error.
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=11
+LINEAGE_VERSION=18.1-20260805-UNOFFICIAL-
+TARGET_PRODUCT=halium_vayu
+TARGET_BUILD_VARIANT=userdebug
+TARGET_BUILD_TYPE=release
+TARGET_ARCH=arm64
+TARGET_ARCH_VARIANT=armv8-a
+TARGET_CPU_VARIANT=generic
+TARGET_2ND_ARCH=arm
+TARGET_2ND_ARCH_VARIANT=armv8-a
+TARGET_2ND_CPU_VARIANT=generic
+HOST_ARCH=x86_64
+HOST_2ND_ARCH=x86
+HOST_OS=linux
+HOST_OS_EXTRA=Linux-7.0.0-28-generic-x86_64-Ubuntu-24.04.4-LTS
+HOST_CROSS_OS=windows
+HOST_CROSS_ARCH=x86
+HOST_CROSS_2ND_ARCH=x86_64
+HOST_BUILD_TYPE=release
+BUILD_ID=RQ3A.211001.001
+OUT_DIR=/home/user/sailfish_build_out
+PRODUCT_SOONG_NAMESPACES=hardware/google/interfaces hardware/google/pixel device
+/xiaomi/sm8150-common hardware/xiaomi vendor/xiaomi/sm8150-common device/xiaomi/
+vayu vendor/xiaomi/vayu
+============================================
+[  0% 3/43059] Building Kernel Config
 make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
 0'
 make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
@@ -58,7 +86,7 @@ make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
 j/KERNEL_OBJ'
 make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 '
-[  0% 318/43373] Building dtb.img
+[  0% 4/43059] Building dtb.img
 FAILED: /home/user/sailfish_build_out/target/product/vayu/dtb.img
 /bin/bash -c "(PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH
 =/media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/clang-r383902
@@ -279,8 +307,7 @@ j/DTB_OBJ'
 make: *** [Makefile:146: sub-make] Error 2
 make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 '
-01:23:30 ninja failed with: exit status 1
-[  0% 319/43373] Building Kernel Image (Image)
+[  0% 5/43059] Building Kernel Image (Image)
 FAILED: /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/arch/ar
 m64/boot/Image
 /bin/bash -c "(PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH
@@ -505,6 +532,6 @@ j/KERNEL_OBJ'
 make: *** [Makefile:146: sub-make] Error 2
 make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 '
-ninja: build stopped: subcommand failed.
+01:31:02 ninja failed with: exit status 1
 
-#### failed to build some targets (01:56 (mm:ss)) ####
+#### failed to build some targets (16 seconds) ####
