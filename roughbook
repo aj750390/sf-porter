@@ -97,3 +97,10 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile
 
 TARGET_KERNEL_CLANG_PATH := /media/user/sailfish/sailfish_vayu/prebuilts/clang/host/linux-x86/clang-r383902b1
+
+# Disable Clang to prevent x86 architecture errors
+TARGET_KERNEL_CLANG_COMPILE := false
+TARGET_KERNEL_CLANG_PATH := ""
+
+# CONFIG_CC_STACKPROTECTOR_STRONG is not set
+
