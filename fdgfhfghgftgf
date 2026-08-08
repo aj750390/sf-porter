@@ -1,63 +1,117 @@
 make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ -j2 dtbs Image
 make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ'
-  GEN     ./Makefile
-scripts/kconfig/conf  --silentoldconfig Kconfig
   CHK     include/config/kernel.release
   GEN     ./Makefile
   CHK     include/generated/uapi/linux/version.h
   CHK     include/generated/utsrelease.h
   Using /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150 as source for kernel
-  HOSTCC  scripts/dtc/dtc.o
-  HOSTCC  scripts/genksyms/genksyms.o
-  SHIPPED scripts/genksyms/parse.tab.c
-  SHIPPED scripts/genksyms/lex.lex.c
-  SHIPPED scripts/genksyms/parse.tab.h
-  HOSTCC  scripts/genksyms/parse.tab.o
-  HOSTCC  scripts/dtc/flattree.o
-  HOSTCC  scripts/genksyms/lex.lex.o
-  HOSTCC  scripts/dtc/fstree.o
-  HOSTCC  scripts/dtc/data.o
-  HOSTCC  scripts/dtc/livetree.o
-  HOSTLD  scripts/genksyms/genksyms
-  CC      scripts/mod/empty.o
-  HOSTCC  scripts/mod/mk_elfconfig
-  CC      scripts/mod/devicetable-offsets.s
-  HOSTCC  scripts/dtc/treesource.o
-  MKELF   scripts/mod/elfconfig.h
   CHK     scripts/mod/devicetable-offsets.h
-  UPD     scripts/mod/devicetable-offsets.h
-  HOSTCC  scripts/mod/sumversion.o
-  HOSTCC  scripts/dtc/srcpos.o
-  HOSTCC  scripts/mod/modpost.o
-  HOSTCC  scripts/dtc/checks.o
-  HOSTCC  scripts/dtc/util.o
-  HOSTCC  scripts/mod/file2alias.o
-  SHIPPED scripts/dtc/dtc-lexer.lex.c
-  SHIPPED scripts/dtc/dtc-parser.tab.h
-  SHIPPED scripts/dtc/dtc-parser.tab.c
-  HOSTCC  scripts/dtc/dtc-lexer.lex.o
-  HOSTCC  scripts/dtc/dtc-parser.tab.o
-  HOSTLD  scripts/mod/modpost
-  HOSTCC  scripts/selinux/genheaders/genheaders
-  HOSTLD  scripts/dtc/dtc
-  HOSTCC  scripts/kallsyms
-  HOSTCC  scripts/selinux/mdp/mdp
-  HOSTCC  scripts/pnmtologo
-  HOSTCC  scripts/sortextable
-  HOSTCC  scripts/asn1_compiler
   HOSTCC  scripts/sign-file
   HOSTCC  scripts/extract-cert
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:21:10: fatal error: openssl/bio.h: No such file or directory
-   21 | #include <openssl/bio.h>
-      |          ^~~~~~~~~~~~~~~
-compilation terminated.
-make[2]: *** [scripts/Makefile.host:102: scripts/extract-cert] Error 1
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c: In function ‘display_openssl_errors’:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c: In function ‘display_openssl_errors’:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:46:9: warning: ‘ERR_get_error_line’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   46 |         while ((e = ERR_get_error_line(&file, &line))) {
+      |         ^~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:89:9: warning: ‘ERR_get_error_line’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   89 |         while ((e = ERR_get_error_line(&file, &line))) {
+      |         ^~~~~
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:23:
+/usr/include/openssl/err.h:423:15: note: declared here
+  423 | unsigned long ERR_get_error_line(const char **file, int *line);
+      |               ^~~~~~~~~~~~~~~~~~
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:29:
+/usr/include/openssl/err.h:423:15: note: declared here
+  423 | unsigned long ERR_get_error_line(const char **file, int *line);
+      |               ^~~~~~~~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c: In function ‘drain_openssl_errors’:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c: In function ‘drain_openssl_errors’:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:59:9: warning: ‘ERR_get_error_line’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+   59 |         while (ERR_get_error_line(&file, &line)) {}
+      |         ^~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:102:9: warning: ‘ERR_get_error_line’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  102 |         while (ERR_get_error_line(&file, &line)) {}
+      |         ^~~~~
+/usr/include/openssl/err.h:423:15: note: declared here
+  423 | unsigned long ERR_get_error_line(const char **file, int *line);
+      |               ^~~~~~~~~~~~~~~~~~
+/usr/include/openssl/err.h:423:15: note: declared here
+  423 | unsigned long ERR_get_error_line(const char **file, int *line);
+      |               ^~~~~~~~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c: In function ‘read_private_key’:
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:142:17: warning: ‘ENGINE_load_builtin_engines’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  142 |                 ENGINE_load_builtin_engines();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:30:
+/usr/include/openssl/engine.h:358:28: note: declared here
+  358 | OSSL_DEPRECATEDIN_3_0 void ENGINE_load_builtin_engines(void);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:144:17: warning: ‘ENGINE_by_id’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  144 |                 e = ENGINE_by_id("pkcs11");
+      |                 ^
+/usr/include/openssl/engine.h:336:31: note: declared here
+  336 | OSSL_DEPRECATEDIN_3_0 ENGINE *ENGINE_by_id(const char *id);
+      |                               ^~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:146:17: warning: ‘ENGINE_init’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  146 |                 if (ENGINE_init(e))
+      |                 ^~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c: In function ‘main’:
+/usr/include/openssl/engine.h:620:27: note: declared here
+  620 | OSSL_DEPRECATEDIN_3_0 int ENGINE_init(ENGINE *e);
+      |                           ^~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:124:17: warning: ‘ENGINE_load_builtin_engines’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  124 |                 ENGINE_load_builtin_engines();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:151:25: warning: ‘ENGINE_ctrl_cmd_string’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  151 |                         ERR(!ENGINE_ctrl_cmd_string(e, "PIN", key_pass, 0),
+      |                         ^~~
+/usr/include/openssl/engine.h:479:5: note: declared here
+  479 | int ENGINE_ctrl_cmd_string(ENGINE *e, const char *cmd_name, const char *arg,
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:24:
+/usr/include/openssl/engine.h:358:28: note: declared here
+  358 | OSSL_DEPRECATEDIN_3_0 void ENGINE_load_builtin_engines(void);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:153:17: warning: ‘ENGINE_load_private_key’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  153 |                 private_key = ENGINE_load_private_key(e, private_key_name,
+      |                 ^~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:126:17: warning: ‘ENGINE_by_id’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  126 |                 e = ENGINE_by_id("pkcs11");
+      |                 ^
+/usr/include/openssl/engine.h:638:11: note: declared here
+  638 | EVP_PKEY *ENGINE_load_private_key(ENGINE *e, const char *key_id,
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/engine.h:336:31: note: declared here
+  336 | OSSL_DEPRECATEDIN_3_0 ENGINE *ENGINE_by_id(const char *id);
+      |                               ^~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:128:17: warning: ‘ENGINE_init’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  128 |                 if (ENGINE_init(e))
+      |                 ^~
+/usr/include/openssl/engine.h:620:27: note: declared here
+  620 | OSSL_DEPRECATEDIN_3_0 int ENGINE_init(ENGINE *e);
+      |                           ^~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:133:25: warning: ‘ENGINE_ctrl_cmd_string’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  133 |                         ERR(!ENGINE_ctrl_cmd_string(e, "PIN", key_pass, 0), "Set PKCS#11 PIN");
+      |                         ^~~
+/usr/include/openssl/engine.h:479:5: note: declared here
+  479 | int ENGINE_ctrl_cmd_string(ENGINE *e, const char *cmd_name, const char *arg,
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:134:17: warning: ‘ENGINE_ctrl_cmd’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+  134 |                 ENGINE_ctrl_cmd(e, "LOAD_CERT_CTRL", 0, &parms, NULL, 1);
+      |                 ^~~~~~~~~~~~~~~
+/usr/include/openssl/engine.h:450:27: note: declared here
+  450 | OSSL_DEPRECATEDIN_3_0 int ENGINE_ctrl_cmd(ENGINE *e, const char *cmd_name,
+      |                           ^~~~~~~~~~~~~~~
+  CHK     include/generated/timeconst.h
+  CC      kernel/bounds.s
+  CHK     include/generated/bounds.h
+  CC      arch/arm64/kernel/asm-offsets.s
+  CHK     include/generated/asm-offsets.h
+  CALL    /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/checksyscalls.sh
+  LDS     arch/arm64/kernel/vdso/vdso.lds
+  VDSOA   arch/arm64/kernel/vdso/gettimeofday.o
+b"real-aarch64-linux-android-gcc: error: unrecognized command line option '-no-integrated-as'\n"b"real-aarch64-linux-android-gcc: error: unrecognized command line option '-no-integrated-as'\n"make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile:57: arch/arm64/kernel/vdso/gettimeofday.o] Error 1
 make[2]: *** Waiting for unfinished jobs....
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:25:10: fatal error: openssl/opensslv.h: No such file or directory
-   25 | #include <openssl/opensslv.h>
-      |          ^~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[2]: *** [scripts/Makefile.host:102: scripts/sign-file] Error 1
-make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:603: scripts] Error 2
+make[1]: *** [arch/arm64/Makefile:231: vdso_prepare] Error 2
 make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ'
 make: *** [Makefile:146: sub-make] Error 2
