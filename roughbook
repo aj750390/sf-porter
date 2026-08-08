@@ -174,3 +174,6 @@ cd /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 export ARCH=arm64
 export CROSS_COMPILE=/media/user/sailfish/sailfish_vayu/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ -j2 dtbs Image
+
+
+export CC=/media/user/sailfish/sailfish_vayu/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/real-aarch64-linux-android-gcc
