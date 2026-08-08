@@ -1,117 +1,112 @@
 make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ -j2 dtbs Image
 make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ'
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
   CHK     include/config/kernel.release
   GEN     ./Makefile
   CHK     include/generated/uapi/linux/version.h
   CHK     include/generated/utsrelease.h
   Using /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150 as source for kernel
   CHK     scripts/mod/devicetable-offsets.h
-  HOSTCC  scripts/sign-file
-  HOSTCC  scripts/extract-cert
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c: In function ‘display_openssl_errors’:
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c: In function ‘display_openssl_errors’:
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:46:9: warning: ‘ERR_get_error_line’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-   46 |         while ((e = ERR_get_error_line(&file, &line))) {
-      |         ^~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:89:9: warning: ‘ERR_get_error_line’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-   89 |         while ((e = ERR_get_error_line(&file, &line))) {
-      |         ^~~~~
-In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:23:
-/usr/include/openssl/err.h:423:15: note: declared here
-  423 | unsigned long ERR_get_error_line(const char **file, int *line);
-      |               ^~~~~~~~~~~~~~~~~~
-In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:29:
-/usr/include/openssl/err.h:423:15: note: declared here
-  423 | unsigned long ERR_get_error_line(const char **file, int *line);
-      |               ^~~~~~~~~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c: In function ‘drain_openssl_errors’:
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c: In function ‘drain_openssl_errors’:
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:59:9: warning: ‘ERR_get_error_line’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-   59 |         while (ERR_get_error_line(&file, &line)) {}
-      |         ^~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:102:9: warning: ‘ERR_get_error_line’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  102 |         while (ERR_get_error_line(&file, &line)) {}
-      |         ^~~~~
-/usr/include/openssl/err.h:423:15: note: declared here
-  423 | unsigned long ERR_get_error_line(const char **file, int *line);
-      |               ^~~~~~~~~~~~~~~~~~
-/usr/include/openssl/err.h:423:15: note: declared here
-  423 | unsigned long ERR_get_error_line(const char **file, int *line);
-      |               ^~~~~~~~~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c: In function ‘read_private_key’:
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:142:17: warning: ‘ENGINE_load_builtin_engines’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  142 |                 ENGINE_load_builtin_engines();
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:30:
-/usr/include/openssl/engine.h:358:28: note: declared here
-  358 | OSSL_DEPRECATEDIN_3_0 void ENGINE_load_builtin_engines(void);
-      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:144:17: warning: ‘ENGINE_by_id’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  144 |                 e = ENGINE_by_id("pkcs11");
-      |                 ^
-/usr/include/openssl/engine.h:336:31: note: declared here
-  336 | OSSL_DEPRECATEDIN_3_0 ENGINE *ENGINE_by_id(const char *id);
-      |                               ^~~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:146:17: warning: ‘ENGINE_init’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  146 |                 if (ENGINE_init(e))
-      |                 ^~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c: In function ‘main’:
-/usr/include/openssl/engine.h:620:27: note: declared here
-  620 | OSSL_DEPRECATEDIN_3_0 int ENGINE_init(ENGINE *e);
-      |                           ^~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:124:17: warning: ‘ENGINE_load_builtin_engines’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  124 |                 ENGINE_load_builtin_engines();
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:151:25: warning: ‘ENGINE_ctrl_cmd_string’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  151 |                         ERR(!ENGINE_ctrl_cmd_string(e, "PIN", key_pass, 0),
-      |                         ^~~
-/usr/include/openssl/engine.h:479:5: note: declared here
-  479 | int ENGINE_ctrl_cmd_string(ENGINE *e, const char *cmd_name, const char *arg,
-      |     ^~~~~~~~~~~~~~~~~~~~~~
-In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:24:
-/usr/include/openssl/engine.h:358:28: note: declared here
-  358 | OSSL_DEPRECATEDIN_3_0 void ENGINE_load_builtin_engines(void);
-      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/sign-file.c:153:17: warning: ‘ENGINE_load_private_key’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  153 |                 private_key = ENGINE_load_private_key(e, private_key_name,
-      |                 ^~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:126:17: warning: ‘ENGINE_by_id’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  126 |                 e = ENGINE_by_id("pkcs11");
-      |                 ^
-/usr/include/openssl/engine.h:638:11: note: declared here
-  638 | EVP_PKEY *ENGINE_load_private_key(ENGINE *e, const char *key_id,
-      |           ^~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/openssl/engine.h:336:31: note: declared here
-  336 | OSSL_DEPRECATEDIN_3_0 ENGINE *ENGINE_by_id(const char *id);
-      |                               ^~~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:128:17: warning: ‘ENGINE_init’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  128 |                 if (ENGINE_init(e))
-      |                 ^~
-/usr/include/openssl/engine.h:620:27: note: declared here
-  620 | OSSL_DEPRECATEDIN_3_0 int ENGINE_init(ENGINE *e);
-      |                           ^~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:133:25: warning: ‘ENGINE_ctrl_cmd_string’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  133 |                         ERR(!ENGINE_ctrl_cmd_string(e, "PIN", key_pass, 0), "Set PKCS#11 PIN");
-      |                         ^~~
-/usr/include/openssl/engine.h:479:5: note: declared here
-  479 | int ENGINE_ctrl_cmd_string(ENGINE *e, const char *cmd_name, const char *arg,
-      |     ^~~~~~~~~~~~~~~~~~~~~~
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/extract-cert.c:134:17: warning: ‘ENGINE_ctrl_cmd’ is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
-  134 |                 ENGINE_ctrl_cmd(e, "LOAD_CERT_CTRL", 0, &parms, NULL, 1);
-      |                 ^~~~~~~~~~~~~~~
-/usr/include/openssl/engine.h:450:27: note: declared here
-  450 | OSSL_DEPRECATEDIN_3_0 int ENGINE_ctrl_cmd(ENGINE *e, const char *cmd_name,
-      |                           ^~~~~~~~~~~~~~~
   CHK     include/generated/timeconst.h
-  CC      kernel/bounds.s
   CHK     include/generated/bounds.h
-  CC      arch/arm64/kernel/asm-offsets.s
   CHK     include/generated/asm-offsets.h
   CALL    /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/checksyscalls.sh
   LDS     arch/arm64/kernel/vdso/vdso.lds
   VDSOA   arch/arm64/kernel/vdso/gettimeofday.o
-b"real-aarch64-linux-android-gcc: error: unrecognized command line option '-no-integrated-as'\n"b"real-aarch64-linux-android-gcc: error: unrecognized command line option '-no-integrated-as'\n"make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile:57: arch/arm64/kernel/vdso/gettimeofday.o] Error 1
-make[2]: *** Waiting for unfinished jobs....
-make[1]: *** [arch/arm64/Makefile:231: vdso_prepare] Error 2
+  VDSOA   arch/arm64/kernel/vdso/note.o
+  VDSOA   arch/arm64/kernel/vdso/sigreturn.o
+  VDSOL   arch/arm64/kernel/vdso/vdso.so.dbg
+  VDSOSYM include/generated/vdso-offsets.h
+  CC      init/main.o
+  DTC     arch/arm64/boot/dts/qcom/sm8150-v2-vayu.dtb
+  DTC     arch/arm64/boot/dts/qcom/vayu-sm8150-overlay.dtbo
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/do_mounts.o
+  CC      init/do_mounts_rd.o
+  CC      init/do_mounts_initrd.o
+  CC      init/do_mounts_dm.o
+  CC      init/noinitramfs.o
+  CC      init/initramfs.o
+  CC      init/calibrate.o
+  CC      init/init_task.o
+  HOSTCC  usr/gen_init_cpio
+  CC      init/version.o
+b'In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/init/version.c:9:0:\n'b"./include/generated/compile.h:7:407: error: expected ',' or ';' before 'Configured'\n"b' #define LINUX_COMPILER "b\'Using built-in specs.\\n\'b\'COLLECT_GCC=/media/user/sailfish/sailfish_vayu/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/real-aarch64-linux-android-gcc\\n\'b\'COLLECT_LTO_WRAPPER=/media/user/sailfish/sailfish_vayu/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper\\n\'b\'Target: aarch64-linux-android\\n\'b"Configured with: /usr/local/google/buildbot/src/android/gcc/toolchain/build/../gcc/gcc-4.9/configure --prefix=/tmp/e6907faf0e32af832a212b16710470e7 --target=aarch64-linux-android --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/buildbot/tmp/build/toolchain/temp-install --with-mpfr=/buildbot/tmp/build/toolchain/temp-install --with-mpc=/buildbot/tmp/build/toolchain/temp-install --with-cloog=/buildbot/tmp/build/toolchain/temp-install --with-isl=/buildbot/tmp/build/toolchain/temp-install --with-ppl=/buildbot/tmp/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx=\'-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm\' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --enable-bionic-libs --enable-libatomic-ifuncs=no --enable-initfini-array --disable-nls --prefix=/tmp/e6907faf0e32af832a212b16710470e7 --with-sysroot=/tmp/e6907faf0e32af832a212b16710470e7/sysroot --with-binutils-version=2.27 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=none --with-gxx-include-dir=/tmp/e6907faf0e32af832a212b16710470e7/include/c++/4.9.x --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-ld=default --enable-threads --enable-eh-frame-hdr-for-static --enable-fix-cortex-a53-835769 --enable-graphite=yes --with-isl-version=0.11.1 --with-cloog-version=0.18.0 --program-transform-name=\'s&^&aarch64-linux-android-&\' --enable-gold\\n"b\'Thread model: posix\\n\'b\'gcc version 4.9.x 20150123 (prerelease) (GCC) \\n\', GNU ld (binutils-2.27-bd24d23f) 2.27.0.20170315"\n'b'                                                                                                                                                                                                                                                                                                                                                                                                                       ^\n'b"/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/init/version.c:46:27: note: in expansion of macro 'LINUX_COMPILER'\n"b'  LINUX_COMPILE_HOST ") (" LINUX_COMPILER ") " UTS_VERSION "\\n";\n'b'                           ^\n'b'/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/init/version.c:46:27: warning: character constant too long for its type\n'  GEN     usr/initramfs_data.cpio
+  AS      usr/initramfs_data.o
+  AR      usr/built-in.o
+Traceback (most recent call last):
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrapper.py", line 95, in <module>
+    status = run_gcc()
+             ^^^^^^^^^
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrapper.py", line 81, in run_gcc
+    interpret_warning(line)
+  File "/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-wrapper.py", line 55, in interpret_warning
+    print >> sys.stderr, "error, forbidden warning:", m.group(2)
+    ~~~~~~^^~~~~~~~~~~~
+TypeError: unsupported operand type(s) for >>: 'builtin_function_or_method' and '_io.TextIOWrapper'. Did you mean "print(<message>, file=<output_stream>)"?
+make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/Makefile.build:362: init/version.o] Error 1
+make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1195: init] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      arch/arm64/kernel/debug-monitors.o
+  AS      arch/arm64/kernel/entry.o
+  CC      arch/arm64/kernel/irq.o
+  CC      arch/arm64/kernel/fpsimd.o
+  AS      arch/arm64/kernel/entry-fpsimd.o
+  CC      arch/arm64/kernel/process.o
+  CC      arch/arm64/kernel/ptrace.o
+  CC      arch/arm64/kernel/setup.o
+  CC      arch/arm64/kernel/signal.o
+  CC      arch/arm64/kernel/sys.o
+  CC      arch/arm64/kernel/stacktrace.o
+  CC      arch/arm64/kernel/time.o
+  CC      arch/arm64/kernel/traps.o
+  CC      arch/arm64/kernel/io.o
+  CC      arch/arm64/kernel/vdso.o
+  AS      arch/arm64/kernel/hyp-stub.o
+  CC      arch/arm64/kernel/psci.o
+  CC      arch/arm64/kernel/cpu_ops.o
+  CC      arch/arm64/kernel/insn.o
+  CC      arch/arm64/kernel/return_address.o
+  CC      arch/arm64/kernel/cpuinfo.o
+  CC      arch/arm64/kernel/cpu_errata.o
+  CC      arch/arm64/kernel/cpufeature.o
+  CC      arch/arm64/kernel/alternative.o
+  CC      arch/arm64/kernel/cacheinfo.o
+  CC      arch/arm64/kernel/smp.o
+  CC      arch/arm64/kernel/smp_spin_table.o
+  CC      arch/arm64/kernel/topology.o
+  AS      arch/arm64/kernel/smccc-call.o
+  CC      arch/arm64/kernel/sys32.o
+  AS      arch/arm64/kernel/kuser32.o
+  CC      arch/arm64/kernel/signal32.o
+  CC      arch/arm64/kernel/sys_compat.o
+  AS      arch/arm64/kernel/entry32.o
+  CC      arch/arm64/kernel/arm64ksyms.o
+  CC      arch/arm64/kernel/module.o
+  CC      arch/arm64/kernel/module-plts.o
+  CC      arch/arm64/kernel/perf_regs.o
+  CC      arch/arm64/kernel/perf_callchain.o
+  CC      arch/arm64/kernel/perf_event.o
+  CC      arch/arm64/kernel/perf_trace_counters.o
+  CC      arch/arm64/kernel/perf_trace_user.o
+  CC      arch/arm64/kernel/hw_breakpoint.o
+  AS      arch/arm64/kernel/sleep.o
+  CC      arch/arm64/kernel/suspend.o
+  CC      arch/arm64/kernel/cpuidle.o
+  CC      arch/arm64/kernel/pci.o
+  CC      arch/arm64/kernel/armv8_deprecated.o
+  CC      arch/arm64/kernel/kaslr.o
+  CC      arch/arm64/kernel/probes/uprobes.o
+  OBJCOPY arch/arm64/kernel/vdso/vdso.so
+  CC      arch/arm64/kernel/probes/decode-insn.o
+  AS      arch/arm64/kernel/vdso/vdso.o
+  AR      arch/arm64/kernel/vdso/built-in.o
+  AS      arch/arm64/kernel/head.o
+  LDS     arch/arm64/kernel/vmlinux.lds
+  CC      arch/arm64/kernel/probes/simulate-insn.o
+  AR      arch/arm64/kernel/probes/built-in.o
+  AR      arch/arm64/kernel/built-in.o
 make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ'
 make: *** [Makefile:146: sub-make] Error 2
