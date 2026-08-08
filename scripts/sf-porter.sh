@@ -165,8 +165,8 @@ EOF
         export CROSS_COMPILE=$BUILD_DIR/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
         export CROSS_COMPILE_ARM32=$BUILD_DIR/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
         
-        # Explicitly tell Clang to compile for ARM64!
-        export CC="clang --target=aarch64-linux-gnu"
+        # FIX: Tell the kernel build to use Clang's Integrated Assembler
+        export LLVM_IAS=1
         export HOSTCC=gcc
         
         # Force Clang to ignore strict warnings in the older kernel
