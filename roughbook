@@ -119,3 +119,17 @@ nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/
 
 
 #define current_stack_pointer ({ unsigned long sp; asm volatile("mov %0, sp" : "=r" (sp)); sp; })
+
+cd /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+
+# Set up the environment manually
+export ARCH=arm64
+export CROSS_COMPILE=/media/user/sailfish/sailfish_vayu/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+export CC=gcc  # Use standard GCC to avoid all Clang bugs
+
+# Generate the config
+make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ vendor/vayu_defconfig
+
+# Build the kernel and DTBs
+make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ -j2 dtbs Image
+
