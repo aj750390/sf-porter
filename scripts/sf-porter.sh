@@ -165,7 +165,11 @@ EOF
         export CROSS_COMPILE=$BUILD_DIR/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
         export CROSS_COMPILE_ARM32=$BUILD_DIR/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
         
-        # Force GCC to ignore strict warnings in the older kernel
+        # Explicitly tell Clang to compile for ARM64!
+        export CC="clang --target=aarch64-linux-gnu"
+        export HOSTCC=gcc
+        
+        # Force Clang to ignore strict warnings in the older kernel
         export KCFLAGS="-Wno-array-bounds -Wno-error"
         export CFLAGS="-Wno-array-bounds -Wno-error"
         export KCPPFLAGS="-Wno-error"
