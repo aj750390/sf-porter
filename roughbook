@@ -177,3 +177,12 @@ make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ -j2 dtbs
 
 
 export CC=/media/user/sailfish/sailfish_vayu/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/real-aarch64-linux-android-gcc
+
+
+mkdir ~/android_image_kitchen
+cd ~/android_image_kitchen
+wget https://github.com/osm0sis/Android-Image-Kitchen/archive/refs/heads/master.zip
+unzip master.zip
+cd Android-Image-Kitchen-master
+
+
