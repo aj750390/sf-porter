@@ -165,14 +165,18 @@ EOF
         export CROSS_COMPILE=$BUILD_DIR/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
         export CROSS_COMPILE_ARM32=$BUILD_DIR/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
         
-        # FIX: Tell the kernel build to use Clang's Integrated Assembler
-        export LLVM_IAS=1
         export HOSTCC=gcc
         
         # Force Clang to ignore strict warnings in the older kernel
         export KCFLAGS="-Wno-array-bounds -Wno-error"
         export CFLAGS="-Wno-array-bounds -Wno-error"
         export KCPPFLAGS="-Wno-error"
+        
+        # FIX: Force the legacy kernel VDSO to compile with GNU assembler instead of Clang's IAS
+        print_info "Patching VDSO Makefile for Clang 11 compatibility..."
+        if ! grep -q "\-no-integrated-as" kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile; then
+            echo "ccflags-y += -no-integrated-as" >> kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile
+        fi
         
         source build/envsetup.sh
         lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree (make sure halium_vayu.mk exists)."
