@@ -172,10 +172,12 @@ EOF
         export CFLAGS="-Wno-array-bounds -Wno-error"
         export KCPPFLAGS="-Wno-error"
         
-        # FIX: Force the legacy kernel VDSO to compile with GNU assembler instead of Clang's IAS
+        # FIX: Force the legacy kernel VDSO (C and Assembly files) to compile with GNU assembler instead of Clang's IAS
         print_info "Patching VDSO Makefile for Clang 11 compatibility..."
-        if ! grep -q "\-no-integrated-as" kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile; then
+        if ! grep -q "asflags-y" kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile; then
             echo "ccflags-y += -no-integrated-as" >> kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile
+            echo "asflags-y += -no-integrated-as" >> kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile
+            echo "AFLAGS_gettimeofday.o += -no-integrated-as" >> kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile
         fi
         
         source build/envsetup.sh
