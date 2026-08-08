@@ -113,5 +113,9 @@ def interpret_warning(line):
         line = line.decode('utf-8')
     line = line.rstrip('\n')
 
+nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/stack_pointer.h
+
+nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/spinlock.h
+
 
 
