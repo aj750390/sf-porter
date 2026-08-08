@@ -118,4 +118,4 @@ nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/
 nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/spinlock.h
 
 
-register unsigned long current_stack_pointer __asm__("sp");
+#define current_stack_pointer ({ unsigned long sp; asm volatile("mov %0, sp" : "=r" (sp)); sp; })
