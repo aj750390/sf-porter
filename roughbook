@@ -199,8 +199,12 @@ cd ~/android_image_kitchen/Android-Image-Kitchen-master/split_img
 cp boot.img-kernel /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/prebuilt/Image
 cp boot.img-dtb /media/user/sailfish/sailfish_vayu/device/xiaomi/vayu/prebuilt/dtb.img
 
-
-# Use prebuilt kernel to bypass compiler issues
+# Force prebuilt kernel
+TARGET_KERNEL_SOURCE :=
+TARGET_KERNEL_CONFIG :=
 TARGET_PREBUILT_KERNEL := device/xiaomi/vayu/prebuilt/Image
 TARGET_PREBUILT_DTB := device/xiaomi/vayu/prebuilt/dtb.img
 BOARD_KERNEL_IMAGE_NAME := Image
+
+nano /media/user/sailfish/sailfish_vayu/device/xiaomi/sm8150-common/BoardConfigCommon.mk
+
