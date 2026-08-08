@@ -1,35 +1,28 @@
-#
-# Copyright (C) 2021 The LineageOS Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
+[ 85% 426/496] including vendor/halium/audioflingerglue/Android.mk ...
+vendor/halium/audioflingerglue/Android.mk:41: warning: *** ANDROID_MICRO undefin
+ed. Assuming 0
+/bin/bash: line 1: test: -le: unary operator expected
+cat: frameworks/av/include/media/AudioSystem.h: No such file or directory
+[ 86% 428/496] including vendor/halium/droidmedia/Android.mk ...
+vendor/halium/droidmedia/Android.mk:43: warning: *** ANDROID_MICRO undefined. As
+suming 0
+[ 99% 495/496] finishing build rules ...
+vendor/lineage/build/tasks/kernel.mk:134: warning: *****************************
+**********************************
+vendor/lineage/build/tasks/kernel.mk:135: warning: * Using prebuilt kernel binar
+y instead of source              *
+vendor/lineage/build/tasks/kernel.mk:136: warning: * THIS IS DEPRECATED, AND IS 
+NOT ADVISED.                     *
+vendor/lineage/build/tasks/kernel.mk:137: warning: * Please configure your devic
+e to download the kernel         *
+vendor/lineage/build/tasks/kernel.mk:138: warning: * source repository to 
+vendor/lineage/build/tasks/kernel.mk:139: warning: * for more information       
+                                 *
+vendor/lineage/build/tasks/kernel.mk:140: warning: *****************************
+**********************************
+FAILED: ninja: '/home/user/sailfish_build_out/target/product/vayu/dtb.img', need
+ed by '/home/user/sailfish_build_out/target/product/vayu/boot.img', missing and 
+no known rule to make it
+23:39:29 ninja failed with: exit status 1
 
-# Inherit from sm8150-common
-include device/xiaomi/sm8150-common/BoardConfigCommon.mk
-
-DEVICE_PATH := device/xiaomi/vayu
-
-BUILD_BROKEN_DUP_RULES := true
-
-# Assert
-TARGET_OTA_ASSERT_DEVICE := vayu,bhima
-
-# Display
-TARGET_SCREEN_DENSITY := 440
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_vayu
-TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_vayu
-
-
-
-# Properties
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-
-# Inherit from the proprietary version
-include vendor/xiaomi/vayu/BoardConfigVendor.mk
-
-# Explicitly define kernel architecture and source
-TARGET_PREBUILT_KERNEL := device/xiaomi/vayu/prebuilt/Image
-TARGET_PREBUILT_DTB := device/xiaomi/vayu/prebuilt/dtb.img
-BOARD_KERNEL_IMAGE_NAME := Image
+#### failed to build some targets (20:18 (mm:ss)) ####
