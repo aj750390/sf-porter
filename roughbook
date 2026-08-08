@@ -186,3 +186,9 @@ unzip master.zip
 cd Android-Image-Kitchen-master
 
 
+
+
+cd ~/android_image_kitchen/Android-Image-Kitchen-master
+wget https://raw.githubusercontent.com/osm0sis/Android-Image-Kitchen/master/unpackimg.sh
+
+
