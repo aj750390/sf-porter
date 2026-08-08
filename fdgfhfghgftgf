@@ -18,32 +18,6 @@ warning: unknown warning option '-Wno-packed-not-aligned'; did you mean '-Wno-ov
 er-aligned'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-pointer-to-enum-cast'; did you mean '-Wno-
 pointer-compare'? [-Wunknown-warning-option]
-9 warnings generated.
-  CHK     include/generated/bounds.h
-  UPD     include/generated/bounds.h
-  CHK     include/generated/timeconst.h
-  UPD     include/generated/timeconst.h
-  CC      arch/arm64/kernel/asm-offsets.s
-clang-11: warning: optimization flag '-fmerge-constants' is not supported [-Wign
-ored-optimization-argument]
-warning: unknown warning option '-Wno-frame-address'; did you mean '-Wno-address
-'? [-Wunknown-warning-option]
-warning: unknown warning option '-Wno-format-truncation' [-Wunknown-warning-opti
-on]
-warning: unknown warning option '-Wno-format-overflow'; did you mean '-Wno-shift
--overflow'? [-Wunknown-warning-option]
-warning: unknown warning option '-Wno-attribute-alias'; did you mean '-Wno-attri
-butes'? [-Wunknown-warning-option]
-warning: unknown warning option '-Wno-undefined-optimized'; did you mean '-Wno-u
-ndefined-inline'? [-Wunknown-warning-option]
-warning: unknown warning option '-Wno-stringop-truncation'; did you mean '-Wno-s
-tring-conversion'? [-Wunknown-warning-option]
-warning: unknown warning option '-Werror=designated-init'; did you mean '-Werror
-=deprecated-copy'? [-Wunknown-warning-option]
-warning: unknown warning option '-Wno-packed-not-aligned'; did you mean '-Wno-ov
-er-aligned'? [-Wunknown-warning-option]
-warning: unknown warning option '-Wno-pointer-to-enum-cast'; did you mean '-Wno-
-pointer-compare'? [-Wunknown-warning-option]
 In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
 ch/arm64/kernel/asm-offsets.c:21:
 In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/in
@@ -64,22 +38,20 @@ clude/linux/thread_info.h:38:
 In file included from /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/ar
 ch/arm64/include/asm/thread_info.h:31:
 /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/s
-tack_pointer.h:8:24: error: illegal storage class on file-scoped variable
-register unsigned long current_stack_pointer _asm_("sp");
-                       ^
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/include/asm/s
-tack_pointer.h:8:45: error: expected ';' after top level declarator
-register unsigned long current_stack_pointer _asm_("sp");
-                                            ^
-                                            ;
-9 warnings and 2 errors generated.
+tack_pointer.h:8:54: error: register 'sp' unsuitable for global register variabl
+es on this target
+register unsigned long current_stack_pointer __asm__("sp");
+                                                     ^
+9 warnings and 1 error generated.
 make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:5
 8: arch/arm64/kernel/asm-offsets.s] Error 1
 make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
 239: prepare0] Error 2
 make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
-j/KERNEL_OBJ'
+j/DTB_OBJ'
 make: *** [Makefile:146: sub-make] Error 2
 make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 '
-09:48:11 ninja failed with: exit status 1
+09:57:03 ninja failed with: exit status 1
+
+#### failed to build some targets (15 seconds) ####
