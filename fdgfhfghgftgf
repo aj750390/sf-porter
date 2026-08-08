@@ -1,157 +1,35 @@
-[ 47% 39499/82552] Building Kernel Image (Image)
-FAILED: /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/arch/ar
-m64/boot/Image
-/bin/bash -c "(PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH
-=/prebuilts/clang/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/pre
-builts/clang/host/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$
-PATH  make  -C kernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/produ
-ct/vayu/obj/KERNEL_OBJ ARCH=arm64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"
-  Image ) && (if grep -q '^CONFIG_OF=y' /home/user/sailfish_build_out/target/pro
-duct/vayu/obj/KERNEL_OBJ/.config; then 			echo \"Building DTBs\"; 
-PATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH=/prebuilts/cla
-ng/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/ho
-st/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C 
-kernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/KER
-NEL_OBJ ARCH=arm64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  dtbs; 	f
-i ) && (if grep -q '=m' /home/user/sailfish_build_out/target/product/vayu/obj/KE
-RNEL_OBJ/.config; then 			echo \"Building Kernel Modules\"; 	P
-ATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH=/prebuilts/clan
-g/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/hos
-t/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C k
-ernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/KERN
-EL_OBJ ARCH=arm64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  modules || exi
-t \"\$?\"; 			echo \"Installing Kernel Modules\"; 		P
-ATH=/home/user/sailfish_build_out/host/linux-x86/bin:\$PATH PATH=/prebuilts/clan
-g/host/linux-x86/clang-r383902b1/bin:\$PATH LD_LIBRARY_PATH=/prebuilts/clang/hos
-t/linux-x86/clang-r383902b1/lib64:\$LD_LIBRARY_PATH PATH=/bin:\$PATH  make  -C k
-ernel/xiaomi/sm8150 O=/home/user/sailfish_build_out/target/product/vayu/obj/KERN
-EL_OBJ ARCH=arm64  CLANG_TRIPLE=aarch64-linux-gnu- CC=\" clang\"  INSTALL_MOD_PA
-TH=/home/user/sailfish_build_out/target/product/vayu/obj/PACKAGING/kernel_module
-s_intermediates INSTALL_MOD_STRIP=1 modules_install; 			kernel_r
-elease=\$(cat /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/i
-nclude/config/kernel.release) 			kernel_modules_dir=/home/user/sa
-ilfish_build_out/target/product/vayu/obj/PACKAGING/kernel_modules_intermediates/
-lib/modules/\$kernel_release 			; 			modules=
-\$(find \$kernel_modules_dir -type f -name '*.ko'); 			(    mkd
-ir -p /home/user/sailfish_build_out/target/product/vayu/vendor/lib/modules ) && 
-(cp \$modules /home/user/sailfish_build_out/target/product/vayu/vendor/lib/modul
-es/ ) && (rm -rf /home/user/sailfish_build_out/target/product/vayu/obj/PACKAGING
-/depmod_vendor_intermediates ) && (mkdir -p /home/user/sailfish_build_out/target
-/product/vayu/obj/PACKAGING/depmod_vendor_intermediates/lib/modules/0.0/vendor/l
-ib/modules ) && (cp \$modules /home/user/sailfish_build_out/target/product/vayu/
-obj/PACKAGING/depmod_vendor_intermediates/lib/modules/0.0/vendor/lib/modules ) &
-& (/home/user/sailfish_build_out/host/linux-x86/bin/depmod -b /home/user/sailfis
-h_build_out/target/product/vayu/obj/PACKAGING/depmod_vendor_intermediates 0.0 ) 
-&& (sed -e 's/\\(.*modules.*\\):/\\/\\1:/g' -e 's/ \\([^ ]*modules[^ ]*\\)/ \\/\
-\1/g' /home/user/sailfish_build_out/target/product/vayu/obj/PACKAGING/depmod_ven
-dor_intermediates/lib/modules/0.0/modules.dep > /home/user/sailfish_build_out/ta
-rget/product/vayu/vendor/lib/modules/modules.dep ) && (cp /home/user/sailfish_bu
-ild_out/target/product/vayu/obj/PACKAGING/depmod_vendor_intermediates/lib/module
-s/0.0/modules.softdep /home/user/sailfish_build_out/target/product/vayu/vendor/l
-ib/modules ) && (cp /home/user/sailfish_build_out/target/product/vayu/obj/PACKAG
-ING/depmod_vendor_intermediates/lib/modules/0.0/modules.alias /home/user/sailfis
-h_build_out/target/product/vayu/vendor/lib/modules ) && (rm -f /home/user/sailfi
-sh_build_out/target/product/vayu/vendor/lib/modules/modules.load ) && (for MODUL
-E in ; do basename \$MODULE >> /home/user/sailfish_build_out/target/product/vayu
-/vendor/lib/modules/modules.load; done); 			 		f
-i )"
-make: Entering directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm815
-0'
-make[1]: Entering directory '/home/user/sailfish_build_out/target/product/vayu/o
-bj/KERNEL_OBJ'
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
-line 26: clang: command not found
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
-line 27: clang: command not found
-make[1]: clang: No such file or directory
-make[1]: clang: No such file or directory
-  GEN     ./Makefile
-scripts/kconfig/conf  --silentoldconfig Kconfig
-arch/arm64/Makefile:57: Detected assembler with broken .inst; disassembly will b
-e unreliable
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
-line 26: clang: command not found
-/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/scripts/gcc-version.sh: 
-line 27: clang: command not found
-make[1]: clang: No such file or directory
-make[1]: clang: No such file or directory
-  CHK     include/config/kernel.release
-  UPD     include/config/kernel.release
-make[1]: clang: No such file or directory
-  Using /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150 as source for ke
-rnel
-make[1]: clang: No such file or directory
-  GEN     ./Makefile
-make[1]: clang: No such file or directory
-  WRAP    arch/arm64/include/generated/uapi/asm/errno.h
-  WRAP    arch/arm64/include/generated/uapi/asm/ioctl.h
-  WRAP    arch/arm64/include/generated/uapi/asm/ioctls.h
-  WRAP    arch/arm64/include/generated/uapi/asm/ipcbuf.h
-  WRAP    arch/arm64/include/generated/uapi/asm/kvm_para.h
-  WRAP    arch/arm64/include/generated/uapi/asm/mman.h
-  WRAP    arch/arm64/include/generated/uapi/asm/msgbuf.h
-  WRAP    arch/arm64/include/generated/uapi/asm/poll.h
-  WRAP    arch/arm64/include/generated/uapi/asm/resource.h
-  WRAP    arch/arm64/include/generated/uapi/asm/sembuf.h
-  WRAP    arch/arm64/include/generated/uapi/asm/shmbuf.h
-  WRAP    arch/arm64/include/generated/uapi/asm/socket.h
-  WRAP    arch/arm64/include/generated/uapi/asm/sockios.h
-  WRAP    arch/arm64/include/generated/uapi/asm/swab.h
-  WRAP    arch/arm64/include/generated/uapi/asm/termbits.h
-  WRAP    arch/arm64/include/generated/uapi/asm/termios.h
-  WRAP    arch/arm64/include/generated/uapi/asm/types.h
-make[1]: clang: No such file or directory
-  WRAP    arch/arm64/include/generated/asm/bugs.h
-  WRAP    arch/arm64/include/generated/asm/clkdev.h
-  WRAP    arch/arm64/include/generated/asm/delay.h
-  WRAP    arch/arm64/include/generated/asm/div64.h
-  WRAP    arch/arm64/include/generated/asm/dma.h
-  WRAP    arch/arm64/include/generated/asm/dma-contiguous.h
-  WRAP    arch/arm64/include/generated/asm/early_ioremap.h
-  WRAP    arch/arm64/include/generated/asm/emergency-restart.h
-  WRAP    arch/arm64/include/generated/asm/hw_irq.h
-  WRAP    arch/arm64/include/generated/asm/irq_regs.h
-  WRAP    arch/arm64/include/generated/asm/kdebug.h
-  WRAP    arch/arm64/include/generated/asm/kmap_types.h
-  WRAP    arch/arm64/include/generated/asm/local.h
-  WRAP    arch/arm64/include/generated/asm/local64.h
-  WRAP    arch/arm64/include/generated/asm/mcs_spinlock.h
-  WRAP    arch/arm64/include/generated/asm/mm-arch-hooks.h
-  WRAP    arch/arm64/include/generated/asm/msi.h
-  WRAP    arch/arm64/include/generated/asm/preempt.h
-  WRAP    arch/arm64/include/generated/asm/qrwlock.h
-  WRAP    arch/arm64/include/generated/asm/rwsem.h
-  WRAP    arch/arm64/include/generated/asm/segment.h
-  WRAP    arch/arm64/include/generated/asm/serial.h
-  WRAP    arch/arm64/include/generated/asm/set_memory.h
-  WRAP    arch/arm64/include/generated/asm/sizes.h
-  WRAP    arch/arm64/include/generated/asm/switch_to.h
-  WRAP    arch/arm64/include/generated/asm/trace_clock.h
-  WRAP    arch/arm64/include/generated/asm/unaligned.h
-  WRAP    arch/arm64/include/generated/asm/user.h
-  WRAP    arch/arm64/include/generated/asm/vga.h
-  WRAP    arch/arm64/include/generated/asm/xor.h
-make[1]: clang: No such file or directory
-  CHK     include/generated/uapi/linux/version.h
-  UPD     include/generated/uapi/linux/version.h
-make[1]: clang: No such file or directory
-  CHK     include/generated/utsrelease.h
-  UPD     include/generated/utsrelease.h
-make[1]: clang: No such file or directory
-make[1]: clang: No such file or directory
-  HOSTCC  scripts/basic/fixdep
-  HOSTCC  scripts/basic/bin2c
-make[1]: clang: No such file or directory
-  CC      kernel/bounds.s
-/bin/sh: 1: clang: not found
-make[2]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/./Kbuild:2
-2: kernel/bounds.s] Error 127
-make[1]: *** [/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/Makefile:1
-239: prepare0] Error 2
-make[1]: Leaving directory '/home/user/sailfish_build_out/target/product/vayu/ob
-j/KERNEL_OBJ'
-make: *** [Makefile:146: sub-make] Error 2
-make: Leaving directory '/media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
-'
-22:59:17 ninja failed with: exit status 1
+#
+# Copyright (C) 2021 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 
+# Inherit from sm8150-common
+include device/xiaomi/sm8150-common/BoardConfigCommon.mk
+
+DEVICE_PATH := device/xiaomi/vayu
+
+BUILD_BROKEN_DUP_RULES := true
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := vayu,bhima
+
+# Display
+TARGET_SCREEN_DENSITY := 440
+
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_vayu
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_vayu
+
+
+
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+# Inherit from the proprietary version
+include vendor/xiaomi/vayu/BoardConfigVendor.mk
+
+# Explicitly define kernel architecture and source
+TARGET_PREBUILT_KERNEL := device/xiaomi/vayu/prebuilt/Image
+TARGET_PREBUILT_DTB := device/xiaomi/vayu/prebuilt/dtb.img
+BOARD_KERNEL_IMAGE_NAME := Image
