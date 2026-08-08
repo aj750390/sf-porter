@@ -131,5 +131,22 @@ export CC=gcc  # Use standard GCC to avoid all Clang bugs
 make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ vendor/vayu_defconfig
 
 # Build the kernel and DTBs
+
+
 make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ -j2 dtbs Image
+
+
+nano /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile
+
+rm -rf /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/arch/arm64/kernel/vdso
+
+
+
+
+
+
+
+
+
+
 
