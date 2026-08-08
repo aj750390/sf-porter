@@ -154,7 +154,23 @@ cd /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
 make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ -j2 dtbs Image
 
 
+cat << 'EOF' > /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/include/generated/compile.h
+/* This file is auto generated, do not edit */
+#define UTS_MACHINE "arm64"
+#define UTS_VERSION "#1 SMP PREEMPT"
+#define LINUX_COMPILE_BY "user"
+#define LINUX_COMPILE_HOST "buildhost"
+#define LINUX_COMPILER "GCC 4.9"
+EOF
 
 
+chmod 444 /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/include/generated/compile.h
 
 
+rm -f /home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ/init/version.o
+
+
+cd /media/user/sailfish/sailfish_vayu/kernel/xiaomi/sm8150
+export ARCH=arm64
+export CROSS_COMPILE=/media/user/sailfish/sailfish_vayu/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+make O=/home/user/sailfish_build_out/target/product/vayu/obj/KERNEL_OBJ -j2 dtbs Image
