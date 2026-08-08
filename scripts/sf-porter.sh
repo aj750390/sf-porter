@@ -153,7 +153,7 @@ EOF
         mkdir -p $HOME/sailfish_build_out
         export OUT_DIR=$HOME/sailfish_build_out
         
-        # Force kernel variables into the environment (fixes missing 'make' and 'ARCH=')
+        # Force kernel variables into the environment
         export KERNEL_MAKE_CMD=make
         export KERNEL_ARCH=arm64
         export TARGET_KERNEL_ARCH=arm64
@@ -172,13 +172,9 @@ EOF
         export CFLAGS="-Wno-array-bounds -Wno-error"
         export KCPPFLAGS="-Wno-error"
         
-        # FIX: Force the legacy kernel VDSO (C and Assembly files) to compile with GNU assembler instead of Clang's IAS
-        print_info "Patching VDSO Makefile for Clang 11 compatibility..."
-        if ! grep -q "asflags-y" kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile; then
-            echo "ccflags-y += -no-integrated-as" >> kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile
-            echo "asflags-y += -no-integrated-as" >> kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile
-            echo "AFLAGS_gettimeofday.o += -no-integrated-as" >> kernel/xiaomi/sm8150/arch/arm64/kernel/vdso/Makefile
-        fi
+        # FIX: Explicitly disable Clang's Integrated Assembler globally.
+        # This forces the build system to use the GNU assembler, which is required for legacy VDSO files.
+        export LLVM_IAS=0
         
         source build/envsetup.sh
         lunch halium_$DEVICE-userdebug || print_err "Lunch failed. Check your device tree (make sure halium_vayu.mk exists)."
