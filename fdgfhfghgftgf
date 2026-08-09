@@ -1,28 +1,206 @@
-[ 85% 426/496] including vendor/halium/audioflingerglue/Android.mk ...
-vendor/halium/audioflingerglue/Android.mk:41: warning: *** ANDROID_MICRO undefin
-ed. Assuming 0
-/bin/bash: line 1: test: -le: unary operator expected
-cat: frameworks/av/include/media/AudioSystem.h: No such file or directory
-[ 86% 428/496] including vendor/halium/droidmedia/Android.mk ...
-vendor/halium/droidmedia/Android.mk:43: warning: *** ANDROID_MICRO undefined. As
-suming 0
-[ 99% 495/496] finishing build rules ...
-vendor/lineage/build/tasks/kernel.mk:134: warning: *****************************
-**********************************
-vendor/lineage/build/tasks/kernel.mk:135: warning: * Using prebuilt kernel binar
-y instead of source              *
-vendor/lineage/build/tasks/kernel.mk:136: warning: * THIS IS DEPRECATED, AND IS 
-NOT ADVISED.                     *
-vendor/lineage/build/tasks/kernel.mk:137: warning: * Please configure your devic
-e to download the kernel         *
-vendor/lineage/build/tasks/kernel.mk:138: warning: * source repository to 
-vendor/lineage/build/tasks/kernel.mk:139: warning: * for more information       
-                                 *
-vendor/lineage/build/tasks/kernel.mk:140: warning: *****************************
-**********************************
-FAILED: ninja: '/home/user/sailfish_build_out/target/product/vayu/dtb.img', need
-ed by '/home/user/sailfish_build_out/target/product/vayu/boot.img', missing and 
-no known rule to make it
-23:39:29 ninja failed with: exit status 1
+[ 89% 96508/107781] //frameworks/av/camera:libcamera_client link libcamera_clien
+FAILED: /home/user/sailfish_build_out/soong/.intermediates/frameworks/av/camera/
+libcamera_client/android_arm64_armv8-a_shared_cfi/unstripped/libcamera_client.so
+prebuilts/clang/host/linux-x86/clang-r383902b1/bin/clang++ /home/user/sailfish_b
+uild_out/soong/.intermediates/bionic/libc/crtbegin_so/android_arm64_armv8-a/crtb
+egin_so.o @/home/user/sailfish_build_out/soong/.intermediates/frameworks/av/came
+ra/libcamera_client/android_arm64_armv8-a_shared_cfi/unstripped/libcamera_client
+.so.rsp /home/user/sailfish_build_out/soong/.intermediates/external/libcxxabi/li
+bc++demangle/android_arm64_armv8-a_static/libc++demangle.a prebuilts/clang/host/
+linux-x86/clang-r383902b1/lib64/clang/11.0.2/lib/linux/libclang_rt.builtins-aarc
+h64-android.a prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/aarch64-
+linux-android/lib64/libatomic.a /home/user/sailfish_build_out/soong/.intermediat
+es/system/core/libcutils/libcutils/android_arm64_armv8-a_shared/libcutils.so /ho
+me/user/sailfish_build_out/soong/.intermediates/system/core/libutils/libutils/an
+droid_arm64_armv8-a_shared/libutils.so /home/user/sailfish_build_out/soong/.inte
+rmediates/system/core/liblog/liblog/android_arm64_armv8-a_shared/liblog.so /home
+/user/sailfish_build_out/soong/.intermediates/frameworks/native/libs/binder/libb
+inder/android_arm64_armv8-a_shared/libbinder.so /home/user/sailfish_build_out/so
+ong/.intermediates/frameworks/native/libs/gui/libgui/android_arm64_armv8-a_share
+d/libgui.so /home/user/sailfish_build_out/soong/.intermediates/system/media/came
+ra/libcamera_metadata/android_arm64_armv8-a_shared/libcamera_metadata.so /home/u
+ser/sailfish_build_out/soong/.intermediates/frameworks/native/libs/nativewindow/
+libnativewindow/android_arm64_armv8-a_shared/libnativewindow.so /home/user/sailf
+ish_build_out/soong/.intermediates/external/libcxx/libc++/android_arm64_armv8-a_
+shared/libc++.so /home/user/sailfish_build_out/soong/.intermediates/bionic/libc/
+libc/android_arm64_armv8-a_shared_10000/libc.so /home/user/sailfish_build_out/so
+ong/.intermediates/bionic/libm/libm/android_arm64_armv8-a_shared_10000/libm.so /
+home/user/sailfish_build_out/soong/.intermediates/bionic/libdl/libdl/android_arm
+64_armv8-a_shared_10000/libdl.so /home/user/sailfish_build_out/soong/.intermedia
+tes/bionic/libc/crtend_so/android_arm64_armv8-a/obj/bionic/libc/arch-common/bion
+ic/crtend_so.o -o /home/user/sailfish_build_out/soong/.intermediates/frameworks/
+av/camera/libcamera_client/android_arm64_armv8-a_shared_cfi/unstripped/libcamera
+_client.so -target aarch64-linux-android10000 -Bprebuilts/gcc/linux-x86/aarch64/
+aarch64-linux-android-4.9/aarch64-linux-android/bin -Wl,-z,noexecstack -Wl,-z,re
+lro -Wl,-z,now -Wl,--build-id=md5 -Wl,--warn-shared-textrel -Wl,--fatal-warnings
+ -Wl,--no-undefined-version -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgc
+c_stripped.a -Wl,--exclude-libs,libunwind_llvm.a -fuse-ld=lld -Wl,--pack-dyn-rel
+ocs=android+relr -Wl,--use-android-relr-tags -Wl,--no-undefined -Wl,--hash-style
+=gnu -Wl,-z,separate-code -Wl,--icf=safe -Wl,-z,max-page-size=4096  -Wl,--exclud
+e-libs=libclang_rt.builtins-aarch64-android.a  -nostdlib -Wl,--gc-sections -shar
+ed -Wl,-soname,libcamera_client.so -flto -fsanitize-cfi-cross-dso -fsanitize=cfi
+ -Wl,-plugin-opt,O1 
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_PREVIEW_SIZE
+>>> referenced by CameraParameters2.cpp:239 (frameworks/av/camera/CameraParamete
+rs2.cpp:239)
+>>>               lto.tmp:(android::CameraParameters2::setPreviewSize(int, int))
+>>> referenced by CameraParameters2.cpp:239 (frameworks/av/camera/CameraParamete
+rs2.cpp:239)
+>>>               lto.tmp:(android::CameraParameters2::setPreviewSize(int, int))
+>>> referenced by CameraParameters2.cpp:246 (frameworks/av/camera/CameraParamete
+rs2.cpp:246)
+>>>               lto.tmp:(android::CameraParameters2::getPreviewSize(int*, int*
+) const)
+>>> referenced by CameraParameters2.cpp:246 (frameworks/av/camera/CameraParamete
+rs2.cpp:246)
+>>>               lto.tmp:(android::CameraParameters2::getPreviewSize(int*, int*
+) const)
 
-#### failed to build some targets (20:18 (mm:ss)) ####
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_PREFERRED_PREVIE
+W_SIZE_FOR_VIDEO
+>>> referenced by CameraParameters2.cpp:254 (frameworks/av/camera/CameraParamete
+rs2.cpp:254)
+>>>               lto.tmp:(android::CameraParameters2::getPreferredPreviewSizeFo
+rVideo(int*, int*) const)
+>>> referenced by CameraParameters2.cpp:254 (frameworks/av/camera/CameraParamete
+rs2.cpp:254)
+>>>               lto.tmp:(android::CameraParameters2::getPreferredPreviewSizeFo
+rVideo(int*, int*) const)
+
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_SUPPORTED_PREVIE
+W_SIZES
+>>> referenced by CameraParameters2.cpp:261 (frameworks/av/camera/CameraParamete
+rs2.cpp:261)
+>>>               lto.tmp:(android::CameraParameters2::getSupportedPreviewSizes(
+android::Vector<android::Size>&) const)
+>>> referenced by CameraParameters2.cpp:261 (frameworks/av/camera/CameraParamete
+rs2.cpp:261)
+>>>               lto.tmp:(android::CameraParameters2::getSupportedPreviewSizes(
+android::Vector<android::Size>&) const)
+
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_VIDEO_SIZE
+>>> referenced by CameraParameters2.cpp:269 (frameworks/av/camera/CameraParamete
+rs2.cpp:269)
+>>>               lto.tmp:(android::CameraParameters2::setVideoSize(int, int))
+>>> referenced by CameraParameters2.cpp:269 (frameworks/av/camera/CameraParamete
+rs2.cpp:269)
+>>>               lto.tmp:(android::CameraParameters2::setVideoSize(int, int))
+>>> referenced by CameraParameters2.cpp:275 (frameworks/av/camera/CameraParamete
+rs2.cpp:275)
+>>>               lto.tmp:(android::CameraParameters2::getVideoSize(int*, int*) 
+const)
+>>> referenced by CameraParameters2.cpp:275 (frameworks/av/camera/CameraParamete
+rs2.cpp:275)
+>>>               lto.tmp:(android::CameraParameters2::getVideoSize(int*, int*) 
+const)
+
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_SUPPORTED_VIDEO_
+SIZES
+>>> referenced by CameraParameters2.cpp:282 (frameworks/av/camera/CameraParamete
+rs2.cpp:282)
+>>>               lto.tmp:(android::CameraParameters2::getSupportedVideoSizes(an
+droid::Vector<android::Size>&) const)
+>>> referenced by CameraParameters2.cpp:282 (frameworks/av/camera/CameraParamete
+rs2.cpp:282)
+>>>               lto.tmp:(android::CameraParameters2::getSupportedVideoSizes(an
+droid::Vector<android::Size>&) const)
+
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_PREVIEW_FRAME_RA
+TE
+>>> referenced by CameraParameters2.cpp:114 (frameworks/av/camera/CameraParamete
+rs2.cpp:114)
+>>>               lto.tmp:(android::CameraParameters2::setPreviewFrameRate(int))
+>>> referenced by CameraParameters2.cpp:114 (frameworks/av/camera/CameraParamete
+rs2.cpp:114)
+>>>               lto.tmp:(android::CameraParameters2::setPreviewFrameRate(int))
+>>> referenced by CameraParameters2.cpp:136 (frameworks/av/camera/CameraParamete
+rs2.cpp:136)
+>>>               lto.tmp:(android::CameraParameters2::getPreviewFrameRate() con
+st)
+>>> referenced by CameraParameters2.cpp:136 (frameworks/av/camera/CameraParamete
+rs2.cpp:136)
+>>>               lto.tmp:(android::CameraParameters2::getPreviewFrameRate() con
+st)
+
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_PREVIEW_FPS_RANG
+E
+>>> referenced by CameraParameters2.cpp:299 (frameworks/av/camera/CameraParamete
+rs2.cpp:299)
+>>>               lto.tmp:(android::CameraParameters2::getPreviewFpsRange(int*, 
+int*) const)
+>>> referenced by CameraParameters2.cpp:299 (frameworks/av/camera/CameraParamete
+rs2.cpp:299)
+>>>               lto.tmp:(android::CameraParameters2::getPreviewFpsRange(int*, 
+int*) const)
+>>> referenced by CameraParameters2.cpp:307 (frameworks/av/camera/CameraParamete
+rs2.cpp:307)
+>>>               lto.tmp:(android::CameraParameters2::setPreviewFpsRange(int, i
+nt))
+>>> referenced by CameraParameters2.cpp:307 (frameworks/av/camera/CameraParamete
+rs2.cpp:307)
+>>>               lto.tmp:(android::CameraParameters2::setPreviewFpsRange(int, i
+nt))
+
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_PREVIEW_FORMAT
+>>> referenced by CameraParameters2.cpp:312 (frameworks/av/camera/CameraParamete
+rs2.cpp:312)
+>>>               lto.tmp:(android::CameraParameters2::setPreviewFormat(char con
+st*))
+>>> referenced by CameraParameters2.cpp:312 (frameworks/av/camera/CameraParamete
+rs2.cpp:312)
+>>>               lto.tmp:(android::CameraParameters2::setPreviewFormat(char con
+st*))
+>>> referenced by CameraParameters2.cpp:317 (frameworks/av/camera/CameraParamete
+rs2.cpp:317)
+>>>               lto.tmp:(android::CameraParameters2::getPreviewFormat() const)
+>>> referenced by CameraParameters2.cpp:317 (frameworks/av/camera/CameraParamete
+rs2.cpp:317)
+>>>               lto.tmp:(android::CameraParameters2::getPreviewFormat() const)
+
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_PICTURE_SIZE
+>>> referenced by CameraParameters2.cpp:324 (frameworks/av/camera/CameraParamete
+rs2.cpp:324)
+>>>               lto.tmp:(android::CameraParameters2::setPictureSize(int, int))
+>>> referenced by CameraParameters2.cpp:324 (frameworks/av/camera/CameraParamete
+rs2.cpp:324)
+>>>               lto.tmp:(android::CameraParameters2::setPictureSize(int, int))
+>>> referenced by CameraParameters2.cpp:331 (frameworks/av/camera/CameraParamete
+rs2.cpp:331)
+>>>               lto.tmp:(android::CameraParameters2::getPictureSize(int*, int*
+) const)
+>>> referenced by CameraParameters2.cpp:331 (frameworks/av/camera/CameraParamete
+rs2.cpp:331)
+>>>               lto.tmp:(android::CameraParameters2::getPictureSize(int*, int*
+) const)
+
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_SUPPORTED_PICTUR
+E_SIZES
+>>> referenced by CameraParameters2.cpp:338 (frameworks/av/camera/CameraParamete
+rs2.cpp:338)
+>>>               lto.tmp:(android::CameraParameters2::getSupportedPictureSizes(
+android::Vector<android::Size>&) const)
+>>> referenced by CameraParameters2.cpp:338 (frameworks/av/camera/CameraParamete
+rs2.cpp:338)
+>>>               lto.tmp:(android::CameraParameters2::getSupportedPictureSizes(
+android::Vector<android::Size>&) const)
+
+ld.lld: error: undefined symbol: android::CameraParameters::KEY_PICTURE_FORMAT
+>>> referenced by CameraParameters2.cpp:344 (frameworks/av/camera/CameraParamete
+rs2.cpp:344)
+>>>               lto.tmp:(android::CameraParameters2::setPictureFormat(char con
+st*))
+>>> referenced by CameraParameters2.cpp:344 (frameworks/av/camera/CameraParamete
+rs2.cpp:344)
+>>>               lto.tmp:(android::CameraParameters2::setPictureFormat(char con
+st*))
+>>> referenced by CameraParameters2.cpp:349 (frameworks/av/camera/CameraParamete
+rs2.cpp:349)
+>>>               lto.tmp:(android::CameraParameters2::getPictureFormat() const)
+>>> referenced by CameraParameters2.cpp:349 (frameworks/av/camera/CameraParamete
+rs2.cpp:349)
+>>>               lto.tmp:(android::CameraParameters2::getPictureFormat() const)
+clang-11: error: linker command failed with exit code 1 (use -v to see invocatio
+n)
+08:01:43 ninja failed with: exit status 1
+
+#### failed to build some targets (08:12:18 (hh:mm:ss)) ####
