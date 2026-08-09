@@ -1,1 +1,6 @@
 nano /media/user/sailfish/sailfish_vayu/frameworks/av/camera/Android.bp
+
+    srcs: [
+        "CameraParameters.cpp",
+        "CameraParameters2.cpp",
+        "Camera.cpp",
