@@ -208,3 +208,11 @@ BOARD_KERNEL_IMAGE_NAME := Image
 
 nano /media/user/sailfish/sailfish_vayu/device/xiaomi/sm8150-common/BoardConfigCommon.mk
 
+nano /media/user/sailfish/sailfish_vayu/frameworks/native/services/surfaceflinger/Android.bp
+
+
+
+    srcs: [
+        "FodUtils.cpp",
+        "SurfaceFlinger.cpp",
+        ...
