@@ -40,17 +40,18 @@ mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
 
 
 
-docker run --rm -it --privileged -u root -v ~/sf-porter/configs/vayu/kickstart:/home/src coderus/sailfishos-platform-sdk bash
-sudo: PAM account management error: Authentication service cannot retrieve authentication info
-sudo: a password is required
-/usr/bin/sdk-motd: line 648: USER: unbound variable
-[root@9c187682bab0 mersdk]# cd /home/src
-[root@9c187682bab0 src]# mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
-[08/11 20:47:56] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
-module 'gettext' has no attribute 'lgettext'
-module 'gettext' has no attribute 'lgettext'
-Info[08/11 20:47:57] : Retrieving repo metadata:
+cat << 'EOF' > vayu-userimage.ks
+# Sailfish OS 5.0 Rootfs Kickstart for Poco X3 Pro (vayu)
 
-Error <kickstart>[08/11 20:47:57] : no valid repos found in ks file
-[root@9c187682bab0 src]# 
+# Specify the package repositories
+Repo --name=jolla --baseurl=https://releases.jolla.com/releases/5.0.0.64/jolla/aarch64/
+Repo --name=hotfixes --baseurl=https://releases.jolla.com/releases/5.0.0.64_hotfixes/jolla/aarch64/
 
+# Install the base packages
+%packages
+@ Sailfish OS Base
+%end
+
+# Basic partition setup
+part root --size=3000 --fstype=ext4
+EOF
