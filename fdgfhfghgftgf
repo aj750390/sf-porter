@@ -48,3 +48,20 @@ mic create rootfs vayu-userimage.ks --arch=arm64 --token=ignore --outdir=/home/s
 
 
 
+docker run --rm -it --privileged -v ~/sf-porter/configs/vayu/kickstart:/home/src coderus/sailfishos-platform-sdk bash
+sudo: PAM account management error: Authentication service cannot retrieve authentication info
+sudo: a password is required
+/usr/bin/sdk-motd: line 648: USER: unbound variable
+[mersdk@ff54dd54bd4e ~]$ cd /home/src
+[mersdk@ff54dd54bd4e src]$ mic create rootfs vayu-userimage.ks --arch=arm64 --token=ignore --outdir=/home/src/rootfs-out
+[08/11 20:04:51] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
+Error <usage>[08/11 20:04:51] : Invalid architecture: "arm64".
+  Supported architectures are: 
+  x86_64, mipsel, ia64, i686, i586, i486, armv7tnhl, armv7thl, armv7nhl, armv7l, armv7hl, armv6l, armv5tel, armv5tejl, armv5l, aarch64, please use "--help" for more info
+[mersdk@ff54dd54bd4e src]$ 
+
+
+
+
+
+
