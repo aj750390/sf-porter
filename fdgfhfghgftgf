@@ -45,14 +45,9 @@ mic create fs vayu-userimage.ks --arch=aarch64 --token=ignore --outdir=/home/src
 
 
 
-docker run --rm -it --privileged -u root -v ~/sf-porter/configs/vayu/kickstart:/home/src coderus/sailfishos-platform-sdk bash
-sudo: PAM account management error: Authentication service cannot retrieve authentication info
-sudo: a password is required
-/usr/bin/sdk-motd: line 648: USER: unbound variable
-[root@bc68724df15e mersdk]# mic create rootfs vayu-userimage.ks --arch=aarch64 --token=ignore --outdir=/home/src/rootfs-out
-[08/11 20:28:26] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
-mic create(cr): unknown command: 'rootfs'
-Try 'mic create(cr) help' for info.
-[root@bc68724df15e mersdk]# 
-
-
+[root@bc68724df15e mersdk]# cd /home/src
+[root@bc68724df15e src]# mic create fs vayu-userimage.ks --arch=aarch64 --token=ignore --outdir=/home/src/rootfs-out
+[08/11 20:31:59] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
+mic create(cr) fs: no such option: --token
+Try 'mic create(cr) help fs' for info.
+[root@bc68724df15e src]# 
