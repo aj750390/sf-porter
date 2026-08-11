@@ -43,9 +43,8 @@ cat vayu-userimage.ks
 cat << 'EOF' > vayu-userimage.ks
 # Sailfish OS 5.2 Rootfs Kickstart for Poco X3 Pro (vayu)
 
-# Specify the package repositories for 5.2.0.15
-Repo --name=mer-core --baseurl=https://repo.sailfishos.org/obs/mer:/core:/5.2.0.15/sailfishos_5.2.0.15/aarch64/
-Repo --name=jolla --baseurl=https://repo.sailfishos.org/obs/jolla:/5.2.0.15/sailfishos_5.2.0.15/aarch64/
+# Specify the package repositories using the working Jolla URL
+Repo --name=jolla --baseurl=https://releases.jolla.com/releases/5.2.0.15/jolla/aarch64/
 
 # Install the base packages
 %packages
@@ -55,10 +54,3 @@ Repo --name=jolla --baseurl=https://repo.sailfishos.org/obs/jolla:/5.2.0.15/sail
 # Basic partition setup
 part root --size=3000 --fstype=ext4
 EOF
-
-
-
-curl -I https://repo.sailfishos.org/obs/mer:/core:/5.2.0.15/sailfishos_5.2.0.15/aarch64/repodata/repomd.xml
-curl -I https://releases.jolla.com/releases/5.2.0.15/jolla/aarch64/repodata/repomd.xml
-
-curl -I https://repo.sailfishos.org/obs/jolla:/5.2.0.15/sailfish_5.2.0.15_aarch64/repodata/repomd.xml
