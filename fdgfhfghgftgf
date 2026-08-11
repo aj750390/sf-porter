@@ -55,3 +55,8 @@ Repo --name=jolla --baseurl=https://repo.sailfishos.org/obs/jolla:/5.2.0.15/sail
 # Basic partition setup
 part root --size=3000 --fstype=ext4
 EOF
+
+
+
+curl -I https://repo.sailfishos.org/obs/mer:/core:/5.2.0.15/sailfishos_5.2.0.15/aarch64/repodata/repomd.xml
+
