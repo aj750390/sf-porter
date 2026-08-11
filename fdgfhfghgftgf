@@ -4,7 +4,7 @@ sudo usermod -aG docker $USER
 
 docker pull coderus/sailfishos-platform-sdk
 
-docker run --rm -it --privileged -v ~/sf-porter/configs/vayu/kickstart:/home/src coderus/sailfishos-platform-sdk bash
+docker run --rm -it --privileged -u root -v ~/sf-porter/configs/vayu/kickstart:/home/src coderus/sailfishos-platform-sdk bash
 
 nano ~/sf-porter/configs/vayu/kickstart/vayu-userimage.ks
 
