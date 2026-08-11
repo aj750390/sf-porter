@@ -216,3 +216,12 @@ nano /media/user/sailfish/sailfish_vayu/frameworks/native/services/surfaceflinge
         "FodUtils.cpp",
         "SurfaceFlinger.cpp",
         ...
+
+
+hybris-boot.img  META-INF  sfos-rootfs.tar.bz2  tar
+
+
+
+
+
+
