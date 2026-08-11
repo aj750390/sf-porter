@@ -42,3 +42,11 @@ docker run --rm -it --privileged -v ~/sf-porter/configs/vayu/kickstart:/home/src
 
 cd /home/src
 mic create rootfs vayu-userimage.ks --arch=aarch64 --token=ignore --outdir=/home/src/rootfs-out
+
+
+
+mic create rootfs vayu-userimage.ks --arch=aarch64 --token=ignore --outdir=/home/src/rootfs-out
+[08/11 20:20:35] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
+Error[08/11 20:20:35] : root permission is required to continue, abort
+
+
