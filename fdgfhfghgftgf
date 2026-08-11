@@ -1,132 +1,16 @@
-[  0% 88/11199] //frameworks/native/services/surfaceflinger:libsurfaceflinger link 
-FAILED: /home/user/sailfish_build_out/soong/.intermediates/frameworks/native/servic
-es/surfaceflinger/libsurfaceflinger/android_arm64_armv8-a_shared/unstripped/libsurf
-aceflinger.so
-prebuilts/clang/host/linux-x86/clang-r383902b1/bin/clang++ /home/user/sailfish_buil
-d_out/soong/.intermediates/bionic/libc/crtbegin_so/android_arm64_armv8-a/crtbegin_s
-o.o @/home/user/sailfish_build_out/soong/.intermediates/frameworks/native/services/
-surfaceflinger/libsurfaceflinger/android_arm64_armv8-a_shared/unstripped/libsurface
-flinger.so.rsp /home/user/sailfish_build_out/soong/.intermediates/frameworks/native
-/services/surfaceflinger/CompositionEngine/libcompositionengine/android_arm64_armv8
--a_static_lto-thin/libcompositionengine.a /home/user/sailfish_build_out/soong/.inte
-rmediates/external/perfetto/libperfetto_client_experimental/android_arm64_armv8-a_s
-tatic/libperfetto_client_experimental.a /home/user/sailfish_build_out/soong/.interm
-ediates/frameworks/native/libs/renderengine/librenderengine/android_arm64_armv8-a_s
-tatic/librenderengine.a /home/user/sailfish_build_out/soong/.intermediates/framewor
-ks/native/services/utils/libserviceutils/android_arm64_armv8-a_static_lto-thin/libs
-erviceutils.a /home/user/sailfish_build_out/soong/.intermediates/frameworks/native/
-cmds/surfacereplayer/proto/libtrace_proto/android_arm64_armv8-a_static_lto-thin/lib
-trace_proto.a /home/user/sailfish_build_out/soong/.intermediates/frameworks/native/
-libs/vr/libvrflinger/libvrflinger/android_arm64_armv8-a_static_lto-thin/libvrflinge
-r.a /home/user/sailfish_build_out/soong/.intermediates/external/libcxxabi/libc++dem
-angle/android_arm64_armv8-a_static_lto-thin/libc++demangle.a prebuilts/clang/host/l
-inux-x86/clang-r383902b1/lib64/clang/11.0.2/lib/linux/libclang_rt.builtins-aarch64-
-android.a prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/aarch64-linux-a
-ndroid/lib64/libatomic.a /home/user/sailfish_build_out/soong/.intermediates/framewo
-rks/hardware/interfaces/vr/composer/2.0/android.frameworks.vr.composer@2.0/android_
-arm64_armv8-a_shared/android.frameworks.vr.composer@2.0.so /home/user/sailfish_buil
-d_out/soong/.intermediates/hardware/interfaces/configstore/utils/android.hardware.c
-onfigstore-utils/android_arm64_armv8-a_shared/android.hardware.configstore-utils.so
- /home/user/sailfish_build_out/soong/.intermediates/hardware/interfaces/configstore
-/1.0/android.hardware.configstore@1.0/android_arm64_armv8-a_shared/android.hardware
-.configstore@1.0.so /home/user/sailfish_build_out/soong/.intermediates/hardware/int
-erfaces/configstore/1.1/android.hardware.configstore@1.1/android_arm64_armv8-a_shar
-ed/android.hardware.configstore@1.1.so /home/user/sailfish_build_out/soong/.interme
-diates/hardware/interfaces/graphics/allocator/2.0/android.hardware.graphics.allocat
-or@2.0/android_arm64_armv8-a_shared/android.hardware.graphics.allocator@2.0.so /hom
-e/user/sailfish_build_out/soong/.intermediates/hardware/interfaces/graphics/allocat
-or/3.0/android.hardware.graphics.allocator@3.0/android_arm64_armv8-a_shared/android
-.hardware.graphics.allocator@3.0.so /home/user/sailfish_build_out/soong/.intermedia
-tes/hardware/interfaces/graphics/common/1.2/android.hardware.graphics.common@1.2/an
-droid_arm64_armv8-a_shared/android.hardware.graphics.common@1.2.so /home/user/sailf
-ish_build_out/soong/.intermediates/hardware/interfaces/graphics/composer/2.1/androi
-d.hardware.graphics.composer@2.1/android_arm64_armv8-a_shared/android.hardware.grap
-hics.composer@2.1.so /home/user/sailfish_build_out/soong/.intermediates/hardware/in
-terfaces/graphics/composer/2.2/android.hardware.graphics.composer@2.2/android_arm64
-_armv8-a_shared/android.hardware.graphics.composer@2.2.so /home/user/sailfish_build
-_out/soong/.intermediates/hardware/interfaces/graphics/composer/2.3/android.hardwar
-e.graphics.composer@2.3/android_arm64_armv8-a_shared/android.hardware.graphics.comp
-oser@2.3.so /home/user/sailfish_build_out/soong/.intermediates/hardware/interfaces/
-graphics/composer/2.4/android.hardware.graphics.composer@2.4/android_arm64_armv8-a_
-shared/android.hardware.graphics.composer@2.4.so /home/user/sailfish_build_out/soon
-g/.intermediates/hardware/interfaces/power/1.0/android.hardware.power@1.0/android_a
-rm64_armv8-a_shared/android.hardware.power@1.0.so /home/user/sailfish_build_out/soo
-ng/.intermediates/hardware/interfaces/power/1.3/android.hardware.power@1.3/android_
-arm64_armv8-a_shared/android.hardware.power@1.3.so /home/user/sailfish_build_out/so
-ong/.intermediates/hardware/interfaces/power/aidl/android.hardware.power-cpp/androi
-d_arm64_armv8-a_shared/android.hardware.power-V1-cpp.so /home/user/sailfish_build_o
-ut/soong/.intermediates/system/core/base/libbase/android_arm64_armv8-a_shared/libba
-se.so /home/user/sailfish_build_out/soong/.intermediates/vendor/lineage/libbfqio/li
-bbfqio/android_arm64_armv8-a_shared/libbfqio.so /home/user/sailfish_build_out/soong
-/.intermediates/frameworks/native/libs/binder/libbinder/android_arm64_armv8-a_share
-d/libbinder.so /home/user/sailfish_build_out/soong/.intermediates/frameworks/native
-/libs/vr/libbufferhubqueue/libbufferhubqueue/android_arm64_armv8-a_shared/libbuffer
-hubqueue.so /home/user/sailfish_build_out/soong/.intermediates/system/core/libcutil
-s/libcutils/android_arm64_armv8-a_shared/libcutils.so /home/user/sailfish_build_out
-/soong/.intermediates/frameworks/native/opengl/libs/libEGL/android_arm64_armv8-a_sh
-ared/libEGL.so /home/user/sailfish_build_out/soong/.intermediates/system/libfmq/lib
-fmq/android_arm64_armv8-a_shared/libfmq.so /home/user/sailfish_build_out/soong/.int
-ermediates/frameworks/native/opengl/libs/libGLESv1_CM/android_arm64_armv8-a_shared/
-libGLESv1_CM.so /home/user/sailfish_build_out/soong/.intermediates/frameworks/nativ
-e/opengl/libs/libGLESv2/android_arm64_armv8-a_shared/libGLESv2.so /home/user/sailfi
-sh_build_out/soong/.intermediates/frameworks/native/libs/gui/libgui/android_arm64_a
-rmv8-a_shared/libgui.so /home/user/sailfish_build_out/soong/.intermediates/system/l
-ibhidl/libhidlbase/android_arm64_armv8-a_shared/libhidlbase.so /home/user/sailfish_
-build_out/soong/.intermediates/frameworks/native/services/surfaceflinger/layerproto
-/liblayers_proto/android_arm64_armv8-a_shared/liblayers_proto.so /home/user/sailfis
-h_build_out/soong/.intermediates/system/core/liblog/liblog/android_arm64_armv8-a_sh
-ared/liblog.so /home/user/sailfish_build_out/soong/.intermediates/frameworks/native
-/libs/nativewindow/libnativewindow/android_arm64_armv8-a_shared/libnativewindow.so 
-/home/user/sailfish_build_out/soong/.intermediates/frameworks/native/libs/vr/libpdx
-_default_transport/libpdx_default_transport/android_arm64_armv8-a_shared/libpdx_def
-ault_transport.so /home/user/sailfish_build_out/soong/.intermediates/system/core/li
-bprocessgroup/libprocessgroup/android_arm64_armv8-a_shared/libprocessgroup.so /home
-/user/sailfish_build_out/soong/.intermediates/external/protobuf/libprotobuf-cpp-lit
-e/android_arm64_armv8-a_shared/libprotobuf-cpp-lite.so /home/user/sailfish_build_ou
-t/soong/.intermediates/frameworks/base/tools/stats_log_api_gen/libstatslog/android_
-arm64_armv8-a_shared/libstatslog.so /home/user/sailfish_build_out/soong/.intermedia
-tes/system/core/libsync/libsync/android_arm64_armv8-a_shared/libsync.so /home/user/
-sailfish_build_out/soong/.intermediates/frameworks/native/services/surfaceflinger/T
-imeStats/libtimestats/android_arm64_armv8-a_shared/libtimestats.so /home/user/sailf
-ish_build_out/soong/.intermediates/frameworks/native/libs/ui/libui/android_arm64_ar
-mv8-a_shared/libui.so /home/user/sailfish_build_out/soong/.intermediates/frameworks
-/native/libs/input/libinput/android_arm64_armv8-a_shared/libinput.so /home/user/sai
-lfish_build_out/soong/.intermediates/system/core/libutils/libutils/android_arm64_ar
-mv8-a_shared/libutils.so /home/user/sailfish_build_out/soong/.intermediates/framewo
-rks/native/services/surfaceflinger/libSurfaceFlingerProp/android_arm64_armv8-a_shar
-ed/libSurfaceFlingerProp.so /home/user/sailfish_build_out/soong/.intermediates/exte
-rnal/libcxx/libc++/android_arm64_armv8-a_shared/libc++.so /home/user/sailfish_build
-_out/soong/.intermediates/bionic/libc/libc/android_arm64_armv8-a_shared_10000/libc.
-so /home/user/sailfish_build_out/soong/.intermediates/bionic/libm/libm/android_arm6
-4_armv8-a_shared_10000/libm.so /home/user/sailfish_build_out/soong/.intermediates/b
-ionic/libdl/libdl/android_arm64_armv8-a_shared_10000/libdl.so /home/user/sailfish_b
-uild_out/soong/.intermediates/bionic/libc/crtend_so/android_arm64_armv8-a/obj/bioni
-c/libc/arch-common/bionic/crtend_so.o -o /home/user/sailfish_build_out/soong/.inter
-mediates/frameworks/native/services/surfaceflinger/libsurfaceflinger/android_arm64_
-armv8-a_shared/unstripped/libsurfaceflinger.so -target aarch64-linux-android10000 -
-Bprebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/aarch64-linux-android/bi
-n -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=md5 -Wl,--warn-shared-t
-extrel -Wl,--fatal-warnings -Wl,--no-undefined-version -Wl,--exclude-libs,libgcc.a 
--Wl,--exclude-libs,libgcc_stripped.a -Wl,--exclude-libs,libunwind_llvm.a -fuse-ld=l
-ld -Wl,--pack-dyn-relocs=android+relr -Wl,--use-android-relr-tags -Wl,--no-undefine
-d -Wl,--hash-style=gnu -Wl,-z,separate-code -Wl,--icf=safe -Wl,-z,max-page-size=409
-6  -Wl,--exclude-libs=libclang_rt.builtins-aarch64-android.a  -nostdlib -Wl,--gc-se
-ctions -shared -Wl,-soname,libsurfaceflinger.so -flto=thin -fsplit-lto-unit -Wl,-pl
-ugin-opt,-inline-threshold=0 -Wl,-plugin-opt,-unroll-threshold=0 
-ld.lld: error: undefined symbol: getFodUsageBits(unsigned long, bool)
->>> referenced by BufferQueueLayer.cpp:0 (frameworks/native/services/surfaceflinger
-/BufferQueueLayer.cpp:0)
->>>               lto.tmp:(android::BufferQueueLayer::setDefaultBufferProperties(un
-signed int, unsigned int, int))
+nano /media/user/sailfish/sailfish_vayu/frameworks/native/services/surfaceflinger/BufferQueueLayer.cpp
 
-ld.lld: error: undefined symbol: getFodZOrder(unsigned int, bool)
->>> referenced by OutputLayer.cpp:0 (frameworks/native/services/surfaceflinger/Comp
-ositionEngine/src/OutputLayer.cpp:0)
->>>               lto.tmp:(android::compositionengine::impl::OutputLayer::writeOutp
-utDependentGeometryStateToHWC(android::HWC2::Layer*, android::hardware::graphics::c
-omposer::V2_1::IComposerClient::Composition))
-clang-11: error: linker command failed with exit code 1 (use -v to see invocation)
-22:33:32 ninja failed with: exit status 1
 
-#### failed to build some targets (02:36 (mm:ss)) ####
 
+
+uint64_t getFodUsageBits(uint64_t usage, bool isFod) { return usage; }
+uint32_t getFodZOrder(uint32_t z, bool isFod) { return z; }
+
+
+
+
+nano /media/user/sailfish/sailfish_vayu/frameworks/native/services/surfaceflinger/CompositionEngine/src/OutputLayer.cpp
+
+
+uint64_t getFodUsageBits(uint64_t usage, bool isFod) { return usage; }
+uint32_t getFodZOrder(uint32_t z, bool isFod) { return z; }
