@@ -38,7 +38,7 @@ docker run --rm -it --privileged -v ~/sf-porter/configs/vayu/kickstart:/home/src
 cd /home/src
 mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
 
-
+cat vayu-userimage.ks
 
 cat << 'EOF' > vayu-userimage.ks
 # Sailfish OS 5.0 Rootfs Kickstart for Poco X3 Pro (vayu)
