@@ -40,17 +40,10 @@ mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
 
 cat vayu-userimage.ks
 
-cat << 'EOF' > vayu-userimage.ks
-# Sailfish OS 5.2 Rootfs Kickstart for Poco X3 Pro (vayu)
+[root@9c187682bab0 src]# mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
+[08/11 21:37:30] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
+module 'gettext' has no attribute 'lgettext'
+Info[08/11 21:37:30] : Retrieving repo metadata:
 
-# Specify the package repositories using the working Jolla URL
-Repo --name=jolla --baseurl=https://releases.jolla.com/releases/5.2.0.15/jolla/aarch64/
-
-# Install the base packages
-%packages
-@ Sailfish OS Base
-%end
-
-# Basic partition setup
-part root --size=3000 --fstype=ext4
-EOF
+Error <kickstart>[08/11 21:37:30] : no valid repos found in ks file
+[root@9c187682bab0 src]# 
