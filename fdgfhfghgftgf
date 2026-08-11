@@ -1,4 +1,4 @@
-sudo apt-get update
+8sudo apt-get update
 sudo apt-get install -y docker.io
 sudo usermod -aG docker $USER
 
@@ -41,7 +41,7 @@ docker run --rm -it --privileged -v ~/sf-porter/configs/vayu/kickstart:/home/src
 
 
 cd /home/src
-mic create rootfs vayu-userimage.ks --arch=aarch64 --token=ignore --outdir=/home/src/rootfs-out
+mic create fs vayu-userimage.ks --arch=aarch64 --token=ignore --outdir=/home/src/rootfs-out
 
 
 
