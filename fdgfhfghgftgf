@@ -18,9 +18,11 @@ cat << 'EOF' > vayu-userimage.ks
 # Jolla core repository
 repo --name=jolla --baseurl=https://releases.jolla.com/releases/5.2.0.15/jolla/aarch64/
 
-# Install the necessary packages and patterns
+# Install the necessary packages
 %packages
-@ Jolla Configuration
+jolla-configuration
+jolla-ui
+sailfish-content
 %end
 
 # Basic partition setup
