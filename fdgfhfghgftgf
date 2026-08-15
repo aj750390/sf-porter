@@ -11,11 +11,12 @@ nano ~/sf-porter/configs/vayu/kickstart/vayu-userimage.ks
 nano vayu-userimage.ks
 
 
-# Sailfish OS 5.0 Rootfs Kickstart for Poco X3 Pro (vayu)
 
-# Specify the package repositories
-Repo --name=jolla --baseurl=https://releases.jolla.com/releases/5.0.0.64/jolla/arm64/
-Repo --name=hotfixes --baseurl=https://releases.jolla.com/releases/5.0.0.64_hotfixes/jolla/arm64/
+cat << 'EOF' > vayu-userimage.ks
+# Sailfish OS 5.2 Rootfs Kickstart for Poco X3 Pro (vayu)
+
+# Specify the package repositories using the working Jolla URL
+Repo --name=jolla --baseurl=https://releases.jolla.com/releases/5.2.0.15/jolla/aarch64/
 
 # Install the base packages
 %packages
@@ -24,8 +25,7 @@ Repo --name=hotfixes --baseurl=https://releases.jolla.com/releases/5.0.0.64_hotf
 
 # Basic partition setup
 part root --size=3000 --fstype=ext4
-
-
+EOF
 
 
 
