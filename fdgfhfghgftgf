@@ -36,4 +36,10 @@ docker run --rm -it --privileged -v ~/sf-porter/configs/vayu/kickstart:/home/src
 cd /home/src
 mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
 
-curl -I https://releases.jolla.com/releases/5.2.0.15/sailfishos/aarch64/repodata/repomd.xml
+[root@5c7a58d98c25 src]# mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
+[08/15 21:08:38] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
+Info[08/15 21:08:38] : Retrieving repo metadata:
+
+Error <creator>[08/15 21:08:39] : URLGrabber error: https://releases.jolla.com/releases/5.2.0.15/sailfishos/aarch64/repodata/repomd.xml - [Errno 14] HTTPS Error 404 - Not Found
+[root@5c7a58d98c25 src]# 
+
