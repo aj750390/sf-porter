@@ -40,15 +40,8 @@ mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
 cat vayu-userimage.ks
 
 [root@5c7a58d98c25 src]# mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
-[08/15 20:56:37] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
-Info[08/15 20:56:37] : Retrieving repo metadata:
-Info[08/15 20:56:37] : Retrieving repomd.xml ...
-Info[08/15 20:56:37] : /var/tmp/mic/cache/jolla/248255ced2b45f313da08ae013a49532b045d18a9ea606b1242bb64934343c64-primary.xml checksum 9fcc3930053cf1cf99c4fbd6b4a908cb8bbcaa4f6fecf84f477e6addbf72e8ca matches cache
-Info[08/15 20:56:38] : Retrieving repomd.xml.key ...
-Info[08/15 20:56:38] : Repo metadata retrieved.
-Info[08/15 20:56:39] : Running pre scripts ...
-Info[08/15 20:56:39] : Refreshing repository: jolla ...
-Info[08/15 20:56:49] : zypp architecture is <aarch64>
+[08/15 21:01:17] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
+Info[08/15 21:01:17] : Retrieving repo metadata:
 
-Error <creator>[08/15 20:56:49] : Unable to find package: jolla-configuration
+Error <creator>[08/15 21:01:18] : URLGrabber error: https://releases.jolla.com/releases/5.2.0.15/mer/core/aarch64/repodata/repomd.xml - [Errno 14] HTTPS Error 404 - Not Found
 [root@5c7a58d98c25 src]# 
