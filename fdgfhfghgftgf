@@ -12,10 +12,12 @@ nano vayu-userimage.ks
 
 cat << 'EOF' > vayu-userimage.ks
 repo --name=jolla --baseurl=https://releases.jolla.com/releases/5.2.0.15/jolla/aarch64/
+repo --name=hotfixes --baseurl=https://releases.jolla.com/releases/5.2.0.15_hotfixes/jolla/aarch64/
+
 %packages
-sailfish-content
 patterns-sailfishos-ui
 %end
+
 part root --size=3000 --fstype=ext4
 EOF
 
