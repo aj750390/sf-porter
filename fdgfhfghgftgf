@@ -10,29 +10,33 @@ nano ~/sf-porter/configs/vayu/kickstart/vayu-userimage.ks
 
 nano vayu-userimage.ks
 
-
 cat << 'EOF' > vayu-userimage.ks
-# Sailfish OS 5.2 Rootfs Kickstart for Poco X3 Pro (vayu)
+# Sailfish OS 5.2.0.15 Rootfs Kickstart for Poco X3 Pro (vayu)
 
 # Standard Jolla Repositories
 repo --name=jolla --baseurl=https://releases.jolla.com/releases/5.2.0.15/jolla/aarch64/
-repo --name=apps --baseurl=https://releases.jolla.com/releases/5.2.0.15/jolla-apps/aarch64/
+repo --name=apps --baseurl=https://releases.jolla.com/jolla-apps/5.2.0.15/aarch64/
 
-# YOUR LOCAL HARDWARE REPOSITORY (Uncomment and adjust the path)
+# Local Hardware Adaptation Repository (Required for hardware drivers)
+# Uncomment the line below and ensure the path points to your built RPMs
 # repo --name=adaptation-vayu --baseurl=file:///home/src/droid-local-repo/vayu
 
-# Install the necessary packages
+# Packages and Patterns
 %packages
-# Core UI and content
+# Core OS and UI packages
+patterns-sailfishos-base
+patterns-sailfishos-ui
 sailfish-content
 
-# Device-specific configuration (Requires the local hardware repo above)
+# Device-specific hardware configuration 
+# (Uncomment this when your local adaptation-vayu repo is active)
 # @jolla-configuration-vayu
 %end
 
 # Basic partition setup
 part root --size=3000 --fstype=ext4
 EOF
+
 
 
 docker run --rm -it --privileged -v ~/sf-porter/configs/vayu/kickstart:/home/src sailfishos/sdk bash
