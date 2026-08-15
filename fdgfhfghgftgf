@@ -43,9 +43,11 @@ cd /home/src
 mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
 
 [root@5c7a58d98c25 src]# mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
-[08/15 21:08:38] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
-Info[08/15 21:08:38] : Retrieving repo metadata:
+[08/15 21:13:14] : mic 1.0.15 (Sailfish OS 5.2.0.15 (Finlayson))
+Info[08/15 21:13:14] : Retrieving repo metadata:
+Info[08/15 21:13:16] : Retrieving repomd.xml ...
+Info[08/15 21:13:16] : /var/tmp/mic/cache/jolla/248255ced2b45f313da08ae013a49532b045d18a9ea606b1242bb64934343c64-primary.xml checksum 9fcc3930053cf1cf99c4fbd6b4a908cb8bbcaa4f6fecf84f477e6addbf72e8ca matches cache
+Info[08/15 21:13:16] : Retrieving repomd.xml.key ...
 
-Error <creator>[08/15 21:08:39] : URLGrabber error: https://releases.jolla.com/releases/5.2.0.15/sailfishos/aarch64/repodata/repomd.xml - [Errno 14] HTTPS Error 404 - Not Found
+Error <creator>[08/15 21:13:17] : URLGrabber error: https://releases.jolla.com/releases/5.2.0.15/jolla-apps/aarch64/repodata/repomd.xml - [Errno 14] HTTPS Error 404 - Not Found
 [root@5c7a58d98c25 src]# 
-
