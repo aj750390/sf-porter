@@ -11,17 +11,17 @@ nano ~/sf-porter/configs/vayu/kickstart/vayu-userimage.ks
 nano vayu-userimage.ks
 
 
-
 cat << 'EOF' > vayu-userimage.ks
 # Sailfish OS 5.2 Rootfs Kickstart for Poco X3 Pro (vayu)
 
-# Jolla core repository
+# Repositories
+repo --name=mer-core --baseurl=https://releases.jolla.com/releases/5.2.0.15/mer/core/aarch64/
 repo --name=jolla --baseurl=https://releases.jolla.com/releases/5.2.0.15/jolla/aarch64/
 
 # Install the necessary packages
 %packages
-jolla-configuration
-jolla-ui
+patterns-jolla-configuration
+patterns-sailfishos-ui
 sailfish-content
 %end
 
