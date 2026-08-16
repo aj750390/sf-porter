@@ -1,44 +1,19 @@
-# sf-porter vayu baseline manifest
-generated_utc=2026-08-16T09:55:36Z
-device=vayu
-android_base=lineage-18.1
-halium_version=11.0
-architecture=arm64
+mkdir -p "$HOME/sfos5-metadata"
+zipfile=$(find . -maxdepth 1 -type f -iname '*.zip' -print -quit)
+echo "ZIP=$zipfile"
+sha256sum "$zipfile"
+unzip -tqq "$zipfile" && echo "ZIP_INTEGRITY=OK"
+unzip -Z1 "$zipfile" > "$HOME/sfos5-metadata/entries.txt"
 
-[android_base]
-file=lineage-18.1-20220510-UNOFFICIAL-vayu.zip
-size_bytes=1110302493
-sha256=0157305d862c2d6a85362794630ada58204f219c5d616104686b4c6aafd2cfcb
-required_entries=boot.img,dtbo.img,vbmeta.img,vendor.new.dat.br,META-INF/com/google/android/update-binary
-
-[sailfish_image]
-file=sailfishos-4.5.0.25-20240316-vayu-Verevka.zip
-size_bytes=544980714
-sha256=0089b32e48a40288e8550af2bcb88cd62f5ff3798f3e14c36aedbf082943d846
-release=4.5.0.25
-target_lineage=18.1
-required_entries=sfos-rootfs.tar.bz2,hybris-boot.img,META-INF/com/google/android/update-binary
-
-[adaptation]
-file=sfos-adaptation-vayu.1.4.zip
-size_bytes=1248022775
-sha256=7cd9eb1cd3b2d55a48b3023150ed4361014c623df1376cbe733f68e642cf73e3
-required_entries=firmware/hybris-dtbo.img,firmware/modem.img,firmware/vendor.img,sfos/usr/bin/droid/droid-hal-early-init.sh,setup.sh
-
-[installer_contract]
-target_device=vayu
-accepted_android_aliases=vayu,bhima
-target_lineage_version=18.1
-root=/data/.stowaways/sailfishos
-firmware_root=/data/.stowaways/firmware
-patch_root=/data/.stowaways/patches
-boot_partition=/dev/block/bootdevice/by-name/boot
-vendor_partition=/dev/block/bootdevice/by-name/vendor
-dtbo_behavior=backup Android dtbo, then flash hybris-dtbo
-reinstall_behavior=preserve droid-boot and require confirmation
-encryption_behavior=attempt fileencryption/forceencrypt to encryptable
-
-[dynamic_partitions]
-group=qti_dynamic_partitions
-group_max_bytes=9126801408
-partitions=system,vendor,product,odm,system_ext
+for entry in \
+  META-INF/com/google/android/updater-script \
+  META-INF/com/google/android/update-binary \
+  sfos-rootfs.tar.bz2 \
+  hybris-boot.img \
+  setup.sh; do
+  echo "===== $entry ====="
+  unzip -l "$zipfile" "$entry" 2>/dev/null || true
+  unzip -p "$zipfile" "$entry" 2>/dev/null | sed -n '1,220p' || true
+  echo
+done > "$HOME/sfos5-metadata/report.txt"
+cat "$HOME/sfos5-metadata/report.txt"
