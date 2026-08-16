@@ -1,4 +1,4 @@
-printf '%s\n' '===== SailfishOS directories ====='
+user@user-VMware-Virtual-Platform:~$ printf '%s\n' '===== SailfishOS directories ====='
 find "$HOME" -maxdepth 3 -type d \( -iname '*sailfish*' -o -iname '*mersdk*' -o -iname '*build-engine*' \) -print 2>/dev/null
 
 printf '%s\n' '===== recent installer/log files ====='
@@ -6,3 +6,46 @@ find "$HOME" /tmp -maxdepth 4 -type f \( -iname '*sdk*log*' -o -iname '*installe
 
 printf '%s\n' '===== SDK-related directories ====='
 find "$HOME/.config" "$HOME/.local/share" "$HOME/.cache" -maxdepth 4 -iname '*sailfish*' -o -iname '*mer*' 2>/dev/null | head -100
+===== SailfishOS directories =====
+/home/user/Downloads/sailfish-sdk
+/home/user/sailfish_build_out
+===== recent installer/log files =====
+2026-08-16 15:24 /home/user/.local/share/gvfs-metadata/home-5d1a30b4.log
+2026-08-16 14:05 /home/user/.local/share/gvfs-metadata/root-2d3b1fcd.log
+2026-08-11 23:21 /home/user/sailfish_build_out/soong.log
+2026-08-11 23:21 /home/user/sailfish_build_out/error.log
+2026-08-11 23:21 /home/user/sailfish_build_out/dumpvars-soong.log
+2026-08-11 23:21 /home/user/sailfish_build_out/dumpvars-soong.1.log
+2026-08-11 23:21 /home/user/sailfish_build_out/dumpvars-error.log
+2026-08-11 23:21 /home/user/sailfish_build_out/dumpvars-error.1.log
+2026-08-11 22:51 /home/user/sailfish_build_out/soong.1.log
+2026-08-11 22:51 /home/user/sailfish_build_out/error.1.log
+2026-08-11 22:50 /home/user/sailfish_build_out/dumpvars-soong.3.log
+2026-08-11 22:50 /home/user/sailfish_build_out/dumpvars-soong.2.log
+2026-08-11 22:50 /home/user/sailfish_build_out/dumpvars-error.3.log
+2026-08-11 22:50 /home/user/sailfish_build_out/dumpvars-error.2.log
+2026-08-11 22:33 /home/user/sailfish_build_out/soong.2.log
+2026-08-11 22:33 /home/user/sailfish_build_out/error.2.log
+2026-08-11 22:30 /home/user/sailfish_build_out/dumpvars-soong.5.log
+2026-08-11 22:30 /home/user/sailfish_build_out/dumpvars-soong.4.log
+2026-08-11 22:30 /home/user/sailfish_build_out/dumpvars-error.5.log
+2026-08-11 22:30 /home/user/sailfish_build_out/dumpvars-error.4.log
+2026-08-11 22:11 /home/user/sailfish_build_out/soong.3.log
+2026-08-11 22:11 /home/user/sailfish_build_out/error.3.log
+2026-08-09 16:30 /home/user/sailfish_build_out/soong.4.log
+2026-08-09 16:30 /home/user/sailfish_build_out/error.4.log
+2026-08-09 08:01 /home/user/sailfish_build_out/soong.5.log
+2026-08-09 08:01 /home/user/sailfish_build_out/error.5.log
+2026-08-08 23:19 /home/user/sailfish_build_out/.lock_soong.log
+2026-08-08 23:19 /home/user/sailfish_build_out/.lock_error.log
+2026-08-08 23:15 /home/user/sailfish_build_out/.lock_dumpvars-soong.log
+2026-08-08 23:15 /home/user/sailfish_build_out/.lock_dumpvars-error.log
+2026-08-06 01:49 /home/user/.local/share/gvfs-metadata/uuid-7ba84300-ebda-4f9c-a0ca-f3ee45b18d88-03647c64.log
+2026-08-03 11:02 /home/user/.local/share/gvfs-metadata/uuid-2CFEE920FEE8E356-ab384244.log
+2026-08-02 02:03 /home/user/.local/share/gvfs-metadata/uuid-66D66894D6686671-f0a20f2c.log
+===== SDK-related directories =====
+/home/user/.config/systemd/user/timers.target.wants
+/home/user/.config/systemd/user/timers.target.wants/snap.firmware-updater.firmware-notifier.timer
+/home/user/.cache/gnome-desktop-thumbnailer/gstreamer-1.0
+/home/user/.cache/gstreamer-1.0
+user@user-VMware-Virtual-Platform:~$ 
