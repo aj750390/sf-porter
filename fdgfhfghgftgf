@@ -1,11 +1,10 @@
-cd "$HOME/SailfishOS/mersdk" 2>/dev/null || {
-  echo "MERSDK_DIRECTORY_NOT_FOUND"
-  exit 0
-}
-
-printf '%s\n' '===== files ====='
-find . -maxdepth 2 -type f -printf '%P\n' | sort | sed -n '1,120p'
-printf '%s\n' '===== docker build ====='
-docker build --progress=plain \
-  --tag sailfish-sdk-build-engine:user \
-  . 2>&1 | tee "$HOME/sfdk-docker-build.log"
+if [ -d "$HOME/SailfishOS/mersdk" ]; then
+  cd "$HOME/SailfishOS/mersdk"
+  echo '===== files ====='
+  find . -maxdepth 2 -type f -printf '%P\n' | sort | sed -n '1,120p'
+  echo '===== docker build ====='
+  docker build --progress=plain --tag sailfish-sdk-build-engine:user . 2>&1 | tee "$HOME/sfdk-docker-build.log"
+else
+  echo "MERSDK_DIRECTORY_NOT_FOUND: $HOME/SailfishOS/mersdk"
+  echo 'The SDK installer did not create the build context.'
+fi
