@@ -1,5 +1,5 @@
 cd sf-porter
-./scripts/sf-porter.sh validate /path/to/new
+./scripts/sf-porter.sh validate "$HOME/vayu-zips"
 
 
 
