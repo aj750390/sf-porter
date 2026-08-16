@@ -48,6 +48,7 @@ Usage:
   $0                         Open the interactive menu
   $0 validate DIRECTORY      Validate the three ZIPs in DIRECTORY
   $0 validate BASE SAILFISH ADAPTATION
+  $0 manifest DIRECTORY      Validate and write vayu-manifest.txt
   $0 help                    Show this help
 
 The validate command is read-only. It does not extract, flash, mount,
@@ -214,6 +215,67 @@ validate_vayu() {
     return 1
 }
 
+write_vayu_manifest() {
+    local input_dir="$1"
+    local output_path="${2:-$input_dir/vayu-manifest.txt}"
+    local base_zip="$input_dir/$BASE_ZIP_NAME"
+    local sailfish_zip="$input_dir/$SAILFISH_ZIP_NAME"
+    local adaptation_zip="$input_dir/$ADAPTATION_ZIP_NAME"
+
+    if ! validate_vayu "$input_dir"; then
+        print_err "Manifest not written because baseline validation failed."
+    fi
+
+    {
+        echo "# sf-porter vayu baseline manifest"
+        echo "generated_utc=$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+        echo "device=$DEVICE"
+        echo "android_base=$ANDROID_BASE"
+        echo "halium_version=$HALIUM_VERSION"
+        echo "architecture=$ARCH"
+        echo
+        echo "[android_base]"
+        echo "file=$BASE_ZIP_NAME"
+        echo "size_bytes=$(stat -c '%s' "$base_zip")"
+        echo "sha256=$(sha256sum "$base_zip" | awk '{print $1}')"
+        echo "required_entries=boot.img,dtbo.img,vbmeta.img,vendor.new.dat.br,META-INF/com/google/android/update-binary"
+        echo
+        echo "[sailfish_image]"
+        echo "file=$SAILFISH_ZIP_NAME"
+        echo "size_bytes=$(stat -c '%s' "$sailfish_zip")"
+        echo "sha256=$(sha256sum "$sailfish_zip" | awk '{print $1}')"
+        echo "release=4.5.0.25"
+        echo "target_lineage=18.1"
+        echo "required_entries=sfos-rootfs.tar.bz2,hybris-boot.img,META-INF/com/google/android/update-binary"
+        echo
+        echo "[adaptation]"
+        echo "file=$ADAPTATION_ZIP_NAME"
+        echo "size_bytes=$(stat -c '%s' "$adaptation_zip")"
+        echo "sha256=$(sha256sum "$adaptation_zip" | awk '{print $1}')"
+        echo "required_entries=firmware/hybris-dtbo.img,firmware/modem.img,firmware/vendor.img,sfos/usr/bin/droid/droid-hal-early-init.sh,setup.sh"
+        echo
+        echo "[installer_contract]"
+        echo "target_device=vayu"
+        echo "accepted_android_aliases=vayu,bhima"
+        echo "target_lineage_version=18.1"
+        echo "root=/data/.stowaways/sailfishos"
+        echo "firmware_root=/data/.stowaways/firmware"
+        echo "patch_root=/data/.stowaways/patches"
+        echo "boot_partition=/dev/block/bootdevice/by-name/boot"
+        echo "vendor_partition=/dev/block/bootdevice/by-name/vendor"
+        echo "dtbo_behavior=backup Android dtbo, then flash hybris-dtbo"
+        echo "reinstall_behavior=preserve droid-boot and require confirmation"
+        echo "encryption_behavior=attempt fileencryption/forceencrypt to encryptable"
+        echo
+        echo "[dynamic_partitions]"
+        echo "group=qti_dynamic_partitions"
+        echo "group_max_bytes=9126801408"
+        echo "partitions=system,vendor,product,odm,system_ext"
+    } > "$output_path" || print_err "Could not write manifest: $output_path"
+
+    print_ok "Manifest written: $output_path"
+}
+
 # ---------- Interactive build workflow ----------
 
 interactive_menu() {
@@ -369,6 +431,17 @@ case "${1:-menu}" in
     validate)
         shift
         validate_vayu "$@"
+        ;;
+    manifest)
+        if [[ $# -lt 2 || $# -gt 3 ]]; then
+            echo "Usage: $0 manifest DIRECTORY [OUTPUT_FILE]" >&2
+            exit 2
+        fi
+        if [[ $# -eq 3 ]]; then
+            write_vayu_manifest "$2" "$3"
+        else
+            write_vayu_manifest "$2"
+        fi
         ;;
     help|--help|-h)
         usage
