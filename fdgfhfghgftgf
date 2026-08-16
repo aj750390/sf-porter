@@ -1,2 +1,53 @@
-cd "$HOME/Downloads/sailfish-sdk"
-./SailfishSDK-3.13.5-linux64-online.run --verbose 2>&1 | tee "$HOME/sailfish-sdk-installer.log"
+[505744] backup org.merproject.mersdk operation: Mkdir
+[505744] 	- arguments: /home/user/SailfishOS/vmshare
+[505744] Done
+[505745] perform org.merproject.mersdk operation: Mkdir
+[505745] 	- arguments: /home/user/SailfishOS/vmshare
+[505745] Done
+[505745] backup org.merproject.mersdk operation: Mkdir
+[505745] 	- arguments: /home/user/SailfishOS/mersdk/ssh
+[505745] Done
+[505745] perform org.merproject.mersdk operation: Mkdir
+[505745] 	- arguments: /home/user/SailfishOS/mersdk/ssh
+[505746] Done
+[505746] backup org.merproject.mersdk operation: EnvironmentVariable
+[505746] 	- arguments: DOCKER_BUILDKIT, 1, false
+[505746] Done
+[505746] perform org.merproject.mersdk operation: EnvironmentVariable
+[505746] 	- arguments: DOCKER_BUILDKIT, 1, false
+[505746] Done
+[505746] backup org.merproject.mersdk operation: Execute
+[505746] 	- arguments: /usr/bin/docker, network, create, --driver, bridge, -o, com.docker.network.bridge.name=br-sfdk-user, sailfish-sdk:user, UNDOEXECUTE, /usr/bin/docker, network, rm, sailfish-sdk:user
+[505746] Done
+[505746] perform org.merproject.mersdk operation: Execute
+[505746] 	- arguments: /usr/bin/docker, network, create, --driver, bridge, -o, com.docker.network.bridge.name=br-sfdk-user, sailfish-sdk:user, UNDOEXECUTE, /usr/bin/docker, network, rm, sailfish-sdk:user
+[505752] /usr/bin/docker" started, arguments: "network create --driver bridge -o com.docker.network.bridge.name=br-sfdk-user sailfish-sdk:user
+[508401] d1069f5ba966375505ebe181eb0174d3ad4b319b1982cb557b90daf6846bc380\n
+[508406] Done
+[508406] backup org.merproject.mersdk operation: AppendFile
+[508406] 	- arguments: /home/user/SailfishOS/mersdk/Dockerfile, FROM scratch
+ADD sailfish.tar.xz /
+LABEL SharedInstall="/home/user/SailfishOS"       SharedHome="/home/user"       SharedSrc="/home/user/sfos5"       SharedTarget="/home/user/SailfishOS/mersdk/targets"       SharedConfig="/home/user/SailfishOS/vmshare"       SharedSsh="/home/user/SailfishOS/mersdk/ssh"       SshPort="2222"       DBusPort="7777"
+RUN chown -R --from=mersdk "1000" /etc/mersdk /home/mersdk;     usermod -u "1000" mersdk
+CMD ["/bin/bash", "-c", "echo -e 'Setup incomplete. Refer to Sailfish SDK FAQ' >&2; exit 1", "-"]
+
+[508408] Done
+[508413] perform org.merproject.mersdk operation: AppendFile
+[508413] 	- arguments: /home/user/SailfishOS/mersdk/Dockerfile, FROM scratch
+ADD sailfish.tar.xz /
+LABEL SharedInstall="/home/user/SailfishOS"       SharedHome="/home/user"       SharedSrc="/home/user/sfos5"       SharedTarget="/home/user/SailfishOS/mersdk/targets"       SharedConfig="/home/user/SailfishOS/vmshare"       SharedSsh="/home/user/SailfishOS/mersdk/ssh"       SshPort="2222"       DBusPort="7777"
+RUN chown -R --from=mersdk "1000" /etc/mersdk /home/mersdk;     usermod -u "1000" mersdk
+CMD ["/bin/bash", "-c", "echo -e 'Setup incomplete. Refer to Sailfish SDK FAQ' >&2; exit 1", "-"]
+
+[508413] Done
+[508413] backup org.merproject.mersdk operation: Execute
+[508413] 	- arguments: /usr/bin/docker, build, --tag, sailfish-sdk-build-engine:user, /home/user/SailfishOS/mersdk, UNDOEXECUTE, /usr/bin/docker, image, rm, sailfish-sdk-build-engine:user, --force
+[508413] Done
+[508414] perform org.merproject.mersdk operation: Execute
+[508414] 	- arguments: /usr/bin/docker, build, --tag, sailfish-sdk-build-engine:user, /home/user/SailfishOS/mersdk, UNDOEXECUTE, /usr/bin/docker, image, rm, sailfish-sdk-build-engine:user, --force
+[508419] /usr/bin/docker" started, arguments: "build --tag sailfish-sdk-build-engine:user /home/user/SailfishOS/mersdk
+[508454] ERROR: BuildKit is enabled but the buildx component is missing or broken.\n       Install the buildx component to build images with BuildKit:\n       https://docs.docker.com/go/buildx/\n
+[508456] Done
+[508457] Operation \"Execute\" with arguments \"/usr/bin/docker; build; --tag; sailfish-sdk-build-engine:user; /home/user/SailfishOS/mersdk; UNDOEXECUTE; /usr/bin/docker; image; rm; sailfish-sdk-build-engine:user; --force\" failed: Execution failed (Unexpected exit code: 1): \"/usr/bin/docker build --tag sailfish-sdk-build-engine:user /home/user/SailfishOS/mersdk\"
+[508457] Created warning message box "installationErrorWithRetry": "Installer Error", "Error during installation process (org.merproject.mersdk):\nExecution failed (Unexpected exit code: 1): \"/usr/bin/docker build --tag sailfish-sdk-build-engine:user /home/user/SailfishOS/mersdk\""
+
