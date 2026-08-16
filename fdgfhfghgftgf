@@ -22,3 +22,15 @@ SailfishSDK-3.13.5-linux64-online.run: OK
 ./SailfishSDK-3.13.5-linux64-online.run: error while loading shared libraries: libxcb-xinerama.so.0: cannot open shared object file: No such file or directory
 user@user-VMware-Virtual-Platform:~/Downloads/sailfish-sdk$ 
 
+
+
+
+
+
+
+
+
+sudo apt-get update
+sudo apt-get install -y libxcb-xinerama0
+cd "$HOME/Downloads/sailfish-sdk"
+./SailfishSDK-3.13.5-linux64-online.run
