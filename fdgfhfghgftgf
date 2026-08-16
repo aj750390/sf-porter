@@ -29,12 +29,135 @@ docker run --rm -it --privileged -v ~/sf-porter/configs/vayu/kickstart:/home/src
 cd /home/src
 mic create fs vayu-userimage.ks --arch=aarch64 --outdir=/home/src/rootfs-out
 
-for f in *.zip; do
-  echo "===== FILE: $f ====="
-  sha256sum "$f"
-  unzip -l "$f" | sed -n '1,120p'
-  echo
-  echo "----- matching entries -----"
-  unzip -l "$f" | grep -Ei 'boot|dtbo|vendor|system|rootfs|hybris|firmware|META-INF|payload' | head -80
-  echo
-done > vayu_zip_audit.txt
+===== FILE: lineage-18.1-20220510-UNOFFICIAL-vayu.zip =====
+0157305d862c2d6a85362794630ada58204f219c5d616104686b4c6aafd2cfcb  lineage-18.1-20220510-UNOFFICIAL-vayu.zip
+Archive:  lineage-18.1-20220510-UNOFFICIAL-vayu.zip
+signed by SignApk
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      323  2009-01-01 00:00   META-INF/com/android/metadata
+   568436  2009-01-01 00:00   odm.new.dat.br
+        0  2009-01-01 00:00   odm.patch.dat
+173490533  2009-01-01 00:00   product.new.dat.br
+        0  2009-01-01 00:00   product.patch.dat
+377367558  2009-01-01 00:00   system.new.dat.br
+        0  2009-01-01 00:00   system.patch.dat
+ 84287934  2009-01-01 00:00   system_ext.new.dat.br
+        0  2009-01-01 00:00   system_ext.patch.dat
+454931323  2009-01-01 00:00   vendor.new.dat.br
+        0  2009-01-01 00:00   vendor.patch.dat
+  2002432  2009-01-01 00:00   META-INF/com/google/android/update-binary
+     3084  2009-01-01 00:00   META-INF/com/google/android/updater-script
+134217728  2009-01-01 00:00   boot.img
+ 33554432  2009-01-01 00:00   dtbo.img
+     1002  2009-01-01 00:00   dynamic_partitions_op_list
+     1190  2009-01-01 00:00   install/bin/backuptool.functions
+     4308  2009-01-01 00:00   install/bin/backuptool.sh
+      102  2009-01-01 00:00   odm.transfer.list
+     2272  2009-01-01 00:00   product.transfer.list
+     5235  2009-01-01 00:00   system.transfer.list
+     1543  2009-01-01 00:00   system_ext.transfer.list
+     8192  2009-01-01 00:00   vbmeta.img
+     4096  2009-01-01 00:00   vbmeta_system.img
+     4922  2009-01-01 00:00   vendor.transfer.list
+     1675  2009-01-01 00:00   META-INF/com/android/otacert
+---------                     -------
+1260458320                     26 files
+
+----- matching entries -----
+      323  2009-01-01 00:00   META-INF/com/android/metadata
+377367558  2009-01-01 00:00   system.new.dat.br
+        0  2009-01-01 00:00   system.patch.dat
+ 84287934  2009-01-01 00:00   system_ext.new.dat.br
+        0  2009-01-01 00:00   system_ext.patch.dat
+454931323  2009-01-01 00:00   vendor.new.dat.br
+        0  2009-01-01 00:00   vendor.patch.dat
+  2002432  2009-01-01 00:00   META-INF/com/google/android/update-binary
+     3084  2009-01-01 00:00   META-INF/com/google/android/updater-script
+134217728  2009-01-01 00:00   boot.img
+ 33554432  2009-01-01 00:00   dtbo.img
+     5235  2009-01-01 00:00   system.transfer.list
+     1543  2009-01-01 00:00   system_ext.transfer.list
+     4096  2009-01-01 00:00   vbmeta_system.img
+     4922  2009-01-01 00:00   vendor.transfer.list
+     1675  2009-01-01 00:00   META-INF/com/android/otacert
+
+===== FILE: sailfishos-4.5.0.25-20240316-vayu-Verevka.zip =====
+0089b32e48a40288e8550af2bcb88cd62f5ff3798f3e14c36aedbf082943d846  sailfishos-4.5.0.25-20240316-vayu-Verevka.zip
+Archive:  sailfishos-4.5.0.25-20240316-vayu-Verevka.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+526995606  2024-03-16 22:44   sfos-rootfs.tar.bz2
+        0  2024-03-16 22:44   META-INF/
+        0  2024-03-16 22:44   META-INF/com/
+        0  2024-03-16 22:44   META-INF/com/google/
+        0  2024-03-16 22:44   META-INF/com/google/android/
+        1  2024-03-16 22:44   META-INF/com/google/android/updater-script
+     7073  2024-03-16 22:44   META-INF/com/google/android/update-binary
+  1467316  2024-03-16 22:44   tar
+ 53305344  2024-03-16 22:44   hybris-boot.img
+---------                     -------
+581775340                     9 files
+
+----- matching entries -----
+526995606  2024-03-16 22:44   sfos-rootfs.tar.bz2
+        0  2024-03-16 22:44   META-INF/
+        0  2024-03-16 22:44   META-INF/com/
+        0  2024-03-16 22:44   META-INF/com/google/
+        0  2024-03-16 22:44   META-INF/com/google/android/
+        1  2024-03-16 22:44   META-INF/com/google/android/updater-script
+     7073  2024-03-16 22:44   META-INF/com/google/android/update-binary
+ 53305344  2024-03-16 22:44   hybris-boot.img
+
+===== FILE: sfos-adaptation-vayu.1.4.zip =====
+7cd9eb1cd3b2d55a48b3023150ed4361014c623df1376cbe733f68e642cf73e3  sfos-adaptation-vayu.1.4.zip
+Archive:  sfos-adaptation-vayu.1.4.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2022-02-21 22:07   META-INF/
+        0  2022-02-21 22:07   META-INF/com/
+        0  2022-02-21 22:07   META-INF/com/google/
+        0  2022-02-22 00:16   META-INF/com/google/android/
+     2536  2022-05-30 01:41   META-INF/com/google/android/update-binary
+       47  2022-02-21 22:07   META-INF/com/google/android/updater-script
+        0  2022-05-11 03:15   firmware/
+  1048576  2022-05-11 12:15   firmware/bluetooth.img
+ 67108864  2022-05-11 12:15   firmware/dsp.img
+ 33554432  2022-05-30 12:51   firmware/hybris-dtbo.img
+ 16777216  2022-05-11 12:29   firmware/metadata.img
+335544320  2022-05-11 12:16   firmware/modem.img
+        0  2022-06-11 13:15   patches/
+      907  2022-06-11 13:20   setup.sh
+        0  2022-06-11 13:21   sfos/
+        0  2022-06-11 13:21   sfos/usr/
+        0  2022-06-11 13:21   sfos/usr/bin/
+        0  2022-06-11 13:21   sfos/usr/bin/droid/
+        0  2022-02-21 22:07   tools/
+  1194144  2022-02-21 22:07   tools/busybox
+  1282048  2023-09-23 18:34   firmware/odm.img
+384131072  2023-09-23 18:35   firmware/product.img
+1008529408  2023-09-23 18:35   firmware/system.img
+209948672  2023-09-23 18:35   firmware/system_ext.img
+1013223424  2023-09-23 18:36   firmware/vendor.img
+      891  2023-09-23 19:07   sfos/usr/bin/droid/droid-hal-early-init.sh
+---------                     -------
+3072346557                     26 files
+
+----- matching entries -----
+        0  2022-02-21 22:07   META-INF/
+        0  2022-02-21 22:07   META-INF/com/
+        0  2022-02-21 22:07   META-INF/com/google/
+        0  2022-02-22 00:16   META-INF/com/google/android/
+     2536  2022-05-30 01:41   META-INF/com/google/android/update-binary
+       47  2022-02-21 22:07   META-INF/com/google/android/updater-script
+        0  2022-05-11 03:15   firmware/
+  1048576  2022-05-11 12:15   firmware/bluetooth.img
+ 67108864  2022-05-11 12:15   firmware/dsp.img
+ 33554432  2022-05-30 12:51   firmware/hybris-dtbo.img
+ 16777216  2022-05-11 12:29   firmware/metadata.img
+335544320  2022-05-11 12:16   firmware/modem.img
+  1282048  2023-09-23 18:34   firmware/odm.img
+384131072  2023-09-23 18:35   firmware/product.img
+1008529408  2023-09-23 18:35   firmware/system.img
+209948672  2023-09-23 18:35   firmware/system_ext.img
+1013223424  2023-09-23 18:36   firmware/vendor.img
