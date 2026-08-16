@@ -1,13 +1,8 @@
-user@user-VMware-Virtual-Platform:~$ if [ -d "$HOME/SailfishOS/mersdk" ]; then
-  cd "$HOME/SailfishOS/mersdk"
-  echo '===== files ====='
-  find . -maxdepth 2 -type f -printf '%P\n' | sort | sed -n '1,120p'
-  echo '===== docker build ====='
-  docker build --progress=plain --tag sailfish-sdk-build-engine:user . 2>&1 | tee "$HOME/sfdk-docker-build.log"
-else
-  echo "MERSDK_DIRECTORY_NOT_FOUND: $HOME/SailfishOS/mersdk"
-  echo 'The SDK installer did not create the build context.'
-fi
-MERSDK_DIRECTORY_NOT_FOUND: /home/user/SailfishOS/mersdk
-The SDK installer did not create the build context.
-user@user-VMware-Virtual-Platform:~$ 
+printf '%s\n' '===== SailfishOS directories ====='
+find "$HOME" -maxdepth 3 -type d \( -iname '*sailfish*' -o -iname '*mersdk*' -o -iname '*build-engine*' \) -print 2>/dev/null
+
+printf '%s\n' '===== recent installer/log files ====='
+find "$HOME" /tmp -maxdepth 4 -type f \( -iname '*sdk*log*' -o -iname '*installer*log*' -o -iname '*.log' \) -printf '%TY-%Tm-%Td %TH:%TM %p\n' 2>/dev/null | sort -r | head -80
+
+printf '%s\n' '===== SDK-related directories ====='
+find "$HOME/.config" "$HOME/.local/share" "$HOME/.cache" -maxdepth 4 -iname '*sailfish*' -o -iname '*mer*' 2>/dev/null | head -100
