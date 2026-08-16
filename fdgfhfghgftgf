@@ -1,7 +1,14 @@
-command -v sfdk || true
+user@user-VMware-Virtual-Platform:~$ command -v sfdk || true
 sfdk --version 2>/dev/null || true
 command -v sb2 || true
 command -v mic || true
 command -v repo || true
 free -h
  df -h "$HOME"
+/home/user/bin/repo
+               total        used        free      shared  buff/cache   available
+Mem:            10Gi       2.5Gi       233Mi        53Mi       8.1Gi       8.4Gi
+Swap:          4.0Gi       320Ki       4.0Gi
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2       147G  104G   36G  75% /
+user@user-VMware-Virtual-Platform:~$ 
