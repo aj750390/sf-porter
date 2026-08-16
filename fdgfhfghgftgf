@@ -1,36 +1,7 @@
-user@user-VMware-Virtual-Platform:~$ mkdir -p "$HOME/Downloads/sailfish-sdk"
-cd "$HOME/Downloads/sailfish-sdk"
-wget -O SailfishSDK-3.13.5-linux64-online.run \
-  https://releases.sailfishos.org/sdk/installers/3.13.5/SailfishSDK-3.13.5-linux64-online.run
-printf '%s  %s\n' \
-  20fbb809a4ad27b71444a2081d56ca84 \
-  SailfishSDK-3.13.5-linux64-online.run | md5sum -c -
-chmod +x SailfishSDK-3.13.5-linux64-online.run
-./SailfishSDK-3.13.5-linux64-online.run
---2026-08-16 16:39:17--  https://releases.sailfishos.org/sdk/installers/3.13.5/SailfishSDK-3.13.5-linux64-online.run
-Resolving releases.sailfishos.org (releases.sailfishos.org)... 13.32.121.14, 13.32.121.26, 13.32.121.44, ...
-Connecting to releases.sailfishos.org (releases.sailfishos.org)|13.32.121.14|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 30408560 (29M) [application/x-makeself]
-Saving to: ‘SailfishSDK-3.13.5-linux64-online.run’
-
-SailfishSDK-3.13.5- 100%[===================>]  29.00M  5.47MB/s    in 6.3s    
-
-2026-08-16 16:39:25 (4.62 MB/s) - ‘SailfishSDK-3.13.5-linux64-online.run’ saved [30408560/30408560]
-
-SailfishSDK-3.13.5-linux64-online.run: OK
-./SailfishSDK-3.13.5-linux64-online.run: error while loading shared libraries: libxcb-xinerama.so.0: cannot open shared object file: No such file or directory
-user@user-VMware-Virtual-Platform:~/Downloads/sailfish-sdk$ 
-
-
-
-
-
-
-
-
-
-sudo apt-get update
-sudo apt-get install -y libxcb-xinerama0
-cd "$HOME/Downloads/sailfish-sdk"
-./SailfishSDK-3.13.5-linux64-online.run
+command -v docker || true
+docker --version 2>&1 || true
+sudo systemctl status docker --no-pager 2>&1 || true
+sudo docker info 2>&1 | sed -n '1,80p'
+groups
+ls -ld "$HOME/SailfishOS" 2>/dev/null || true
+df -h "$HOME"
