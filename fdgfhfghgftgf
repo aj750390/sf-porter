@@ -7,5 +7,36 @@ wip/vayu-bootstrap-baseline
 4796177 Fix config path resolution for checked-out project
 a56b7c0 Add read-only vayu baseline validator
 
-ls -lh "$HOME/vayu-zips"
+user@user-VMware-Virtual-Platform:~$ cd sf-porter
+./scripts/sf-porter.sh validate "$HOME/vayu-zips"
+sf-porter vayu validator
+Device: vayu | Android base: lineage-18.1 | Halium: 11.0 | Architecture: arm64
+
+[OK] Android base present: /home/user/vayu-zips/lineage-18.1-20220510-UNOFFICIAL-vayu.zip
+[OK] Sailfish image present: /home/user/vayu-zips/sailfishos-4.5.0.25-20240316-vayu-Verevka.zip
+[OK] Device adaptation present: /home/user/vayu-zips/sfos-adaptation-vayu.1.4.zip
+[OK] Android base ZIP integrity
+[OK] Sailfish image ZIP integrity
+[OK] Device adaptation ZIP integrity
+[OK] Android base SHA-256 matches baseline
+[OK] Sailfish image SHA-256 matches baseline
+[OK] Device adaptation SHA-256 matches baseline
+[OK] Android base has boot.img
+[OK] Android base has dtbo.img
+[OK] Android base has vbmeta.img
+[OK] Android base has vendor dynamic payload
+[OK] Android base has recovery installer
+[OK] Sailfish image has sfos-rootfs.tar.bz2
+[OK] Sailfish image has hybris-boot.img
+[OK] Sailfish image has recovery installer
+[OK] Adaptation has hybris-dtbo.img
+[OK] Adaptation has modem firmware
+[OK] Adaptation has vendor.img
+[OK] Adaptation has early-init script
+[OK] Adaptation has setup.sh
+
+[OK] All vayu baseline checks passed
+[INFO] No files were extracted or modified
+user@user-VMware-Virtual-Platform:~/sf-porter$ 
+
 
