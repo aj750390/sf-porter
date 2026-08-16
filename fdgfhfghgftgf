@@ -1,4 +1,4 @@
-if [ -d "$HOME/SailfishOS/mersdk" ]; then
+user@user-VMware-Virtual-Platform:~$ if [ -d "$HOME/SailfishOS/mersdk" ]; then
   cd "$HOME/SailfishOS/mersdk"
   echo '===== files ====='
   find . -maxdepth 2 -type f -printf '%P\n' | sort | sed -n '1,120p'
@@ -8,3 +8,6 @@ else
   echo "MERSDK_DIRECTORY_NOT_FOUND: $HOME/SailfishOS/mersdk"
   echo 'The SDK installer did not create the build context.'
 fi
+MERSDK_DIRECTORY_NOT_FOUND: /home/user/SailfishOS/mersdk
+The SDK installer did not create the build context.
+user@user-VMware-Virtual-Platform:~$ 
