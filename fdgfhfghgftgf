@@ -6,3 +6,6 @@ cd sf-porter
 wip/vayu-bootstrap-baseline
 4796177 Fix config path resolution for checked-out project
 a56b7c0 Add read-only vayu baseline validator
+
+ls -lh "$HOME/vayu-zips"
+
